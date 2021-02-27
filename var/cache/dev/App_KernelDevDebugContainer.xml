@@ -326,6 +326,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\EcolesController" class="App\Controller\EcolesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\EcolesController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProjetsController" class="App\Controller\ProjetsController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5029,6 +5036,9 @@
       <tag name="maker.command"/>
       <argument>/Users/kevinrifa/Documents/Sites_Web/studUp/StudUp</argument>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EcolesController" class="App\Controller\EcolesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EcolesController" class="App\Controller\EcolesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EcolesController" class="App\Controller\EcolesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjetsController" class="App\Controller\ProjetsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjetsController" class="App\Controller\ProjetsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjetsController" class="App\Controller\ProjetsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5645,6 +5655,12 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\EcolesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\EcolesController"/>
+      <argument>App\Controller\EcolesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
     <service id=".service_locator.5nX7ca3.App\Controller\ProjetsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProjetsController"/>
