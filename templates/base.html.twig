@@ -13,7 +13,31 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
+
     <body>
+    <nav class="">
+  <a class="" href="{{ path('home') }}">Stud'Up</a>
+  <button class="" type="button" data-toggle="collapse" data-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+    <span class=""></span>
+  </button>
+    <form class="">
+      <input class="" type="search" placeholder="Rechercher" aria-label="Search">
+      <button class="" type="submit">Search</button>
+    </form>
+  <div class="" id="">
+    <ul class="">
+      <li class="">
+        <a class="" href="# {# {{ path('educationalContent') }} #}">Contenu Pédagogique</a>
+      </li>
+      <li class="">
+        <a class="">Ecoles</a>
+      </li>
+            <li class="">
+        <a class="" href="{{ path('projets') }}" >Projets</a>
+      </li>
+    </ul>
+  </div>
+</nav>
         {% block body %}{% endblock %}
     </body>
 </html>
