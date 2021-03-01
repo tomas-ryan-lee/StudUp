@@ -577,3 +577,7 @@ vendor/laminas/laminas-code/src/Scanner/ScannerInterface.php
 vendor/laminas/laminas-code/src/Scanner/TokenArrayScanner.php
 vendor/laminas/laminas-code/src/Scanner/Util.php
 vendor/laminas/laminas-code/src/Scanner/ValueScanner.php
+var/log/dev.log
+var/cache/dev/profiler/index.csv
+var/log/dev.log
+var/cache/dev/profiler/index.csv

@@ -22,3 +22,9 @@ d7dc6e,127.0.0.1,GET,http://localhost:8000/home,1614624230,20b382,500
 20b382,127.0.0.1,GET,http://localhost:8000/home,1614624230,,500
 d145db,127.0.0.1,GET,http://localhost:8000/home,1614624308,,200
 f6f244,127.0.0.1,GET,http://localhost:8000/home,1614624415,,200
+27e5e2,127.0.0.1,GET,http://localhost:8000/projets,1614625467,,200
+473ff4,127.0.0.1,GET,http://localhost:8000/,1614625476,,200
+083b5d,127.0.0.1,GET,http://localhost:8000/,1614625613,,200
+1183f2,127.0.0.1,GET,http://localhost:8000/ecoles,1614625617,,200
+124b3d,127.0.0.1,GET,http://localhost:8000/projets,1614625621,,200
+f285e5,127.0.0.1,GET,http://localhost:8000/,1614625625,,200
