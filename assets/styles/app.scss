@@ -46,6 +46,7 @@ a {
 
 body {
     background: $home_bg_color;
+    width: auto;
     h1{
         color: $color_head;
         font-family: 'Anton', sans-serif;
@@ -83,6 +84,10 @@ body {
 }
 
 .container{
+    width: 80%;
+    padding: 7%;
+}
+
+main {
     width: 100%;
-    padding: 10%;
 }
