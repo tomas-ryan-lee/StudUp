@@ -1,8 +1,88 @@
 $color_head: #fff;
+$bg_nav: #fff;
+$text_color_nav: rgba(0, 0, 0, 0.6);
+$home_bg_color: rgba(218, 207, 227, 0.6);
+
+.navigation {
+    background-color: $bg_nav;
+    position: absolute;
+    width: 100%;
+    height: 91px;
+    left: 0px;
+    top: 0px;
+    display: inline-block;
+    .logo{
+        margin-left: 1%;
+        width: 129px;
+        height: 90px;
+    }
+    .nav_elements{
+        width: 33%;
+        display: inline-block;
+        position: absolute;
+        margin: 2%;
+        margin-left: 30%;
+        .nav_item{
+            margin: 5%;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            color: $text_color_nav;
+            display: inline;
+        }
+    }
+    .search {
+        float: right;
+        width: 20%;
+        margin: 2%;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+
+}
+
 
 body {
-    background: #000;
+    background: $home_bg_color;
     h1{
         color: $color_head;
+        font-family: 'Anton', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 64px;
+        text-shadow: 1px 1px 2px black;
     }
+    h3{
+        color: $color_head;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        text-shadow: 1px 1px 2px black;
+    }
+    .home_tag_line{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+    }
+}
+
+.team_btn {
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 1%;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.container{
+    width: 100%;
+    padding: 10%;
 }

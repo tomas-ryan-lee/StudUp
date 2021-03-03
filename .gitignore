@@ -1182,3 +1182,7 @@ var/log/dev.log
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+var/cache/dev/App_KernelDevDebugContainer.php
+var/cache/dev/App_KernelDevDebugContainer.preload.php
+var/cache/dev/profiler/index.csv
+var/log/dev.log

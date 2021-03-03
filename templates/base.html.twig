@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}StudUp, la plateforme qui aide les étudiants à réaliser leurs projets{% endblock %}</title>
+        <meta name="keywords" content="étudiants, entrepreneurs, aides pédagogique">
+        <meta name="author" content="Benjamin Bourdeleau">
+        <meta name="description" content="plateforme d'aide à la réalisation de projets étudiants">
+        <meta name="robots" content="">
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet"> 
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -15,29 +24,32 @@
     </head>
 
     <body>
-    <nav class="">
-  <a class="" href="{{ path('home') }}">Stud'Up</a>
-  <button class="" type="button" data-toggle="collapse" data-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-    <span class=""></span>
-  </button>
-    <form class="">
-      <input class="" type="search" placeholder="Rechercher" aria-label="Search">
-      <button class="" type="submit">Search</button>
-    </form>
-  <div class="" id="">
-    <ul class="">
-      <li class="">
-        <a class="" href="# {# {{ path('educationalContent') }} #}">Contenu Pédagogique</a>
-      </li>
-      <li class="">
-        <a class="" href="{{ path('ecoles') }}">Ecoles</a>
-      </li>
-            <li class="">
-        <a class="" href="{{ path('projets') }}" >Projets</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <header>
+      <nav class="navigation">
+        <a rel="canonical" class="" href="{{ path('home') }}">
+          <img class="logo"
+            src="../img/logo.png"
+            alt="Logo du site Stud'Up">
+        </a>
+          <ul class="nav_elements">
+            <li class="nav_item">
+              <a class="" href="# {# {{ path('educationalContent') }} #}">Contenu Pédagogique</a>
+            </li>
+            <li class="nav_item">
+              <a class="" href="{{ path('ecoles') }}">Ecoles</a>
+           </li>
+            <li class="nav_item">
+              <a class="" href="{{ path('projets') }}" >Projets</a>
+            </li>
+          </ul>
+        <form class="search">
+          <input class="" type="search" placeholder="Rechercher" aria-label="Search">
+          <button class="" type="submit">Recherche</button>
+        </form>
+      </nav>
+    </header>
+    <main>
         {% block body %}{% endblock %}
+    </main>
     </body>
 </html>
