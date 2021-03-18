@@ -2,11 +2,14 @@ $color_head: #fff;
 $bg_nav: #fff;
 $text_color_nav: rgba(0, 0, 0, 0.6);
 $home_bg_color: rgba(218, 207, 227, 0.6);
+$grey_title: #4C4C4C;
+$main_title_color: #5F3E79;
+$max: 100%;
 
 .navigation {
     background-color: $bg_nav;
     position: absolute;
-    width: 100%;
+    width:  $max;
     height: 91px;
     left: 0px;
     top: 0px;
@@ -43,26 +46,31 @@ a {
 
 }
 
-
 body {
+    margin: 0 auto;
+    width: $max;
+}
+
+
+main {
+    margin: 0;
     background: $home_bg_color;
-    width: auto;
+    width: $max;
     h1{
-        color: $color_head;
+        color: $main_title_color;
         font-family: 'Anton', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 64px;
-        text-shadow: 1px 1px 2px black;
     }
-    h3{
-        color: $color_head;
+    h2{
+        color: $main_title_color;
         font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: 500;
-        text-shadow: 1px 1px 2px black;
     }
     .home_tag_line{
+        color: $main_title_color;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 300;
@@ -84,10 +92,17 @@ body {
 }
 
 .container{
+    margin: 0;
     width: 80%;
-    padding: 7%;
+    padding: 10%;
 }
 
-main {
-    width: 100%;
+section {
+    width: $max;
+    h3 {
+            color: $grey_title;
+            font-family: 'Anton', sans-serif;
+            font-size: 24px;
+    }
+
 }

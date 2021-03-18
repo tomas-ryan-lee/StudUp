@@ -48,6 +48,13 @@
         </form>
       </nav>
     </header>
+    <main role="main">
+        <div class="container">
         {% block body %}{% endblock %}
+        </div>
+        </main>
+        <section class="container">
+        {% block Projets_display %}{% endblock %}
+        </section>
     </body>
 </html>
