@@ -4,7 +4,10 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -58,11 +61,21 @@ class AddEcoleType extends AbstractType
                 "expanded" => true,
                 "label_format" => "Présence d'un incubateur"
             ])
-            ->add("school_nb_students", NumberType::class, [
-                "label" => "Nombre d'étudiants",
+            ->add("school_nb_students_tot", NumberType::class, [
+                "label" => "Nombre d'étudiants total",
                 "required" => false,
                 "html5" => true
                 ])
+            ->add("school_nb_students_plateform", NumberType::class, [
+                "label" => "Nombre d’étudiant à inscrire sur la plateforme",
+                "required" => false,
+                "html5" => true
+                ])
+            ->add("school_intermediary", TextType::class, ["label" => "Nom de l'intermédiaire"])
+            ->add("school_intermediary_role", TextType::class, ["label" => "Rôle de l'intermédiaire"])
+            ->add("school_intermediary_mail", EmailType::class, ["label" => "E-Mail de l'intermédiaire"])
+            ->add("school_intermediary_tel", TelType::class, ["label" => "Téléphone de l'intermédiaire"])
+            ->add("submit", SubmitType::class, ["label" => "Envoyer"])
         ;
     }
 
