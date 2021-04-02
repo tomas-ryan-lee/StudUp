@@ -63,3 +63,6 @@ composer.lock
 composer-setup.php
 *.lock
 *.lock
+
+# Local files
+*.local

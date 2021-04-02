@@ -70,6 +70,39 @@ Run these lines to setup and launch the project
 composer update
 npm install
 npm run dev
+```
+
+## Setup the database
+
+Install mysql
+```sh
+sudo apt-get install mysql
+```
+
+Create the database and a user and grant it the privileges to update the base.
+
+```sql
+CREATE DATABASE _dbname_;
+CREATE USER _login_ IDENTIFIED BY _password_;
+GRANT ALL PRIVILEGES ON studup.* TO 'stud'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Make sure to update the `.env` file with the correct informations or create a `.env.local` file to configure it.
+
+```yaml
+DATABASE_URL="mysql://_login_:_password_@127.0.0.1:3306/_dbname_?serverVersion=5.7"
+```
+
+And finally create the database
+
+```sh
+php bin/console doctrine:schema:create
+```
+
+## Make the server running
+
+```sh
 symfony server:start
 ```
 
