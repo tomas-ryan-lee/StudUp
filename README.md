@@ -2,7 +2,7 @@
 ## _Hier étudiant.e.s, aujourd'hui entrepreneur.e.s_
 
 
-## Install
+## Installation
 
 ### Cloning the project
 
