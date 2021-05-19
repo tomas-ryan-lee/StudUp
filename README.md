@@ -76,7 +76,7 @@ npm run dev
 
 Install mysql
 ```sh
-sudo apt-get install mysql
+sudo apt-get install mysql-server
 ```
 
 Create the database and a user and grant it the privileges to update the base.
@@ -84,7 +84,7 @@ Create the database and a user and grant it the privileges to update the base.
 ```sql
 CREATE DATABASE _dbname_;
 CREATE USER _login_ IDENTIFIED BY _password_;
-GRANT ALL PRIVILEGES ON studup.* TO 'stud'@'localhost';
+GRANT ALL PRIVILEGES ON studup.* TO '_login_'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
