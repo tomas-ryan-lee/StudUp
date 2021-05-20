@@ -2,48 +2,60 @@
 
 {% block title 'Stud\'Up!' %}
 
-{% block body %}
-        <h1>Stud'Up</h1>
-        <h2>La Plateforme de Valorisation de Projets Étudiants.</h2>
-       <button class="team_btn">L'équipe Stud'Up</button>
-       <p class="home_tag_line">Hier étudiant.e.s, <br> aujourd’hui entrepreuneur.e.s.</p>
+{% block main %}
+    <div class="home_tag_line">
+        <h1>Prêt à changer le monde ?</h1>
+        <h2>Boost tes compétences, Collabore entre étudiants</h2>
+        <div class="search">
+            <input type="text" id="name" name="name" placeholder="Découvre les projets sur lesquels travaillent tes potes">
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block promo %} 
+    <div class="content">
+        <h3>Construit une sphère professionelle fun et innovante</h3>
+        <button><a href="">Explore l’annuaire personnalisé</a> </button>
+        <p>#Prestataire #Consultant #Associé</p>
     </div>
 {% endblock %}
 
 {% block Projets_display %}
 
-    <h3>Les projets visibles sur Stud'Up :</h3>
-    <article>
-        <div class="head_articleProjet" >
-            <div class="article_nav">
-               <p>membres projet</p>
-               <p>messagerie</p>
-               <p>favoris</p>
-               <p>Nom du projet</p>
-            </div>
-            <p>Description</p>
-            <p>phase : </p>
-            <p>Logo Projet</p>
+<div class="liste-projets" >
+    <h3>Les projets faits pour toi !</h3>
+    <div class="card">
+    <div class="card-image"></div>
+
+        <div class="card-text">
+            <h3>You Clothes</h3>
+            <p>Environnement - Technologie</p>
+            <p>Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.</p>
         </div>
-        <div class="Body_article">
-            <p>image_écoles</p>
-            <p><i>Tag line </i><p>
-            <div class="actula_strugle">
-                <h2>Problèmatiques Actuelles :  </h2>
-                <ul>
-                    <li>- Developpement d’une V1</li>
-                    <li>- Définir les fonctionnalités</li>
-                    <li>- Tests utilisateurs</li>
-                </ul>
-            </div>
-            <div class="seeked_comp">
-                <h2>Compétences Recherchées: </h2>
-                <ul>
-                    <li>- Community Manager</li>
-                    <li>- Avocat </li>
-                    <li>- Juriste</li>
-                </ul>
+        <div class="card-infos">
+            <h4>Etude de besoins</h4>
+            <span>Q</span>
+            <span>Q</span>
+            <div class="card-list">
+                <p>Associé - Community manager</p>
+                <p>Associé - Graphiste</p>
+                <p>Préstataire - Expert en référencement</p>  
+            </div>  
+            <div class= "card-footer">          
+                <span class="info">Monaco</span>
+                <span><img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil"/></span>
+                <span class="info">Actif</span>
             </div>
         </div>
-    </article>
+    </div>
+</div>
+    
+{% endblock %}
+
+{% block citations %} 
+          <div class="citation">
+            <h4>“Seuls, ceux qui sont assez fous pour penser qu’ils peuvent changer le monde, y parviennent !”</h4>
+            <p>Steve Jobs</p>
+          </div>
 {% endblock %}
