@@ -4,6 +4,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\Job;
+use App\Entity\User;
 
 /**
  * @ORM\Entity()
@@ -61,7 +63,7 @@ class Student {
     private $graduationYear;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $studentNumber;
 
@@ -121,18 +123,18 @@ class Student {
 
     private $website;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
 
     private $linkedin;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $instagram;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $facebook;
 
@@ -146,4 +148,85 @@ class Student {
         $this->wantedJobs = new ArrayCollection();
         $this->domains = new ArrayCollection();
     }
+
+    public function setStatus(string $status) {
+        $this->status = $status;
+    }
+
+    public function setSurname(string $surname) {
+        $this->surname = $surname;
+    }
+
+    public function setName(string $name) {
+        $this->name = $name;
+    }
+
+    public function setGender(string $gender) {
+        $this->gender = $gender;
+    }
+
+    public function setBirthday(date $birthday) {
+        $this->birthday = $birthday;
+    }
+
+    public function setStudyLevel(string $studyLevel) {
+        $this->studyLevel = $studyLevel;
+    }
+
+    public function setGraduationYear(integer $graduationYear) {
+        $this->setGraduationYear = $graduationYear;
+    }
+
+    public function setStudentNumber(string $studentNumber) {
+        $this->studentNumber = $studentNumber;
+    }
+
+    public function setStudentCardPic(string $studentCardPic) {
+        $this->studentCardPic = $studentCardPic;
+    }
+
+    public function setMail(string $mail) {
+        $this->mail = $mail;
+    }
+
+    public function setUser(User $user) {
+        $this->user = $user;
+    } 
+
+    public function setWantedJob(ArrayCollection $jobs) {
+        $this->wantedJobs = $jobs;
+    }
+
+    public function setDomains(ArrayCollection $domains) {
+        $this->domains = $domains;
+    }
+
+    public function setNewsFrequency(string $newsFrequency) {
+        $this->newsFrequency = $newsFrequency;
+    }
+
+    public function setProfilePic(string $profilePic) {
+        $this->profilePic = $profilePic;
+    }
+
+    public function setWebsite(string $website) {
+        $this->website = $website;
+    }
+
+    public function setLinkedin(string $linkedin) {
+        $this->linkedin = $linkedin;
+    }
+
+    public function setInstagram(string $instagram) {
+        $this->instagram = $instagram;
+    }
+
+    public function setFacebook(string $facebook) {
+        $this->facebook = $facebook;
+    }
+
+    public function setIsActif(boolean $isActif) {
+        $this->isActif = $isActif;
+    }
+
 }
