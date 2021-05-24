@@ -20,7 +20,7 @@ class ProjectMember {
     # link to project entity (many to one)
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Project", inversedBy="members")
-     * @JoinColumn(name="project_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     private $project;
 
@@ -66,7 +66,7 @@ class ProjectMember {
      * @ORM\ManyToMany(targetEntity="App\Entity\Student")
      * @ORM\JoinTable(name="jt_project_applicant",
      *    joinColumns={@ORM\JoinColumn(name="project_members_id", referencedColumnName="id")},
-     *    inverseJoinColumn={@ORM\JoinColumn(name="applicant_id", referencedColumnName="id")}
+     *    inverseJoinColumns={@ORM\JoinColumn(name="applicant_id", referencedColumnName="id")}
      * )
      */
     private $applicants;

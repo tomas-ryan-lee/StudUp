@@ -88,7 +88,7 @@ class Project {
     private $asset;
 
     /**
-     * @ORM\Colunm(type="string")
+     * @ORM\Column(type="string")
      */
     private $lookingFor;
 

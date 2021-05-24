@@ -88,7 +88,7 @@ class Student {
      * @ORM\ManyToMany(targetEntity="App\Entity\Job")
      * @ORM\JoinTable(name="jt_student_wanted_job",
      *    joinColumns={@ORM\JoinColumn(name="student_id", referencedColumnName="id")},
-     *    inversedJoinColumns={@ORM\JoinColumn(name="job_id", referencedColumnName="id")}
+     *    inverseJoinColumns={@ORM\JoinColumn(name="job_id", referencedColumnName="id")}
      * )
      */
     private $wantedJobs;
@@ -98,7 +98,7 @@ class Student {
      * @ORM\ManyToMany(targetEntity="App\Entity\Domain")
      * @ORM\JoinTable(name="jt_student_domain",
      *     joinColumns={@ORM\JoinColumn(name="student_id", referencedColumnName="id")},
-     *     inversedJoinColumns={@ORM\JoinColumn(name="domain_id", referencedColumnName="id")}
+     *     inverseJoinColumns={@ORM\JoinColumn(name="domain_id", referencedColumnName="id")}
      * )
      */
     private $domains;
