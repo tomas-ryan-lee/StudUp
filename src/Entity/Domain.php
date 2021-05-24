@@ -12,7 +12,7 @@ class Domain {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     private $id;
 
@@ -22,7 +22,16 @@ class Domain {
     private $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $category;
+
+
+    public function setName(string $name) {
+        $this->name = $name;
+    }
+
+    public function setCategory(string $category) {
+        $this->category = $category;
+    }
 }
