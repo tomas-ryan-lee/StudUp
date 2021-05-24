@@ -4,6 +4,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\ProjectMember;
 
 /**
  * @ORM\Entity()
@@ -13,7 +14,7 @@ class Project {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     private $id;
 
@@ -111,5 +112,73 @@ class Project {
     public function __construc() {
         $this->domains = new ArrayCollection();
         $this->members = new ArrayCollection();
+    }
+
+    public function setName(string $name) {
+        $this->name = $name;
+    }
+
+    public function setDomains(ArrayCollection $domains) {
+        $this->domains = $domains;
+    }
+
+    public function setIncubator(string $incubator) {
+        $this->incubator = $incubator;
+    }
+
+    public function setLocation(string $location) {
+        $this->location = $location;
+    }
+
+    public function setLogo(string $logo) {
+        $this->logo = $logo;
+    }
+
+    public function setVideo(string $video) {
+        $this->video = $video;
+    }
+
+    public function setDisplayedContent(string $display) {
+        $this->videoOrLogoDisplayed = display;
+    }
+
+    public function setCurrentPhase(string $phase) {
+        $this->currentPhase = $phase;
+    }
+
+    public function setPhases(string $phases) {
+        $this->phases = $phases;
+    }
+
+    public function setGlobalVision(string $globalVision) {
+        $this->globalVision = $globalVision;
+    }
+
+    public function setElevatorSpeech(string $speech) {
+        $this->elevatorSpeect = $speech;
+    }
+
+    public function setAsset(string $asset) {
+        $this->asset = $asset;
+    }
+
+    public function setLookingFor(string $lookingFor) {
+        $this->lookingFor = $lookingFor;
+    }
+
+    public function setMood(string $mood) {
+        $this->mood = $mood;
+    }
+
+    public function setHasImpact(boolean $impact) {
+        $this->hasImpact = $impact;
+    }
+    
+    public function addMember(ProjectMember $projectMember) {
+        $this->members->add($projectMember);
+    }
+
+    public function removeMember(ProjectMember $projectMember) {
+        $this->members->removeElement($projectMember);
     }
 }
