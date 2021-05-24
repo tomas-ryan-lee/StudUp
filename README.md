@@ -108,3 +108,10 @@ symfony server:start
 
 # Your app is now running ! Congratulation !!
  
+
+## Fixtures
+
+If you are in developpement and you want to populate your database with dummy data, just load the fixtures
+```sh
+php bin/console doctrine:fixtures:load
+```
