@@ -116,7 +116,7 @@ class ProjectMember {
         $this->applicants->removeElement($student);
     }
 
-    public clearApplicant() {
+    public function clearApplicant() {
         $this->applicants->clear();
     }
 }
