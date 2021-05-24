@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+
+use App\Entity\Student;
 
 /**
  * @ORM\Entity()
@@ -11,7 +14,7 @@ class User {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     private $id;
 
@@ -39,7 +42,33 @@ class User {
 
     // ID of the confirmation link used for mail confirmation or reset password
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $confirmationUUID;
+
+
+    public function __construct() {
+        $this->lastConnection = date('d/m/Y H:i:s', time());
+    }
+
+    public function setLogin(string $login) {
+        $this->login = $login;
+        $this->password = $password;
+    }
+    
+    public function setProfile(Student $student) {
+        $this->profile = $student;
+    }
+
+    public function updateLastConnection() {
+        $this->lastConnection = date('d/m/Y H:i:s', time());
+    }
+
+    public function setConfirmationUUID(string $confirmationUUID) {
+        $this->confirmationUUID = $confirmationUUID;
+    }
+
+    public functin deleteConfirmatinUUID() {
+        $this->confirmationUUID = NULL;
+    }
 }
