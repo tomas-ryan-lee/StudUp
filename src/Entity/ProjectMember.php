@@ -4,6 +4,10 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
+use App\Entity\Job;
+use App\Entity\Project;
+use App\Entity\Student;
+
 
 /**
  * @ORM\Entity()
@@ -13,7 +17,7 @@ class ProjectMember {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     private $id;
 
@@ -74,5 +78,45 @@ class ProjectMember {
 
     public function __construct() {
         $this->applicants = new ArrayCollections();
+    }
+
+    public function setProject(Project $project) {
+        $this->project = $project;
+    }
+
+    public function setStudent(Student $student) {
+        $this->student = $student;
+    }
+
+    public function setJob(Job $job) {
+        $this->job = $job;
+    }
+
+    public function setType(string $type) {
+        $this->type = $type;
+    }
+
+    public function setDetail(string $type) {
+        $this->detail = $detail;
+    }
+
+    public function setRetribution(string $retribution) {
+        $this->retribution = $retribution;
+    }
+
+    public function setIsFree(boolean $isFree) {
+        $this->isFree = $isFree;
+    }
+
+    public function addApplicant(Student $student) {
+        $this->applicants->add($student);
+    }
+
+    public function removeApplicant(Student $student) {
+        $this->applicants->removeElement($student);
+    }
+
+    public clearApplicant() {
+        $this->applicants->clear();
     }
 }
