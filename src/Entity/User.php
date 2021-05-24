@@ -28,7 +28,7 @@ class User {
 
     # link to student entity (one to one)
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Student", mappedBy='user')
+     * @ORM\OneToOne(targetEntity="App\Entity\Student", mappedBy="user")
      */
     private $profil;
 
