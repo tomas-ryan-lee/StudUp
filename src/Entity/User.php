@@ -68,7 +68,7 @@ class User {
         $this->confirmationUUID = $confirmationUUID;
     }
 
-    public functin deleteConfirmatinUUID() {
+    public function deleteConfirmatinUUID() {
         $this->confirmationUUID = NULL;
     }
 }
