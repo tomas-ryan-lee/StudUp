@@ -26,4 +26,13 @@ class School {
      * @ORM\Column(type="string")
      */
     private $type;
+
+
+    public function setName(string $name) {
+        $this->name = $name;
+    }
+
+    public function setType(string $type) {
+        $this->type = $type;
+    }
 }
