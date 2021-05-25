@@ -7,6 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 
 use App\Entity\Domain;
 use App\Entity\Job;
+use App\Entity\School;
 
 
 class AppFixtures extends Fixture
@@ -103,6 +104,75 @@ class AppFixtures extends Fixture
         }
 
         ## end of job fixtures
+
+        ## begin of school fixtures
+
+        $commerce = [
+            "ISG",
+            "ISTEC",
+            "ISC",
+            "ISG",
+            "ESCE",
+            "ESUP",
+            "ICOGES",
+            "ISD",
+            "INSEEC",
+            "IPAG",
+            "PPA",
+            "Institut de commerce et de gestion",
+            "EBS",
+            "ESUP",
+            "ESCG",
+            "ESCEN",
+            "ENC",
+            "ESCP",
+            "EIMP",
+            "PSB",
+            "ESGCI",
+            "ISCG",
+            "KEDGE",
+            "Gaming Business School",
+            "Euridis",
+            "ESG",
+            "EDHEC",
+            "ESLSCA",
+            "IBS",
+            "TBS",
+            "Moda Domani",
+            "Neoma",
+            "ESG",
+            "MBS",
+            "ISC",
+            "ESG",
+            "ESAM",
+            "Weller",
+            "EDC",
+            "ILCI",
+            "IPAG",
+            "IFAG",
+            "CNPC",
+            "ETS",
+            "ISCM",
+            "EMLV",
+            "SKEMA",
+            "IFAG",
+            "ISEG",
+            "IESIG",
+            "HEC",
+            "EM Normandie",
+            "Ascencia",
+            "IÉSEG",
+            "ESCE",
+            "ESI"
+        ];
+        foreach($commerce as $commerceSchool) {
+            $school = new School();
+            $school->setName($commerceSchool);
+            $school->setType("Commerce");
+            $manager->persist($school);
+        };
+        
+        ## end of school fixtures
 
         $manager->flush();
     }
