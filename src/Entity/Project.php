@@ -170,7 +170,7 @@ class Project {
         $this->mood = $mood;
     }
 
-    public function setHasImpact(boolean $impact) {
+    public function setHasImpact(bool $impact) {
         $this->hasImpact = $impact;
     }
     

@@ -165,7 +165,7 @@ class Student {
         $this->gender = $gender;
     }
 
-    public function setBirthday(date $birthday) {
+    public function setBirthday(string $birthday) {
         $this->birthday = $birthday;
     }
 
@@ -173,7 +173,7 @@ class Student {
         $this->studyLevel = $studyLevel;
     }
 
-    public function setGraduationYear(integer $graduationYear) {
+    public function setGraduationYear(int $graduationYear) {
         $this->setGraduationYear = $graduationYear;
     }
 
@@ -225,7 +225,7 @@ class Student {
         $this->facebook = $facebook;
     }
 
-    public function setIsActif(boolean $isActif) {
+    public function setIsActif(bool $isActif) {
         $this->isActif = $isActif;
     }
 

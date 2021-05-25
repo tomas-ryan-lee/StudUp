@@ -104,7 +104,7 @@ class ProjectMember {
         $this->retribution = $retribution;
     }
 
-    public function setIsFree(boolean $isFree) {
+    public function setIsFree(bool $isFree) {
         $this->isFree = $isFree;
     }
 
