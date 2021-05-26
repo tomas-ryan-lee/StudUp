@@ -2,12 +2,15 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
 
 use App\Entity\Domain;
 use App\Entity\Job;
 use App\Entity\School;
+use App\Entity\Student;
 use App\Entity\User;
 
 
@@ -44,17 +47,20 @@ class AppFixtures extends Fixture
             "Transport",
             "Urbanisme"
         ];
+        $i = 0;
         foreach($domains as $domainName) {
             $domain = new Domain();
             $domain->setName($domainName);
             $manager->persist($domain);
+
+            $this->addReference("domain".$i, $domain);
+            $i++;
         };
         ## end of domain fixtures
 
         ## begin of job fixtures
 
         $jobs = [
-
             "Développeur.se Cybersécurité" => "Développement",
             "Développeur.se Gaming" => "Développement",
             "Développeur.se Mobile" => "Développement",
@@ -96,12 +102,15 @@ class AppFixtures extends Fixture
             "Team Leader" => "Droit",
             "Traducteur.rice" => "Droit",
         ];
-        
+        $i = 0;
         foreach($jobs as $jobName => $jobCategory){
             $job = new Job();
             $job->setName($jobName);
             $job->setCategory($jobCategory);
             $manager->persist($job);
+
+            $this->addReference("job".$i, $job);
+            $i++;
         }
 
         ## end of job fixtures
@@ -166,11 +175,15 @@ class AppFixtures extends Fixture
             "ESCE",
             "ESI"
         ];
+        $i = 0;
         foreach($commerce as $commerceSchool) {
             $school = new School();
             $school->setName($commerceSchool);
             $school->setType("Commerce");
             $manager->persist($school);
+
+            $this->addReference("school".$i, $school);
+            $i++;
         };
 
         ## end of school fixtures
@@ -183,14 +196,126 @@ class AppFixtures extends Fixture
             "jordan.kevin57@gmail.com" => "YourReallyToughtIWouldPutMyPassword?"
 
         ];
+        $i = 0;
         foreach($users as $login => $password) {
             $user = new User();
             $user->setLogin($login);
             $user->setPassword($password);
             $manager->persist($user);
+
+            $this->addReference("user".$i, $user);
+            $i++;
         };
 
         ## end of user fixtures
+
+        ## begin of student fixtures (without relations)
+
+        $students = [
+            [
+                "student",
+                "Jules",
+                "Patapon",
+                "other",
+                "2018-07-14",
+                "Bac +0",
+                2020,
+                "user1@example.com",
+                "daily",
+                "example.com",
+                False
+            ], [
+                "student",
+                "Florine",
+                "Bonnin",
+                "female",
+                "1996-02-14",
+                "Bac +2",
+                2016,
+                "user2@example.com",
+                "weekly",
+                "example.com",
+                True
+            ], [
+                "alumni",
+                "Kévin",
+                "Jordan",
+                "male",
+                "1996-03-15",
+                "Bac +5",
+                2020,
+                "jordan.kevin57@gmail.com",
+                "monthly",
+                "racontard.fr",
+                True
+            ]
+        ];
+        $i = 0;
+        foreach($students as list(
+            $status,
+            $surname,
+            $name,
+            $gender,
+            $birthday,
+            $studyLevel,
+            $graduationYear,
+            $mail,
+            $newsFrequency,
+            $website,
+            $isActif
+        )) {
+            $student = new Student();
+            $student->setStatus($status);
+            $student->setSurname($surname);
+            $student->setName($name);
+            $student->setGender($gender);
+            $student->setBirthday($birthday);
+            $student->setStudyLevel($studyLevel);
+            $student->setGraduationYear($graduationYear);
+            $student->setMail($mail);
+            $student->setNewsFrequency($newsFrequency);
+            $student->setWebsite($website);
+            $student->setIsActif($isActif);
+            $manager->persist($student);
+
+            $this->addReference("student".$i, $student);
+            $i++;
+        }
+
+        ## end of student fixtures
+
+        ## begin of link for users and students
+
+        for($i=0; $i < 3; $i++) {
+            // get student and user
+            $student = $this->getReference("student".$i);
+            $user = $this->getReference("user".$i);
+
+            // link student and user
+            $student->setUser($user);
+            $user->setProfile($student);
+
+            // link school to student
+            $student->setSchool($this->getReference("school".rand(0, count($commerce)-1)));
+            
+            // choose 1 to 5 random jobs amoung those stored in DB
+            $jobsId = array_rand(range(0, count($jobs)-1), rand(1,5));
+            $studentJobs = new ArrayCollection();
+            foreach($jobsId as $id) {
+                $studentJobs->add($this->getReference('job'.$id));
+            }
+            $student->setWantedJobs($studentJobs);
+
+            // choose 1 to 5 random jobs amoung those stored in DB
+            $domainsId = array_rand(range(0, count($domains)-1), rand(1,5));
+            $studentDomains = new ArrayCollection();
+            foreach($domainsId as $id) {
+                $studentDomains->add($this->getReference('domain'.$id));
+            }
+            $student->setDomains($studentDomains);
+        }
+
+        ## end of link for users and students
 
         $manager->flush();
     }
