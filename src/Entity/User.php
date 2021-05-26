@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Datetime;
 use Doctrine\ORM\Mapping as ORM;
 
 use App\Entity\Student;
@@ -48,20 +49,28 @@ class User {
 
 
     public function __construct() {
-        $this->lastConnection = date('d/m/Y H:i:s', time());
+
+        $this->lastConnection = new DateTime();
     }
 
     public function setLogin(string $login) {
         $this->login = $login;
-        $this->password = $password;
     }
     
+    public function setPassword(string $password) {
+        $this->password = $password;
+    }
+
     public function setProfile(Student $student) {
         $this->profile = $student;
     }
 
     public function updateLastConnection() {
+<<<<<<< HEAD
         $this->lastConnection = new DateTime();
+=======
+        $this->lastConnection = new DateTime());
+>>>>>>> e71cc04... Change date type in user to match ORM type
     }
 
     public function setConfirmationUUID(?string $confirmationUUID) {
