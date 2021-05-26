@@ -31,7 +31,7 @@ class User {
 
     # link to student entity (one to one)
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Student", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="App\Entity\Student", mappedBy="user", cascade={"persist"})
      */
     private $profil;
 
@@ -61,7 +61,7 @@ class User {
     }
 
     public function updateLastConnection() {
-        $this->lastConnection = date('d/m/Y H:i:s', time());
+        $this->lastConnection = new DateTime();
     }
 
     public function setConfirmationUUID(string $confirmationUUID) {

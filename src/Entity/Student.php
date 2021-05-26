@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Entity;
+
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 use App\Entity\Job;
+use App\Entity\School;
 use App\Entity\User;
 
 /**
@@ -69,7 +72,7 @@ class Student {
 
     # location of the pic on the server
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $studentCardPic;
 
@@ -114,7 +117,7 @@ class Student {
     /**
      * @ORM\Column(type="string")
      */
-    private $profilePic;
+    private $profilePic = "/public/img/amineTousmi.png";
 
     # where is it ?
     /**
@@ -166,7 +169,11 @@ class Student {
     }
 
     public function setBirthday(string $birthday) {
-        $this->birthday = $birthday;
+        $this->birthday = new DateTime($birthday);
+    }
+
+    public function setSchool(School $school) {
+        $this->school = $school;
     }
 
     public function setStudyLevel(string $studyLevel) {
@@ -174,7 +181,7 @@ class Student {
     }
 
     public function setGraduationYear(int $graduationYear) {
-        $this->setGraduationYear = $graduationYear;
+        $this->graduationYear = $graduationYear;
     }
 
     public function setStudentNumber(string $studentNumber) {
@@ -193,7 +200,7 @@ class Student {
         $this->user = $user;
     } 
 
-    public function setWantedJob(ArrayCollection $jobs) {
+    public function setWantedJobs(ArrayCollection $jobs) {
         $this->wantedJobs = $jobs;
     }
 
