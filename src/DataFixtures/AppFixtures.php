@@ -8,6 +8,7 @@ use Doctrine\Persistence\ObjectManager;
 use App\Entity\Domain;
 use App\Entity\Job;
 use App\Entity\School;
+use App\Entity\User;
 
 
 class AppFixtures extends Fixture
@@ -171,8 +172,25 @@ class AppFixtures extends Fixture
             $school->setType("Commerce");
             $manager->persist($school);
         };
-        
+
         ## end of school fixtures
+
+        ## begin of user fixtures (without relations)
+
+        $users = [
+            "user1@example.com" => "password",
+            "user2@example.com" => "1234",
+            "jordan.kevin57@gmail.com" => "YourReallyToughtIWouldPutMyPassword?"
+
+        ];
+        foreach($users as $login => $password) {
+            $user = new User();
+            $user->setLogin($login);
+            $user->setPassword($password);
+            $manager->persist($user);
+        };
+
+        ## end of user fixtures
 
         $manager->flush();
     }
