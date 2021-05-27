@@ -66,11 +66,7 @@ class User {
     }
 
     public function updateLastConnection() {
-<<<<<<< HEAD
         $this->lastConnection = new DateTime();
-=======
-        $this->lastConnection = new DateTime());
->>>>>>> e71cc04... Change date type in user to match ORM type
     }
 
     public function setConfirmationUUID(?string $confirmationUUID) {

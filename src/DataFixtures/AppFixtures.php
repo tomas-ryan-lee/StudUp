@@ -10,6 +10,7 @@ use Doctrine\Persistence\ObjectManager;
 use App\Entity\Domain;
 use App\Entity\Job;
 use App\Entity\Project;
+use App\Entity\ProjectMember;
 use App\Entity\School;
 use App\Entity\Student;
 use App\Entity\User;
@@ -418,6 +419,104 @@ class AppFixtures extends Fixture
         }
 
         ## end of project fixtures
+
+        ## begin of projectMember fixtures (and link it in project fixtures)
+
+        $projectMembers = [
+            [
+                "Associé",
+                "Fiche de poste à développer ici, mais flemme",
+                Null,
+                False,
+                0,
+                0,
+                Null
+            ],
+            [
+                "Associé",
+                "Fiche de poste à développer ici, mais flemme",
+                Null,
+                False,
+                1,
+                1,
+                Null
+            ],
+            [
+                "Associé",
+                "Fiche de poste à développer ici, mais flemme",
+                Null,
+                False,
+                2,
+                2,
+                Null
+            ],
+
+            [
+                "Collaborateur",
+                "Fiche de poste, mais flemme",
+                "Une poignée de main",
+                True,
+                0,
+                Null,
+                Null
+
+            ],
+            [
+                "Collaborateur",
+                "Fiche de poste, mais flemme",
+                "Une pipe (à tabac)",
+                True,
+                0,
+                Null,
+                [1, 2]
+            ],
+
+            [
+                "Conseil",
+                "Fiche de poste, mais flemme",
+                "Part de la société",
+                True,
+                1,
+                Null,
+                [0, 2]
+            ],
+
+        ];
+        foreach($projectMembers as list(
+            $type,
+            $detail,
+            $retribution,
+            $isFree,
+            $projectFId,
+            $studentFId,
+            $applicantsFId
+        )) {
+            $projectMember = new ProjectMember();
+            $projectMember->setType($type);
+            $projectMember->setDetail($detail);
+            $projectMember->setRetribution($retribution);
+            $projectMember->setIsFree($isFree);
+            $projectMember->setProject($this->getReference("project".$projectFId));
+            
+            if($studentFId != Null) $projectMember->setStudent($this->getReference("student".$studentFId));
+
+            $jobId = rand(0,count($jobs)-1);
+            $projectMember->setJob($this->getReference("job".$jobId));
+
+            if($applicantsFId != Null) {
+                foreach($applicantsFId as $applicantFId) {
+                    $applicant = $this->getReference("student".$applicantFId);
+                    $projectMember->addApplicant($applicant);
+                }
+            }
+
+            $this->getReference("project".$projectFId)->addMember($projectMember);
+
+            $manager->persist($projectMember);
+        }
+
+        ## end of projectMember fixtures
+        
 
         $manager->flush();
     }

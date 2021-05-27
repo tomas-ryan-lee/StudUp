@@ -54,7 +54,7 @@ class ProjectMember {
     private $detail;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $retribution;
 
@@ -64,7 +64,7 @@ class ProjectMember {
      */
     private $isFree;
 
-    # need to be empty if student is filled
+    # needs to be empty if student is filled
     # link to student entity (many to many)
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Student")
@@ -77,14 +77,14 @@ class ProjectMember {
 
 
     public function __construct() {
-        $this->applicants = new ArrayCollections();
+        $this->applicants = new ArrayCollection();
     }
 
     public function setProject(Project $project) {
         $this->project = $project;
     }
 
-    public function setStudent(Student $student) {
+    public function setStudent(?Student $student) {
         $this->student = $student;
     }
 
@@ -96,11 +96,11 @@ class ProjectMember {
         $this->type = $type;
     }
 
-    public function setDetail(string $type) {
+    public function setDetail(string $detail) {
         $this->detail = $detail;
     }
 
-    public function setRetribution(string $retribution) {
+    public function setRetribution(?string $retribution) {
         $this->retribution = $retribution;
     }
 
@@ -109,6 +109,9 @@ class ProjectMember {
     }
 
     public function addApplicant(Student $student) {
+        if($this->applicants == Null) {
+            $this->applicants = new ArrayCollection();
+        }
         $this->applicants->add($student);
     }
 
