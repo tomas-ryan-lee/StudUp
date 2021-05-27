@@ -2,7 +2,7 @@
 
 {% block title 'Stud\'Up!' %}
 
-{% block main %}
+{% block body %}
     <div class="home_tag_line">
         <h1>Prêt à changer le monde ?</h1>
         <h2>Boost tes compétences, Collabore entre étudiants</h2>
@@ -58,4 +58,244 @@
             <h4>“Seuls, ceux qui sont assez fous pour penser qu’ils peuvent changer le monde, y parviennent !”</h4>
             <p>Steve Jobs</p>
           </div>
+{% endblock %}
+
+
+{% block inscription %}
+<aside id="modal-inscription-page1" class="modal" role="dialog"aria-labelledby="title-modal">
+	<div class="main-Inscritpion-Modal">
+		<a href="#" class="modal-close">X{# Fermer la boite modal #}</a>
+		<h2 id="title-modal">Salut à toi jeune Entrepreneur</h2>
+		<h3>C’est ici que tout commence
+		</h3>
+
+		<div class="navInscritpion">
+			<div class="nav-inscription-btn"><a href="#modal-inscription-page1">1</a></div>
+			<div class="nav-inscription-btn"><a href="#modal-inscription-page2">2</a></div>
+			<div class="nav-inscription-btn"><a href="#modal-inscription-page3">3</a></div>
+            <span></span>
+		</div>
+		<div class="bodyInscription">
+			<p>Prénom :</p>
+			<input type="text">
+            <div class="right-fields">
+			<p >Nom :</p>
+			<input  type="text">
+        <p>Tu es ?<span>I</span></p>
+			<select  name="Tu es ?" id="select">
+				<option value="Femme">Femme</option>
+				<option value="Homme">Homme</option>
+				<option value="Ne pas préciser">Ne pas préciser</option>
+			</select>
+        </div>
+			<p>Date de naissance :</p>
+			<input type="date" value="2018-07-22" min="1970-01-01" max="2018-12-31">
+        <p>Adresse mail</p>
+			<input class="long-input" type="mail">
+			<p>Mot de passe</p>
+			<input class="long-input" type="password">
+            <div class="upload">
+			<p>On veut <br>ta plus belle photo de profil !
+			</p>
+        <label class="upload-profile-img" for="upload-photo">Uploader</label>
+        <input type="file" name="photo" id="upload-photo" />
+    </div>
+    <span class="hashtag">#Stud’uppers</span>
+	</div>
+<a href="#modal-inscription-page2" class="next-form-page">La suite</a>
+</aside>
+
+            {#     PAGE 2 FORMULAIRE INSCRIPTION     #}
+
+<aside id="modal-inscription-page2" class="modal" role="dialog"aria-labelledby="title-modal">
+
+    <div class="main-Inscritpion-Modal">
+		<a href="#" class="modal-close">X{# Fermer la boite modal #}</a>
+		<h2 id="title-modal">Fait par des étudiants, pour des étudiants</h2>
+		<h3>Stud’up veut en savoir plus sur ton dojo</h3>
+
+		<div class="navInscritpion">
+            <div class="nav-inscription-btn"><a href="#modal-inscription-page1">1</a></div>
+            <div class="nav-inscription-btn"><a href="#modal-inscription-page2">2</a></div>
+            <div class="nav-inscription-btn"><a href="#modal-inscription-page3">3</a></div>
+            <span></span>
+		</div>
+		<div class="bodyInscription-page2">
+        <div class="info-ecole">
+        <div class="champs-ecole">
+			<p class="label-ecole">&#201;cole</p>
+            <input type="text" name="ecole" id="ecole-input">
+        <a href="">Ton école n’est pas référencée ?</a>
+        </div>
+        <div class="champs-ecole">
+            <p class="label-diplome">Diplôme</p>
+            <select name="Diplôme" id="diplome-input">
+                <option value="Bac">Bac</option>
+                <option value="Bachelor">Bachelor</option>
+                <option value="BEP">BEP</option>
+                <option value="BTS">BTS</option>
+                <option value="CAP">CAP</option>
+                <option value="Classe prépa">Classe prépa</option>
+                <option value="DEUG">DEUG</option>
+                <option value="DEUST">DEUST</option>
+                <option value="Diplôme d'ingérieur">Diplôme d'ingérieur</option>
+                <option value="Doctorat">Doctorat</option>
+                <option value="DUT">DUT</option>
+                <option value="License">License</option>
+                <option value="Maîtrise">Maîtrise</option>
+                <option value="Master">Master</option>
+            </select>
+        </div>
+        <div class="champs-ecole">
+            <p class="label-grade-year">Année d'obtention</p>
+            <select name="anne d'obtention" id="grade-year">
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+            </select>
+        </div>
+    </div>
+            <p class="label-cursus">Nom du cursus</p>
+            <input class="long-input" type="text">
+        </div>
+    <span class="hashtag">#Stud’uppers</span>
+    <a href="#modal-inscription-page1" class="previous-form-page">Retour</a>
+    <a href="#modal-inscription-page3" class="next-form-page">La suite</a>
+</div>
+
+</aside>
+
+            {#     PAGE 3 FORMULAIRE INSCRIPTION     #}
+
+            <aside id="modal-inscription-page3" class="modal" role="dialog"aria-labelledby="title-modal">
+
+            <div class="main-Inscritpion-Modal">
+                <a href="#" class="modal-close">X{# Fermer la boite modal #}</a>
+                <h2 id="title-modal">L’entrepreneuriat accessible grâce à Stud’up</h2>
+                <h3>On se charge de trouver les projets faits pour toi</h3>
+        
+                <div class="navInscritpion">
+                    <div class="nav-inscription-btn"><a href="#modal-inscription-page1">1</a></div>
+                    <div class="nav-inscription-btn"><a href="#modal-inscription-page2">2</a></div>
+                    <div class="nav-inscription-btn"><a href="#modal-inscription-page3">3</a></div>
+                    <span></span>
+                </div>
+                <div class="bodyInscription-page3">
+                <div class="align-infos">
+                <div class="competences">
+                <div class="title-comp">
+                <p>Tes super-pouvoirs</p>
+                    <span>I</span><span class="max-infos">5 max</span>
+                </div>
+                <p class="quote">Montre nous tout ce que tu sais faire</p>
+                <select name="competences" id="">
+                    <option value="Développeur.se Cybersécurité">Développeur.se Cybersécurité</option>
+                </select>
+                <a href="">Tu ne trouves pas tes compétences ?</a>
+            </div>
+            <div class="domaines">
+                <p>Tes secteurs de prédilection</p>
+                <p class="quote">Dis nous ce qui te fait vibrer</p>
+                <select name="domaine" id="">
+                    <option value="Alimentaire">Alimentaire</option>
+                </select>
+                <a href="">Tu ne trouves pas tes secteurs ?</a>
+            </div>
+        </div>
+            <div class="recurence">
+                <p>On te contacte lorsqu’une opportunité se présente  ?</p>
+                <p class="quote">Promis on est pas des forceurs</p>
+                <select name="recurence" id="">
+                    <option value="Tous les jours">Tous les jours</option>
+                    <option value="Toutes les semaines">Toutes les semaines</option>
+                    <option value="Tous les mois">Tous les mois</option>
+                    <option value="Jamais">Jamais</option>
+                </select>
+            </div>
+                </div>
+
+
+            <span class="hashtag">#Stud’uppers</span>
+            <a href="#modal-inscription-page2" class="previous-form-page">Retour</a>
+            <a href="#modal-inscription-pageFinal" class="next-form-page">La suite</a>
+        </div>
+        
+        </aside>
+
+                    {#     PAGE FINALE FORMULAIRE INSCRIPTION     #}
+
+        <aside id="modal-inscription-pageFinal" class="modal" role="dialog"aria-labelledby="title-modal">
+
+            <div class="main-Inscritpion-Modal">
+                <a href="#" class="modal-close">X{# Fermer la boite modal #}</a>
+                <h2 id="title-modal">Welcome on board jeune Stud’upper !</h2>
+                <div class="bodyInscription-pageFinal">
+                    <div class="recap">
+                    <img src="../img/caroline-CBD.png" alt="image de profile">
+                    <h3>Nom & Prénom</h3>
+                    <p class="cursus-recap">Etud -Alumnis +Niveau + Cursus</p>
+                    <div class="icone">Q</div>
+                    <ul>
+                        <li>Compétence 1 - </li>
+                        <li>Compétence 2 - </li>
+                        <li>Compétence 3 - </li>
+                        <li>Compétence 4 - </li>
+                        <li>Compétence 5</li>
+                    </ul>
+                    <div class="icone">Q</div>
+                    <ul>
+                        <li>Secteur - </li>
+                        <li>Secteur - </li>
+                        <li>Secteur - </li>
+                        <li>Secteur - </li>
+                        <li>Secteur </li>
+                    </ul>
+                    </div>
+                    <div class="contact">
+                        <h3>Point contact</h3>
+                        <p class="mail-recap">ton@email.com</p>
+                        <p>Ton 06</p>
+                        <input type="text">
+                        <p>Ton réseau social</p>
+                        <select name="reseaux sociaux" id="social-network">
+                            <option value="instagrame"></option>
+                            <option value="linkedIn"></option>
+                            <option value="Facebook"></option>
+                        </select>
+                        <input type="text">
+                        <p>Personnalise la prise de contact !</p>
+                        <p class="subtext">Présente toi</p>
+                        <p class="subtext">Ce texte sera visible par les porteurs des projets où tu postuleras</p>
+                        <textarea name="presente toi" id="bio" cols="70" rows="5"></textarea>
+                    </div>
+                    <div class="cgu">
+                        <input type="checkbox" name="CGU" id="CGU">
+                        <span>J’accepte les <a href="">conditions générales d’utilisation</a></span>
+                    </div>
+                </div>
+                <span class="hashtag">#Stud’uppers</span>
+                <a href="#modal-inscription-page3" class="previous-form-page">Retour</a>
+                <button class="create-account" type="submit">La fin</button>
+            </div>
+    
+        </aside>
 {% endblock %}

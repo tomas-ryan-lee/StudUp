@@ -19,6 +19,11 @@ var previouslyFocusedElement = null;
 
 var openModal = function openModal(e) {
   e.preventDefault();
+
+  if (e.className === "js-modal-signUp") {
+    closeModal;
+  }
+
   modal = document.querySelector(e.target.getAttribute('href'));
   focusables = Array.from(modal.querySelectorAll(focusableSelector));
   previouslyFocusedElement = document.querySelector(':focus');
@@ -82,9 +87,15 @@ $('document').ready(function () {
     $('.citation').toggleClass('isOpen'), $('.burger').toggleClass('isOpen');
   });
 });
-document.querySelectorAll('.js-modal').forEach(function (a) {
-  a.addEventListener('click', openModal);
-});
+/** 
+document.querySelectorAll('.js-modal-signUp').forEach(a => {
+    a.addEventListener('click', openModal)
+})
+document.querySelectorAll('.js-modal-signIn').forEach(a => {
+    a.addEventListener('click', openModal)
+})
+*/
+
 window.addEventListener('keydown', function (e) {
   if (e.key === "Escape" || e.key === "Esc") {
     closeModal(e);

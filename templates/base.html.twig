@@ -7,8 +7,6 @@
 		<title>
 			{% block title %}
 				StudUp, la plateforme qui aide les étudiants à réaliser leurs projets
-
-
 			{% endblock %}
 		</title>
 		<meta name="keywords" content="étudiants, entrepreneurs, aides pédagogique">
@@ -22,7 +20,7 @@
 		<link
 		rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"/>
 		{# Run `composer require symfony/webpack-encore-bundle`
-						                       and uncomment the following Encore helpers to start using Symfony UX #}
+																																																								and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -34,36 +32,37 @@
 	</head>
 
 	<body>
-		<a rel="canonical" class="" href="{{ path('home') }}">
-			<img class="logo" src="../img/logo.png" alt="Logo du site Stud'Up">
-		</a>
+
 		<header>
+			<a rel="canonical" class="" href="{{ path('home') }}">
+				<img class="logo" src="../img/logo.png" alt="Logo du site Stud'Up">
+			</a>
 			<nav class="navigation">
 				<ul>
 					<li>
-						<a href="">
+						<a href="#">
 							Annuaire personnalisé
 
 
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="#">
 							Tes collaborations
 
 
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="#">
 							Poste ton projet
 
 
 						</a>
 					</li>
 					<li>
-						<button >
-							<a class="js-modal" href="#modal1">
+						<button>
+							<a class="js-modal-signIn" href="#modalConnexion">
 								Connexion
 
 
@@ -148,22 +147,23 @@
 			</div>
 		</div>
 
-		<aside id="modal1" style="display : none;" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="title-modal">
+		<aside id="modalConnexion" class="modal" role="dialog" aria-labelledby="title-modal">
 			<div class="modal-wrapper js-modal-stop">
-	<a class="js-modal-close">X{# Fermer la boite modal #}</a>
+				<a href="#" class="js-modal-close">&times;{# Fermer la boite modal #}</a>
 				<h4 id="title-modal">Te revoilà parmis nous !</h4>
 				<p>Adresse mail  :</p>
 				<input type="text" placeholder="Je jure solennellement que mes intentions sont studieuses!">
 				<p>Mot de passe :</p>
 				<input type="text" placeholder="Césameouvretoi!">
 				<a href="">Mot de passe oublié ?</a>
-				<a href="">inscrit toi</a>
+				<a href="#modal-inscription-page1">inscrit toi</a>
 				<button type="submit">Connexion</button>
 			</div>
 		</aside>
+		{% block inscription %}{% endblock %}
 		<!-- Partie contenue de la page -->
 		<div class="container">
-			<main role="main"> {% block main %}{% endblock %}
+			<main role="main"> {% block body %}{% endblock %}
 				</main>
 				{% block promo %}{% endblock %}
 				{% block Projets_display %}{% endblock %}
