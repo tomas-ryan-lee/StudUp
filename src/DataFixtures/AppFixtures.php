@@ -9,6 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 
 use App\Entity\Domain;
 use App\Entity\Job;
+use App\Entity\Project;
 use App\Entity\School;
 use App\Entity\Student;
 use App\Entity\User;
@@ -299,7 +300,7 @@ class AppFixtures extends Fixture
             $student->setSchool($this->getReference("school".rand(0, count($commerce)-1)));
             
             // choose 1 to 5 random jobs amoung those stored in DB
-            $jobsId = array_rand(range(0, count($jobs)-1), rand(1,5));
+            $jobsId = array_rand(range(0, count($jobs)-1), rand(2,5));
             $studentJobs = new ArrayCollection();
             foreach($jobsId as $id) {
                 $studentJobs->add($this->getReference('job'.$id));
@@ -307,7 +308,7 @@ class AppFixtures extends Fixture
             $student->setWantedJobs($studentJobs);
 
             // choose 1 to 5 random jobs amoung those stored in DB
-            $domainsId = array_rand(range(0, count($domains)-1), rand(1,5));
+            $domainsId = array_rand(range(0, count($domains)-1), rand(2,5));
             $studentDomains = new ArrayCollection();
             foreach($domainsId as $id) {
                 $studentDomains->add($this->getReference('domain'.$id));
@@ -316,6 +317,107 @@ class AppFixtures extends Fixture
         }
 
         ## end of link for users and students
+
+        ## begin of project fixtures (without members)
+
+        $projects = [
+            [
+                "Dummy Project",
+                Null,
+                "Paris",
+                Null,
+                "https://www.youtube.com/watch?v=ODKTITUPusM",
+                "video",
+                "Création de MVP",
+                [True, False, True, False, True, False, True, False, True],
+                "Lorem ipsum dolor sit amet.",
+                "Ceci est un texte random pour remplir le champs qui demandera sans doute plus de place que ce que j'écris ici. Cependant, je n'en ai rien à foutre, je cherche juste à populer la base de données.",
+                [],
+                ["Rien de particulier", "Inexistant", "Nul"],
+                "You talking to my wife?",
+                False
+            ],
+            [
+                "You Clothes",
+                "racontard.fr",
+                "Monaco",
+                "/public/img/youclothes.jpg",
+                Null,
+                "logo",
+                "Étude de marché",
+                [False, False, False, False, False, False, False, False, False],
+                "Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.",
+                "Beaucoup de marques cachent la provenance et/ou les étapes de fabrication de leurs habits, nous voulons proposer aux gens de s’habiller de manière écologique et forcer les marques à créer en harmonie avec la nature. Pour ça nous avons besoin des gens les plus motiver à créer un monde meilleurs et notamment un excellent développeur et un très bon Community manager !",
+                ["Associé.e.s"],
+                ["Innovant", "Étique", "Impact environnemental", "Ambitieux"],
+                "Netflix & Chill",
+                True
+            ],
+            [
+                "Sockart",
+                Null,
+                "Bordeaux",
+                "/public/img/chaussetteArt.png",
+                Null,
+                "logo",
+                "Rédaction du business plan",
+                [True, True, True, False, False, False, False, False, False],
+                "Nos chaussettes mettent les musées à vos pieds. Des chaussettes, un tableaux et une fiche qui t’apprend son histoire!",
+                "Une entreprise francaise de chaussettes 100% en coton issus de l’agriculture biologique, qui remet l’art au coeur de votre vie. Ces supers chaussettes, à l’éffigie des plus celebres tableaux du monde, vous seront livré avec de superbes annectodes sur le peintre et l’histoire du tableau, pour briller en société.\n N’hésitez plus, venez prendre votre pied avec l’art !",
+                ["Associé.e.s", "Collaborateur.rice.s"],
+                ["Savoir faire", "Didactique", "Inventif", "International"],
+                "Réunionite aigüe",
+                False
+            ],
+        ];
+        $i = 0;
+        foreach($projects as list(
+            $name,
+            $incubator,
+            $location,
+            $logo,
+            $video,
+            $display,
+            $currentPhase,
+            $phases,
+            $globalVision,
+            $elevatorSpeech,
+            $asset,
+            $lookingFor,
+            $mood,
+            $impact
+        )) {
+            $project = new Project();
+            $project->setName($name);
+            $project->setIncubator($incubator);
+            $project->setLocation($location);
+            $project->setLogo($logo);
+            $project->setVideo($video);
+            $project->setDisplayedContent($display);
+            $project->setCurrentPhase($currentPhase);
+            $project->setPhases($phases);
+            $project->setGlobalVision($globalVision);
+            $project->setElevatorSpeech($elevatorSpeech);
+            $project->setAsset($asset);
+            $project->setLookingFor($lookingFor);
+            $project->setMood($mood);
+            $project->setHasImpact($impact);
+
+            $domainsId = array_rand(range(0, count($domains)-1), rand(2,5));
+            $projectDomains = new ArrayCollection();
+            foreach($domainsId as $id) {
+                $projectDomains->add($this->getReference('domain'.$id));
+            }
+            $project->setDomains($projectDomains);
+
+            $manager->persist($project);
+
+            $this->addReference("project".$i, $project);
+            $i++;
+
+        }
+
+        ## end of project fixtures
 
         $manager->flush();
     }
