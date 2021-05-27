@@ -121,7 +121,7 @@ class Student {
 
     # where is it ?
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
 
     private $website;
@@ -184,11 +184,11 @@ class Student {
         $this->graduationYear = $graduationYear;
     }
 
-    public function setStudentNumber(string $studentNumber) {
+    public function setStudentNumber(?string $studentNumber) {
         $this->studentNumber = $studentNumber;
     }
 
-    public function setStudentCardPic(string $studentCardPic) {
+    public function setStudentCardPic(?string $studentCardPic) {
         $this->studentCardPic = $studentCardPic;
     }
 
@@ -216,19 +216,19 @@ class Student {
         $this->profilePic = $profilePic;
     }
 
-    public function setWebsite(string $website) {
+    public function setWebsite(?string $website) {
         $this->website = $website;
     }
 
-    public function setLinkedin(string $linkedin) {
+    public function setLinkedin(?string $linkedin) {
         $this->linkedin = $linkedin;
     }
 
-    public function setInstagram(string $instagram) {
+    public function setInstagram(?string $instagram) {
         $this->instagram = $instagram;
     }
 
-    public function setFacebook(string $facebook) {
+    public function setFacebook(?string $facebook) {
         $this->facebook = $facebook;
     }
 

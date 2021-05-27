@@ -64,7 +64,7 @@ class User {
         $this->lastConnection = new DateTime();
     }
 
-    public function setConfirmationUUID(string $confirmationUUID) {
+    public function setConfirmationUUID(?string $confirmationUUID) {
         $this->confirmationUUID = $confirmationUUID;
     }
 

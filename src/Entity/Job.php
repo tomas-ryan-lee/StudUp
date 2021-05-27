@@ -31,7 +31,7 @@ class Job {
         $this->name = $name;
     }
 
-    public function setCategory(string $category) {
+    public function setCategory(?string $category) {
         $this->category = $category;
     }
 }

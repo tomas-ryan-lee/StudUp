@@ -34,7 +34,7 @@ class Project {
     private $domains;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $incubator;
 
@@ -45,12 +45,12 @@ class Project {
 
     # link to the logo location
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $logo;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     private $video;
 
@@ -84,12 +84,12 @@ class Project {
 
     # FR : atout du projet
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="array")
      */
     private $asset;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="array")
      */
     private $lookingFor;
 
@@ -122,7 +122,7 @@ class Project {
         $this->domains = $domains;
     }
 
-    public function setIncubator(string $incubator) {
+    public function setIncubator(?string $incubator) {
         $this->incubator = $incubator;
     }
 
@@ -130,23 +130,23 @@ class Project {
         $this->location = $location;
     }
 
-    public function setLogo(string $logo) {
+    public function setLogo(?string $logo) {
         $this->logo = $logo;
     }
 
-    public function setVideo(string $video) {
+    public function setVideo(?string $video) {
         $this->video = $video;
     }
 
     public function setDisplayedContent(string $display) {
-        $this->videoOrLogoDisplayed = display;
+        $this->videoOrLogoDisplayed = $display;
     }
 
     public function setCurrentPhase(string $phase) {
         $this->currentPhase = $phase;
     }
 
-    public function setPhases(string $phases) {
+    public function setPhases(Array $phases) {
         $this->phases = $phases;
     }
 
@@ -155,14 +155,14 @@ class Project {
     }
 
     public function setElevatorSpeech(string $speech) {
-        $this->elevatorSpeect = $speech;
+        $this->elevatorSpeech = $speech;
     }
 
-    public function setAsset(string $asset) {
+    public function setAsset(Array $asset) {
         $this->asset = $asset;
     }
 
-    public function setLookingFor(string $lookingFor) {
+    public function setLookingFor(Array $lookingFor) {
         $this->lookingFor = $lookingFor;
     }
 
