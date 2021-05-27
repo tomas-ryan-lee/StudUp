@@ -175,6 +175,9 @@ class Project {
     }
     
     public function addMember(ProjectMember $projectMember) {
+        if($this->members == Null) {
+            $this->members = new ArrayCollection();
+        }
         $this->members->add($projectMember);
     }
 
