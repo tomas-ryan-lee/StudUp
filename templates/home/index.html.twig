@@ -125,7 +125,7 @@
         <div class="champs-ecole">
 			<p class="label-ecole">&#201;cole</p>
             <input type="text" name="ecole" id="ecole-input">
-        <a href="">Ton école n’est pas référencée ?</a>
+        <a href="#addSchool">Ton école n’est pas référencée ?</a>
         </div>
         <div class="champs-ecole">
             <p class="label-diplome">Diplôme</p>
@@ -182,6 +182,17 @@
     <a href="#modal-inscription-page3" class="next-form-page">La suite</a>
 </div>
 
+<aside id="addSchool" class="modal-suggest-element">
+    <div>
+        <a href="#modal-inscription-page2"  class="modal-close">X</a>
+        <h4>Quel est le nom de ton école ?</h4>
+        <input type="text">
+        <button type="submit">Soumettre</button>
+    </div>
+</aside>
+
+
+
 </aside>
 
             {#     PAGE 3 FORMULAIRE INSCRIPTION     #}
@@ -210,7 +221,7 @@
                 <select name="competences" id="">
                     <option value="Développeur.se Cybersécurité">Développeur.se Cybersécurité</option>
                 </select>
-                <a href="">Tu ne trouves pas tes compétences ?</a>
+                <a href="#addSkill">Tu ne trouves pas tes compétences ?</a>
             </div>
             <div class="domaines">
                 <p>Tes secteurs de prédilection</p>
@@ -218,7 +229,7 @@
                 <select name="domaine" id="">
                     <option value="Alimentaire">Alimentaire</option>
                 </select>
-                <a href="">Tu ne trouves pas tes secteurs ?</a>
+                <a href="#addSecteur">Tu ne trouves pas tes secteurs ?</a>
             </div>
         </div>
             <div class="recurence">
@@ -241,6 +252,24 @@
         
         </aside>
 
+
+<aside id="addSkill" class="modal-suggest-element">
+        <div>
+            <a href="#modal-inscription-page3"  class="modal-close">X</a>
+            <h4>Une autre compétence à proposer ?</h4>
+            <input type="text">
+            <button type="submit">Soumettre</button>
+        </div>
+    </aside>
+
+<aside id="addSecteur" class="modal-suggest-element">
+    <div>
+        <a href="#modal-inscription-page3"  class="modal-close">X</a>
+        <h4>Un autre secteur d’activité à proposer ?</h4>
+        <input type="text">
+        <button type="submit">Soumettre</button>
+    </div>
+</aside>
                     {#     PAGE FINALE FORMULAIRE INSCRIPTION     #}
 
         <aside id="modal-inscription-pageFinal" class="modal" role="dialog"aria-labelledby="title-modal">

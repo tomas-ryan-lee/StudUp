@@ -1051,6 +1051,82 @@ div.main-Inscritpion-Modal span.hashtag {
   border-radius: 30px;
 }
 
+/* MODAL SUGGEST ELEMENT */
+.modal-suggest-element {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s both;
+}
+.modal-suggest-element div {
+  background-color: white;
+  border-radius: 30px;
+  width: 551px;
+  height: 236px;
+}
+.modal-suggest-element div .modal-close {
+  font-family: sans-serif;
+  float: right;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+}
+.modal-suggest-element div h4 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+  text-align: center;
+}
+.modal-suggest-element div input {
+  display: block;
+  width: 414px;
+  margin: 0 auto;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.modal-suggest-element div button {
+  padding: 1%;
+  display: block;
+  margin: 5% auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  background: #C4C4C4;
+  border-radius: 30px;
+  border: none;
+}
+
+.modal-suggest-element:target {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*______________________________________________________________*/
 /* !|||||||||||||||! THIS IS REGISTER PAGE 3 !|||||||||||||||! */
 /* !|||||||||||||||! THIS IS REGISTER PAGE 3 !|||||||||||||||! */
