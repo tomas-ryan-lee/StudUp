@@ -35,4 +35,28 @@ class School {
     public function setType(string $type) {
         $this->type = $type;
     }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function toArray(array $exclude = []) {
+        $data = [
+            "id" => $this->getId(),
+            "name" => $this->getName(),
+            "type" => $this->getType()
+        ];
+        foreach($exclude as $key) {
+            unset($data[$key]);
+        }
+        return $data;
+    }
 }
