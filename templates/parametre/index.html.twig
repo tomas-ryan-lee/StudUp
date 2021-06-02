@@ -1,0 +1,313 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Paramètres Utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div class="parametres-compte">
+		<aside class="nav-parametre">
+			<div class="onglets active" data-anim="1">
+				Mon Compte
+			</div>
+			<div class="onglets" data-anim="2">
+				Mes préférences
+			</div>
+			<div class="onglets" data-anim="3">
+				Liens utiles
+			</div>
+			<button class="deconnect">
+				Déconnexion
+			</button>
+		</aside>
+
+		{# ONGLET MON COMPTE !!! #}
+
+		<div class="param-content activeContenu" style="visibility: visible;" data-anim="1">
+			<img src="" alt="photo de profil">
+			<label for="upload-profile-pic"></label>
+			<input type="file" name="upload photo" id="upload-profile-pic">
+			<div class="bio">
+				<h3>
+					Prénom et Nom
+				</h3>
+				<p>
+					Iam enim me ut huius ut ipsum enim ob iam cave sapientissimum vestrum cave vestrum anteponas De ob ut iam quem facta cum ipsum quidem dicta Apollo me habetote huius rem ne ob sapientissimum facta rem iam Catoni ne habetote utroque anteponas iam vestrum Apollo laudantur ob iam dicta loquar ais uiutys
+				</p>
+				<button>
+					Modifier
+				</button>
+			</div>
+			<div class="info-perso">
+				<h4>
+					Tes infos personnelles
+				</h4>
+				<div class="info-ddn">
+					<p>
+						Date de naissance
+					</p>
+					<p>
+						JJ/MM/AAAA
+					</p>
+				</div>
+				<div class="info-mail">
+					<p>
+						Adresse Email
+					</p>
+					<p>
+						nomprénom@gmail.com
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+				<div class="info-tel">
+					<p>
+						Ton 06
+					</p>
+					<p>
+						00 00 00 00 00
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+				<div class="info-mdp">
+					<p>
+						Mot de passe
+					</p>
+					<p>
+						***********
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+			</div>
+
+			<div class="info-ecole">
+				<h4>
+					Ton école
+				</h4>
+				<div class="nom-ecole">
+					<p>
+						Nom de ton école
+					</p>
+					<p>
+						Nom de l’école...
+					</p>
+				</div>
+				<div class="nom-diplome">
+					<p>
+						Diplôme
+					</p>
+					<p>
+						Nom du dipôme
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+				<div class="nom-cursus">
+					<p>
+						Nom de ton cursus
+					</p>
+					<p>
+						Nom du cursus
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+				<div class="anne-diplome">
+					<p>
+						Année d’obtention
+					</p>
+					<p>
+						AAAA
+					</p>
+					<input type="text">
+					<button>
+						Modifier
+					</button>
+				</div>
+			</div>
+		</div>
+
+		{# ONGLET PREFERENCES !!! #}
+
+		<div class="param-content" data-anim="2">
+			<p>
+				On te contacte : Tous les jours
+			</p>
+			<select name="récurence" id="">
+				<option value="tous les jours">
+					tous les jours
+				</option>
+				<option value="toutes les semaines">
+					toutes les semaines
+				</option>
+				<option value="tous les mois">
+					tous les mois
+				</option>
+				<option value="jamais">
+					jamais
+				</option>
+			</select>
+			<div class="info-expertises">
+				<h4>
+					Tes domaines d’expertise
+				</h4>
+				<div class="pref-expertise">
+					<ul>
+						<li>
+							Développeur Cybersécurité
+						</li>
+						<li>
+							Développeur Gaming
+						</li>
+						<li>
+							Développeur Mobile
+						</li>
+						<li>
+							Développeur  Web
+						</li>
+						<li>
+							Technicien Réseau
+						</li>
+					</ul>
+				</div>
+				<div class="select-comp">
+					<p class="max-info">
+						5 maximum
+					</p>
+					<p>
+						Modifie tes compétences
+					</p>
+					<select name="competences" id="comp">
+						<option value="">
+							compétence 1
+						</option>
+						<option value="">
+							compétence 2
+						</option>
+						<option value="">
+							compétence 3
+						</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="info-secteurs">
+				<h4>
+					Tes secteurs d’activité préférés
+				</h4>
+				<ul>
+					<li>
+						Développeur Cybersécurité
+					</li>
+					<li>
+						Développeur Gaming
+					</li>
+					<li>
+						Développeur Mobile
+					</li>
+					<li>
+						Développeur  Web
+					</li>
+					<li>
+						Technicien Réseau
+					</li>
+				</ul>
+
+				<div class="select-comp">
+					<p>
+						5 maximum
+					</p>
+					<p>
+						Modifie tes compétences
+					</p>
+					<select name="competences" id="comp">
+						<option value="">
+							compétence 1
+						</option>
+						<option value="">
+							compétence 2
+						</option>
+						<option value="">
+							compétence 3
+						</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		{# ONGLET LIENS UTILES !!! #}
+
+		<div class="param-content" data-anim="3">
+			<div class="liens-utiles">
+				<p>
+					Veux-tu des news de Stud’up ?
+				</p>
+				<a href="">
+					Abonne toi à la Newsletter
+				</a>
+				<p>
+					Une question ? Check la FAQ
+				</p>
+				<a href="">
+					FAQ
+				</a>
+				<p>
+					Un doute ? Check les CGU
+				</p>
+				<a href="">
+					Les conditions générales d’utilisation de Stud’up
+				</a>
+				<p>
+					Tu n’as pas trouvé ce que tu cherches ?
+				</p>
+				<a href="">
+					Contacte-nous
+				</a>
+				<a id="suppr-compte" href="#modalSuppression-compte">
+					Supprimer ton compte
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+
+	<aside id="modalSuppression-compte" class="modal" role="dialog" aria-labelledby="title-modal">
+		<div class="modal-wrapper modal-delete-account">
+			<a href="#" class="js-modal-close">
+				&times;
+				{# Fermer la boite modal #}
+			</a>
+			<h4 id="title-modal">
+				Toutes tes données vont être supprimées  !
+			</h4>
+			<p>
+				Stud’up a pour but de valoriser tes expériences
+			</p>
+			<p>
+				<b>
+					En supprimant ton compte,
+				</b>
+				ton nom, ta participation et les projets que tu as créés n’apparaîtront plus !
+			</p>
+			<a href="">
+				Annuler
+			</a>
+			<button type="submit">
+				Supprimer mon compte
+			</button>
+		</div>
+	</aside>
+{% endblock %}

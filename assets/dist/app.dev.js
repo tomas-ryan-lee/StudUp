@@ -12,96 +12,54 @@ require("./bootstrap");
  */
 // any CSS you import will output into a single css file (app.css in this case)
 // start the Stimulus application
-var modal = null;
-var focusableSelector = 'button, a, input, textarea';
-var focusables = [];
-var previouslyFocusedElement = null;
 
-var openModal = function openModal(e) {
-  e.preventDefault();
+/** 
+ *  FONCTIONNALITE ONGLETS 
+ *  FONCTIONNALITE ONGLETS 
+ *  FONCTIONNALITE ONGLETS 
+ */
+var onglets = document.querySelectorAll('.onglets');
+var contenu = document.querySelectorAll('.param-content');
+var activeContent = document.querySelector('.activeContenu');
+var index = 0;
+onglets.forEach(function (onglet) {
+  onglet.addEventListener('click', function () {
+    if (onglet.classList.contains('active')) {
+      return;
+    } else {
+      onglet.classList.add('active');
+    }
 
-  if (e.className === "js-modal-signUp") {
-    closeModal;
-  }
+    index = onglet.getAttribute('data-anim');
+    console.log(index);
 
-  modal = document.querySelector(e.target.getAttribute('href'));
-  focusables = Array.from(modal.querySelectorAll(focusableSelector));
-  previouslyFocusedElement = document.querySelector(':focus');
-  modal.style.display = null;
-  focusables[0].focus();
-  modal.removeAttribute('aria-hidden');
-  modal.setAttribute('aria-modal', 'true');
-  modal.addEventListener('click', closeModal);
-  modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
-  modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
-};
+    for (var i = 0; i < onglets.length; i++) {
+      if (onglets[i].getAttribute('data-anim') != index) {
+        onglets[i].classList.remove('active');
+      }
+    }
 
-var closeModal = function closeModal(e) {
-  if (modal === null) return;
-  if (previouslyFocusedElement !== null) previouslyFocusedElement.focus();
-  e.preventDefault();
-  modal.removeAttribute('aria-modal');
-  modal.setAttribute('aria-hidden', 'true');
-  modal.removeEventListener('click', closeModal);
-  modal.querySelector('.js-modal-close').removeEventListener('click', closeModal);
-  modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation);
+    for (var j = 0; j < contenu.length; j++) {
+      activeContent.style.visibility = "visible";
 
-  var hideModal = function hideModal() {
-    modal.style.display = "none";
-    modal.removeEventListener('animationend', hideModal);
-    modal = null;
-  };
-
-  modal.addEventListener('animationend', hideModal);
-};
-
-var stopPropagation = function stopPropagation(e) {
-  e.stopPropagation();
-};
-
-var focusInModal = function focusInModal(e) {
-  e.preventDefault();
-  var index = focusables.findIndex(function (f) {
-    return f === modal.querySelector(':focus');
+      if (contenu[j].getAttribute('data-anim') == index) {
+        contenu[j].classList.add('activeContenu');
+        contenu[j].style.visibility = "visible";
+      } else {
+        contenu[j].classList.remove('activeContenu');
+        contenu[j].style.visibility = "hidden";
+      }
+    }
   });
-
-  if (e.shiftKey === true) {
-    index--;
-  } else {
-    index++;
-  }
-
-  if (index >= focusables.length) {
-    index = 0;
-  }
-
-  if (index < 0) {
-    index = focusables.length - 1;
-  }
-
-  focusables[index].focus();
-};
+});
+/** 
+*  FONCTIONNALITE BURGER
+*  FONCTIONNALITE BURGER
+*  FONCTIONNALITE BURGER
+*/
 
 $('document').ready(function () {
   $('.btn-burger').click(function () {
     $('.citation').toggleClass('isOpen'), $('.burger').toggleClass('isOpen');
   });
-});
-/** 
-document.querySelectorAll('.js-modal-signUp').forEach(a => {
-    a.addEventListener('click', openModal)
-})
-document.querySelectorAll('.js-modal-signIn').forEach(a => {
-    a.addEventListener('click', openModal)
-})
-*/
-
-window.addEventListener('keydown', function (e) {
-  if (e.key === "Escape" || e.key === "Esc") {
-    closeModal(e);
-  }
-
-  if (e.key === "Tab" && modal !== null) {
-    focusInModal(e);
-  }
 });

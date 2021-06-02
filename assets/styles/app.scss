@@ -31,6 +31,14 @@ body, html {
   from { opacity: 1;}
   to   { opacity: 0;}
 }
+@keyframes fade {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
 @keyframes slideFromTop {
   from { transform: translateY(-50px);}
   to   {transform: translateY(0px);}
@@ -639,6 +647,7 @@ line-height: 40px;
   border-radius: 30px;
   animation: slideFromTop .5s both;
   a.js-modal-close {
+    margin: 0;
     background: white;
     border-radius: none;
     position: relative;
@@ -650,11 +659,6 @@ line-height: 40px;
     color: black;
     font-size: 36px;
     font-weight: bold;
-    position: absolute;
-    left: 85.12%;
-    right: 1.17%;
-    top: 5.26%;
-    bottom: 78.64%;
   }
   h4 {
     margin: 0 auto;
@@ -1419,4 +1423,285 @@ ul li {
     resize: none;
   }
 
+}
+
+/*______________________________________________________________*/
+
+/* !|||||||||||||||! THIS IS PARAMETRE DU COMPTE !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS PARAMETRE DU COMPTE !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS PARAMETRE DU COMPTE !VVVVVVVVVVVVVVV! */
+
+/* Anim */
+.activeContenu {
+  animation: fade 0.5s forwards;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+div.parametres-compte {
+  padding-top: 73px;
+  background-color: #D7D7D7;
+  font-family: Sora;
+  button {
+    float: right;
+    margin-top: -15%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+  aside.nav-parametre {
+    width: 250px;
+    background-color: #FFFFFF;
+    height: 90vh;
+    float: left;
+    position: fixed;
+    div.onglets.active {
+      background: black;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    div.onglets{
+      display: block;
+      margin: 10% auto;
+      width: 210px;
+      height: 55px;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      font-family: Sora;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 55px;
+      text-align: center;
+      color: #000000;
+      cursor: pointer;
+
+    }
+    .deconnect {
+      width: 185px;
+      height: 43px;
+      display: block;
+      margin: 45vh auto 10px auto;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 30px;
+      text-align: center;
+      color: #000000;
+      font-family: Sora;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 43px;
+      float: none;
+    }
+  }
+  .bio{
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: 20%;
+  }
+  img {
+    float: left;
+    width: 125px;
+    height: 125px;
+    border-radius: 100%;
+    background-color: #C4C4C4;
+    display: block;
+  }
+  .param-content {
+    padding: 3% 3% 3% 3%;
+    width: 83.5%;
+    right: 0;
+    background-color: #D7D7D7;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    height: 100%;
+    max-height: 100vh;
+    input {
+      display: none;
+    }
+    .info-perso, .info-ecole {
+      margin-top: 3%;
+      width: 856px;
+      height: 231px;
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 1%;
+      margin-left: 20%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.3fr 1.5fr 1.5fr;
+      h4 {
+        margin: 0;
+        padding-left: 1%;
+        grid-column: 1 / span 2;
+        font-family: Sora;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      div {
+        margin: 0 5%;
+        padding: 3%;
+        height: 70px;
+      }
+    }
+
+  }
+}
+
+div.info-expertises {
+  margin-top: 3%;
+  width: 856px;
+  height: 231px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  padding: 2%;
+  margin-left: 20%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style: none;
+    padding: 1%;
+  }
+  h4 {
+    margin: 0;
+  }
+  .max-info {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  p {
+    margin: 0;
+  }
+  select {
+    background: #FFFFFF;
+    border: 1.5px solid #C4C4C4;
+    border-radius: 20px;
+    width: 315px;
+    height: 45px;
+  }
+}
+div.info-secteurs {
+  margin-top: 3%;
+  width: 856px;
+  height: 231px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  padding: 2%;
+  margin-left: 20%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  ul {
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style: none;
+    padding: 1%;
+  }
+  h4 {
+    margin: 0;
+  }
+  .max-info {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  p {
+    margin: 0;
+  }
+  select {
+    background: #FFFFFF;
+    border: 1.5px solid #C4C4C4;
+    border-radius: 20px;
+    width: 315px;
+    height: 45px;
+  }
+}
+
+div.liens-utiles {
+  padding: 5%;
+  a#suppr-compte {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    float: right;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: -15%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 0 5px;
+  }
+  a {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: #000000;
+  }
+}
+
+.modal-delete-account {
+  text-align: center;
+  a {
+    display: block;
+    margin: 3% auto;
+    text-decoration: none;
+    color: white;
+    padding: 1% 2%;
+    background: #000000;
+    border-radius: 30px;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    float: none;
+    width: 108px;
+  }
+  button {
+    color: black;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 60px;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    width: 50%;
+    margin: 2% auto;
+    display: block;
+  }
 }

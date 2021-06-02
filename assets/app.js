@@ -10,88 +10,71 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
-let modal = null
-const focusableSelector = 'button, a, input, textarea'
-let focusables = []
-let previouslyFocusedElement = null
 
-const openModal = function (e) {
-    e.preventDefault()
-    if(e.className === "js-modal-signUp") {
-        closeModal
-    }
-    modal = document.querySelector(e.target.getAttribute('href'))
-    focusables = Array.from(modal.querySelectorAll(focusableSelector))
-    previouslyFocusedElement = document.querySelector(':focus')
-    modal.style.display = null
-    focusables[0].focus()
-    modal.removeAttribute('aria-hidden')
-    modal.setAttribute('aria-modal', 'true')
-    modal.addEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
-    modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation)
 
-}
 
-const closeModal = function (e) {
-    if (modal === null) return
-    if (previouslyFocusedElement !== null) previouslyFocusedElement.focus()
-    e.preventDefault()
-    
-    modal.removeAttribute('aria-modal')
-    modal.setAttribute('aria-hidden', 'true')
-    modal.removeEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
-    modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
 
-    const hideModal = function () {
-        modal.style.display = "none"
-        modal.removeEventListener('animationend', hideModal)
-        modal= null
-    }
-    modal.addEventListener('animationend', hideModal )
-}
 
-const stopPropagation = function (e) {
-    e.stopPropagation();
-}
+/** 
+ *  FONCTIONNALITE ONGLETS 
+ *  FONCTIONNALITE ONGLETS 
+ *  FONCTIONNALITE ONGLETS 
+ */
 
-const focusInModal = function (e) {
-    e.preventDefault()
-    let index = focusables.findIndex(f => f === modal.querySelector(':focus'))
-    if (e.shiftKey === true) {
-        index--
-    } else {
-        index++
-    }
-    if (index >= focusables.length) {
-        index = 0
-    }
-    if (index < 0) {
-        index = focusables.length -1
-    }
-    focusables[index].focus()
-}
+ const onglets = document.querySelectorAll('.onglets');
+ const contenu = document.querySelectorAll('.param-content')
+ let activeContent = document.querySelector('.activeContenu')
+ let index = 0;
+ 
+ onglets.forEach(onglet => {
+ 
+     onglet.addEventListener('click', () => {
+ 
+         if(onglet.classList.contains('active')){
+             return;
+         } else {
+             onglet.classList.add('active');
+         }
+ 
+         index = onglet.getAttribute('data-anim');
+         console.log(index);
+         
+         for(let i = 0; i < onglets.length; i++) {
+ 
+             if(onglets[i].getAttribute('data-anim') != index) {
+                 onglets[i].classList.remove('active');
+             }
+ 
+         }
+ 
+         for(let j = 0; j < contenu.length; j++){
+            activeContent.style.visibility = "visible";
+             if(contenu[j].getAttribute('data-anim') == index) {
+                 contenu[j].classList.add('activeContenu');
+                 contenu[j].style.visibility = "visible";
+             } else {
+                 contenu[j].classList.remove('activeContenu');
+                 contenu[j].style.visibility = "hidden";
+             }
+             
+ 
+         }
+ 
+ 
+     })
+ 
+ })
 
-$('document').ready(function(){
+
+ /** 
+ *  FONCTIONNALITE BURGER
+ *  FONCTIONNALITE BURGER
+ *  FONCTIONNALITE BURGER
+ */
+
+ $('document').ready(function(){
     $('.btn-burger').click(function(){
         $('.citation').toggleClass('isOpen'),
         $('.burger').toggleClass('isOpen');
     })
 });
-/** 
-document.querySelectorAll('.js-modal-signUp').forEach(a => {
-    a.addEventListener('click', openModal)
-})
-document.querySelectorAll('.js-modal-signIn').forEach(a => {
-    a.addEventListener('click', openModal)
-})
-*/
-window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape" || e.key === "Esc"){
-    closeModal(e)
-    }
-    if (e.key === "Tab" && modal !== null) {
-        focusInModal(e)
-    }
-})
