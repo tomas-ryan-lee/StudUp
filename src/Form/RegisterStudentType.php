@@ -52,7 +52,7 @@ class RegisterStudentType extends AbstractType
                     "Master" => "Master"
                 ]
             ])
-            ->add("diploma", ChoiceType::class, [
+            ->add("diploma_year", ChoiceType::class, [
                 "choices" => [
                     "2026" => "2026",
                     "2025" => "2025",
