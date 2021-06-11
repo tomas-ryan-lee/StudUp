@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, html {
   margin: 0;
   padding: 0;
@@ -9,6 +10,25 @@ body, html {
 
 *:focus {
   box-shadow: 0 0 5px blue;
+}
+
+option {
+  background: white;
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 40px;
+  color: #000000;
+}
+
+select {
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 40px;
+  color: #C4C4C4;
 }
 
 /*______________________________________________________________*/
@@ -605,9 +625,6 @@ footer .contactes button {
   visibility: hidden;
   opacity: 0;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -615,6 +632,7 @@ footer .contactes button {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   animation: fadeIn 0.3s both;
+  padding: 1%;
 }
 
 .modal:target {
@@ -623,12 +641,13 @@ footer .contactes button {
 }
 
 .modal-wrapper {
+  margin: 10% auto;
+  display: block;
   background-color: #fff;
   width: 600px;
   max-width: calc(100vw - 30px);
   max-height: calc(100vh - 30px);
   padding: 30px;
-  overflow: auto;
   border-radius: 30px;
   animation: slideFromTop 0.5s both;
 }
@@ -731,42 +750,45 @@ div.main-Inscritpion-Modal {
   width: 98vw;
   max-width: 98vw;
   max-height: 900px;
+  margin: 0 auto;
   padding: 1%;
   background-color: #E8E8E8;
 }
 div.main-Inscritpion-Modal button.create-account {
   text-decoration: none;
-  color: black;
+  margin-right: 3%;
   float: right;
-  width: 146px;
-  height: 41px;
   padding: 5px;
+  line-height: 30px;
+  width: 146px;
+  height: 40px;
+  background: #000000;
+  border-radius: 10px;
+  text-decoration: none;
   font-family: Sora;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 30px;
   text-align: center;
-  background: #C4C4C4;
-  border-radius: 30px;
+  color: #FFFFFF;
 }
 div.main-Inscritpion-Modal a.next-form-page {
   cursor: pointer;
   margin-right: 3%;
-  text-decoration: none;
-  color: black;
   float: right;
-  width: 146px;
-  height: 41px;
   padding: 5px;
+  line-height: 30px;
+  width: 146px;
+  height: 40px;
+  background: #000000;
+  border-radius: 10px;
+  text-decoration: none;
   font-family: Sora;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 30px;
   text-align: center;
-  background: #C4C4C4;
-  border-radius: 30px;
+  color: #FFFFFF;
 }
 div.main-Inscritpion-Modal label.upload-profile-img {
   display: flex;
@@ -945,8 +967,9 @@ div.main-Inscritpion-Modal .bodyInscription .upload {
 div.main-Inscritpion-Modal span.hashtag {
   position: absolute;
   bottom: 10px;
-  left: 47%;
-  font-family: Nunito;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1008,8 +1031,9 @@ div.main-Inscritpion-Modal span.hashtag {
 .bodyInscription-page2 span.hashtag {
   position: absolute;
   bottom: 10px;
-  left: 47%;
-  font-family: Nunito;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1039,20 +1063,21 @@ div.main-Inscritpion-Modal span.hashtag {
 
 .previous-form-page {
   cursor: pointer;
-  text-decoration: none;
-  color: black;
-  margin: 0 3%;
+  margin-right: 3%;
+  padding: 5px;
+  line-height: 30px;
   width: 146px;
-  height: 41px;
-  padding: 5px 20px;
+  height: 40px;
+  border-radius: 10px;
+  text-decoration: none;
   font-family: Sora;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 24px;
-  line-height: 30px;
   text-align: center;
-  background: #C4C4C4;
-  border-radius: 30px;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
 }
 
 /* MODAL SUGGEST ELEMENT */
@@ -1222,8 +1247,9 @@ div.main-Inscritpion-Modal span.hashtag {
 .bodyInscription-page3 span.hashtag {
   position: absolute;
   bottom: 10px;
-  left: 47%;
-  font-family: Nunito;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1377,8 +1403,9 @@ div.main-Inscritpion-Modal span.hashtag {
 .bodyInscription-pageFinal span.hashtag {
   position: absolute;
   bottom: 10px;
-  left: 47%;
-  font-family: Nunito;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -1396,7 +1423,6 @@ div.main-Inscritpion-Modal span.hashtag {
 .bodyInscription-pageFinal textarea {
   background: #FFFFFF;
   border: 1px solid #C4C4C4;
-  box-sizing: border-box;
   border-radius: 10px;
   resize: none;
 }
@@ -1674,4 +1700,1153 @@ div.liens-utiles a {
   width: 50%;
   margin: 2% auto;
   display: block;
+}
+
+/*______________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 1 !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 1 !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE 1 !VVVVVVVVVVVVVVV! */
+div.main-projet-form-Modal {
+  overflow: auto;
+  width: 97vw;
+  max-width: 98vw;
+  padding: 1%;
+  margin: 0 auto;
+  background-color: #E8E8E8;
+}
+div.main-projet-form-Modal button.create-projet {
+  text-decoration: none;
+  color: black;
+  float: right;
+  width: 146px;
+  height: 41px;
+  padding: 5px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  background: #C4C4C4;
+  border-radius: 30px;
+}
+div.main-projet-form-Modal label.upload-profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 288px;
+  height: 155px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  margin: 10px auto;
+}
+div.main-projet-form-Modal #upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+div.main-projet-form-Modal a.modal-close {
+  font-family: sans-serif;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+}
+div.main-projet-form-Modal h2 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 57px;
+  /* identical to box height */
+  text-align: center;
+  color: #606060;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+div.main-projet-form-Modal h3 {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 41px;
+  text-align: center;
+  color: #606060;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+div.main-projet-form-Modal .reference {
+  width: 20%;
+  float: right;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  transform: translateX(-85%);
+}
+div.main-projet-form-Modal button {
+  text-decoration: none;
+  border: none;
+}
+div.main-projet-form-Modal .navProjet-form {
+  height: 80px;
+  max-width: 50%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+div.main-projet-form-Modal .navProjet-form div {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #C4C4C4;
+  border-radius: 100%;
+  margin: 5%;
+  z-index: 1;
+}
+div.main-projet-form-Modal .navProjet-form div a {
+  color: black;
+  text-decoration: none;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 60px;
+  width: 60px;
+  display: inline-block;
+}
+div.main-projet-form-Modal .navProjet-form span {
+  background: #C4C4C4;
+  padding: 0 202px;
+  height: 10px;
+  width: 620px;
+  position: absolute;
+  top: 195px;
+}
+div.main-projet-form-Modal .navProjet-form button {
+  position: relative;
+  z-index: 50;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 45px;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  margin: 2% 7%;
+  border-radius: 35px;
+  background: #C4C4C4;
+}
+div.main-projet-form-Modal .bodyProjet-form {
+  display: flex;
+  justify-content: space-around;
+  max-width: 70%;
+  margin: 0 auto;
+}
+div.main-projet-form-Modal .bodyProjet-form .max-infos {
+  margin-top: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #A1A1A1;
+}
+div.main-projet-form-Modal .bodyProjet-form p {
+  margin-bottom: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+div.main-projet-form-Modal .bodyProjet-form p span {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  color: #C4C4C4;
+}
+div.main-projet-form-Modal .bodyProjet-form .radio-choice {
+  float: left;
+  padding-right: 5%;
+}
+div.main-projet-form-Modal .bodyProjet-form .radio-btn {
+  width: 25px;
+  height: 25px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+div.main-projet-form-Modal .bodyProjet-form input {
+  width: 308px;
+  height: 44px;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+div.main-projet-form-Modal .bodyProjet-form select {
+  background: #FFFFFF;
+  border: 1.5px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 319px;
+  height: 44px;
+}
+div.main-projet-form-Modal .bodyProjet-form select option {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 40px;
+}
+div.main-projet-form-Modal .bodyProjet-form .upload {
+  margin: 0;
+}
+div.main-projet-form-Modal label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+div.main-projet-form-Modal .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+}
+div.main-projet-form-Modal .modal-footer span.hashtag {
+  display: block;
+  justify-content: center;
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: #B8B8B8;
+}
+div.main-projet-form-Modal .modal-footer a.next-form-page {
+  cursor: pointer;
+  margin-right: 3%;
+  margin-left: 30%;
+  padding: 5px;
+  line-height: 30px;
+  width: 146px;
+  height: 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  float: right;
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/*______________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 2 !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 2 !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE 2 !VVVVVVVVVVVVVVV! */
+#modal-form-projet-page2 {
+  overflow: auto;
+}
+#modal-form-projet-page2 span.nav-span {
+  top: 195px;
+}
+#modal-form-projet-page2 textarea {
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  resize: none;
+  width: 537px;
+}
+#modal-form-projet-page2 textarea#global-vision {
+  height: 74px;
+}
+#modal-form-projet-page2 textarea#pitch {
+  height: 150px;
+}
+#modal-form-projet-page2 .upload {
+  right: 0;
+  top: 35%;
+  margin: 0 10%;
+  width: 33%;
+}
+#modal-form-projet-page2 .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+}
+#modal-form-projet-page2 .modal-footer .next-form-page {
+  margin: 0;
+}
+
+/*______________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 3 !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 3 !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE 3 !VVVVVVVVVVVVVVV! */
+#modal-form-projet-page3 {
+  overflow: auto;
+}
+#modal-form-projet-page3 .bodyProjet-form {
+  max-width: 100%;
+  flex-direction: column;
+}
+#modal-form-projet-page3 .bodyProjet-form .question {
+  display: block;
+  margin: 30px auto;
+  width: 420px;
+}
+#modal-form-projet-page3 .form-element {
+  margin: 0 auto;
+  display: block;
+  width: 400px;
+}
+#modal-form-projet-page3 .form-element select {
+  margin: 10px auto;
+  width: 350px;
+  display: block;
+}
+#modal-form-projet-page3 .phase-check-list {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+#modal-form-projet-page3 .phase-check-list div input {
+  width: 35px;
+  height: 35px;
+  background: #F1F0F0;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+#modal-form-projet-page3 .phase-check-list div p {
+  font: normal normal 18px/23px Sora, sans-serif;
+  text-align: center;
+}
+#modal-form-projet-page3 .phase-check-list div {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 145px;
+}
+#modal-form-projet-page3 .phase-check-list .phase-bar-bg {
+  position: absolute;
+  width: 1000px;
+  margin-top: 12px;
+  height: 15px;
+  background: #F1F0F0;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+#modal-form-projet-page3 .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+}
+#modal-form-projet-page3 .modal-footer .next-form-page {
+  margin: 0;
+}
+
+/*______________________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 4 !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 4 !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE 4 !VVVVVVVVVVVVVVV! */
+#modal-form-projet-page4 {
+  overflow: auto;
+}
+#modal-form-projet-page4 .bodyProjet-form {
+  display: block;
+  margin: 0 auto;
+  max-width: 80vw;
+}
+#modal-form-projet-page4 .form-element {
+  display: block;
+  margin: 30px auto;
+  width: 55vw;
+}
+#modal-form-projet-page4 .form-element input {
+  background: #FFFFFF;
+  border: 1.5px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 845px;
+}
+#modal-form-projet-page4 .form-element a {
+  float: right;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #000000;
+}
+#modal-form-projet-page4 .form-card {
+  display: none;
+  /* remettre à : block */
+  width: 443px;
+  height: 338px;
+  margin: 15px auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+#modal-form-projet-page4 .form-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-page4 .form-card .header-card {
+  height: 237px;
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  margin: 65px auto 0 auto;
+}
+#modal-form-projet-page4 .form-card .header-card p {
+  transform: translateY(-50px);
+  text-align: center;
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+}
+#modal-form-projet-page4 .form-card .header-card h4 {
+  transform: translateY(-50px);
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 5px 0;
+}
+#modal-form-projet-page4 .form-card .header-card select {
+  transform: translateY(-50px);
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+}
+#modal-form-projet-page4 .form-card .header-card a {
+  transform: translateY(-50px);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+}
+#modal-form-projet-page4 .form-card .body-card {
+  height: 101px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 30px 30px;
+  padding: 10px;
+}
+#modal-form-projet-page4 .form-card .body-card p {
+  margin: 0;
+  text-align: center;
+}
+#modal-form-projet-page4 .form-card .body-card select {
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 200px;
+}
+#modal-form-projet-page4 .next-form-page {
+  width: 146px;
+  height: 40px;
+  background: #000000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#modal-form-projet-page4 div.validated-teamate-card {
+  display: block;
+  margin: 80px auto 80px auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 543px;
+  height: 258px;
+}
+#modal-form-projet-page4 div.validated-teamate-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-page4 div.validated-teamate-card h4 {
+  transform: translateY(-53px);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+  margin: 15px 0 0 0;
+}
+#modal-form-projet-page4 div.validated-teamate-card p {
+  transform: translateY(-53px);
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+#modal-form-projet-page4 div.validated-teamate-card ul {
+  transform: translateY(-53px);
+  margin: 30px;
+}
+#modal-form-projet-page4 div.validated-teamate-card ul li {
+  display: inline;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+}
+#modal-form-projet-page4 div.validated-teamate-card button {
+  display: block;
+  margin: 0 auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+}
+#modal-form-projet-page4 .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+}
+#modal-form-projet-page4 .modal-footer .next-form-page {
+  margin: 0;
+}
+
+/*______________________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 5 !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE 5 !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE 5 !VVVVVVVVVVVVVVV! */
+#modal-form-projet-page5 {
+  overflow: auto;
+}
+#modal-form-projet-page5 .bodyProjet-form {
+  display: block;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 80vw;
+}
+#modal-form-projet-page5 .bodyProjet-form p {
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+}
+#modal-form-projet-page5 .bodyProjet-form span {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  color: #C4C4C4;
+  text-align: center;
+  display: block;
+}
+#modal-form-projet-page5 .bodyProjet-form .container {
+  display: flex;
+  justify-content: center;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element {
+  margin: 40px auto;
+  display: block;
+  /* remettre à : block */
+  background: #757575;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 463px;
+  height: 163px;
+  padding: 10px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element h4 {
+  margin: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  color: #FFFFFF;
+  text-align: center;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element select {
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 400px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element a {
+  display: block;
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp {
+  display: none;
+  /* remettre à : block */
+  margin: 10px auto;
+  width: 464px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp {
+  margin: 60px auto;
+  width: 463px;
+  height: 329px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp .header-card {
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  max-height: 127px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp .header-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp .header-card h4 {
+  transform: translateY(-63px);
+  font-family: Sora, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp .body-card {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 0 0 30px 30px;
+  padding: 5px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .card-searched-comp .body-card select {
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 400px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp textarea {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 461px;
+  height: 104px;
+  resize: none;
+  border: none;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp .yes-no-btn {
+  width: 20vw;
+  margin: 0 auto;
+  display: block;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp button.cancel {
+  margin: 10px auto;
+  padding: 4px 20px;
+  font-family: Sora, sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 30px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .selected-comp button.validate {
+  margin: 10px auto;
+  float: right;
+  padding: 4px 20px;
+  font-family: Sora, sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: white;
+  background: black;
+  border: 1px solid #000000;
+  border-radius: 30px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce {
+  width: 318px;
+  margin-top: 50px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce {
+  height: 208px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce .header-card {
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  max-height: 127px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce .header-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce .header-card h4 {
+  transform: translateY(-63px);
+  font-family: Sora, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce .body-card {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 0 0 30px 30px;
+  padding: 5px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce .card-annonce .body-card h4 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #555555;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce textarea#collab-description {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 319px;
+  height: 109px;
+  border: none;
+  resize: none;
+  margin-top: 60px;
+  padding: 5px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .resume-annonce button {
+  display: block;
+  margin: 10px auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element2 {
+  margin: 0 auto;
+  display: none;
+  /* remettre à : block */
+  background: #757575;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 463px;
+  height: 163px;
+  padding: 10px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element2 h4 {
+  margin: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  color: #FFFFFF;
+  text-align: center;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element2 select {
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 400px;
+}
+#modal-form-projet-page5 .bodyProjet-form .container .form-element2 a {
+  display: block;
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+#modal-form-projet-page5 .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+}
+#modal-form-projet-page5 .modal-footer .next-form-page {
+  margin: 0;
+}
+
+/*______________________________________________________________________*/
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE FINAL !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FORMULAIRE PROJET PAGE FINAL !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FORMULAIRE PROJET PAGE FINAL !VVVVVVVVVVVVVVV! */
+#modal-form-projet-pageFinal {
+  overflow: auto;
+}
+#modal-form-projet-pageFinal .bodyProjet-form {
+  display: block;
+  margin: 50px auto;
+  max-width: 95vw;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element {
+  margin: 0 auto;
+  display: block;
+  /* remettre à : block */
+  background: #757575;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 450px;
+  height: 255px;
+  padding: 10px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element p {
+  transform: translateY(-70px);
+  text-align: center;
+  font-family: Sora, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element span {
+  transform: translateY(-70px);
+  text-align: center;
+  display: block;
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element h4 {
+  transform: translateY(-60px);
+  margin: 0;
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  color: #FFFFFF;
+  text-align: center;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element select {
+  transform: translateY(-60px);
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 400px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element a {
+  transform: translateY(-60px);
+  display: block;
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .form-element button {
+  background: #000000;
+  border-radius: 30px;
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  color: #FFFFFF;
+  width: 108px;
+  margin: 0 auto;
+  display: block;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce {
+  align-self: flex-end;
+  width: 318px;
+  margin-top: 200px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce {
+  height: 208px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .header-card {
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  max-height: 127px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .header-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .header-card h4 {
+  transform: translateY(-63px);
+  font-family: Sora, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .body-card {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 0 0 30px 30px;
+  padding: 5px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .body-card h4 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #555555;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce .card-annonce .body-card p {
+  text-align: center;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce textarea#collab-description {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 319px;
+  height: 109px;
+  border: none;
+  resize: none;
+  margin-top: 60px;
+  padding: 5px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form .container .resume-annonce button {
+  display: block;
+  margin: 10px auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card {
+  display: block;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 543px;
+  height: 258px;
+  flex-shrink: 0;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card h4 {
+  transform: translateY(-53px);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+  margin: 15px 0 0 0;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card p {
+  transform: translateY(-53px);
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card ul {
+  transform: translateY(-53px);
+  margin: 30px;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card ul li {
+  display: inline;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+}
+#modal-form-projet-pageFinal .bodyProjet-form div.validated-teamate-card button {
+  display: block;
+  margin: 0 auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+}
+#modal-form-projet-pageFinal .modal-footer {
+  margin-top: 20px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+}
+#modal-form-projet-pageFinal .modal-footer .next-form-page {
+  float: right;
+  padding: 5px;
+  line-height: 30px;
+  width: 146px;
+  height: 40px;
+  background: #000000;
+  border-radius: 10px;
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFFFFF;
 }

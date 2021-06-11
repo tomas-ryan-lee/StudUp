@@ -1,20 +1,926 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjetFormController!{% endblock %}
+{% block title %}
+	Hello ProjetFormController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<aside id="modal-form-projet-page1" class="modal" role="dialog" aria-labelledby="title-modal">
+		<div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				Passons aux choses sérieuses !
+			</h2>
+			<h3>
+				“La meilleure manière de prévoir le futur, c’est de le créer”
+			</h3>
+			<p class="reference">
+				Peter Drucker
+			</p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+				<div class="form-element">
+					<p>
+						Nom du projet
+					</p>
+					<input type="text">
+					<p class="label-input">
+						Secteur d’activité
+						<span class="max-infos">
+							2 max
+						</span>
+					</p>
+					<select name="Secteur d’activité" id="select">
+						<option value="Secteur 1">
+							Secteur 1
+						</option>
+						<option value="secteur 2">
+							secteur 2
+						</option>
+					</select>
+					<p class="label-input">
+						Localisation
+					</p>
+					<select name="localisation" id="select">
+						<option value="nom ville">
+							Ville 1
+						</option>
+						<option value="nom ville">
+							Ville 2
+						</option>
+					</select>
+					<p>
+						Es-tu accompagné.e par une structure ?
+					</p>
+					<div class="radio-choice">
+						<input class="radio-btn" type="radio" id="oui" name="projet-suivi" value="true" checked>
+						<label for="oui">
+							Oui
+						</label>
+					</div>
+					<div class="radio-choice">
+						<input class="radio-btn" type="radio" id="non" name="projet-suivi" value="false">
+						<label for="non">
+							Non
+						</label>
+					</div>
+				</div>
+				<div class="upload">
+					<p class="label-input">
+						Une photo, un logo ?
+					</p>
+					<p class="max-infos">
+						Elle doit t’appartenir ou être libre de droit
+					</p>
+					<label class="upload-profile-img" for="upload-photo">
+						Uploader
+					</label>
+					<input type="file" name="photo" id="upload-photo"/>
+					<p>
+						Une vidéo de présentation ?
+					</p>
+					<p class="max-infos">
+						Une vidéo vaut mieux que 1000 images
+					</p>
+					<input type="text" name="lien video" id="video-url">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<a href="#modal-form-projet-page2" class="next-form-page">
+					La suite
+				</a>
+			</div>
+		</div>
+	</aside>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/LAB/StudUp/src/Controller/ProjetFormController.php'|file_link(0) }}">src/Controller/ProjetFormController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/LAB/StudUp/templates/projet_form/index.html.twig'|file_link(0) }}">templates/projet_form/index.html.twig</a></code></li>
-    </ul>
-</div>
+	{#     PAGE 2 FORMULAIRE PROJET     #}
+	{#     PAGE 2 FORMULAIRE PROJET     #}
+	{#     PAGE 2 FORMULAIRE PROJET     #}
+	{#     PAGE 2 FORMULAIRE PROJET     #}
+
+
+		<aside id="modal-form-projet-page2" class="modal" role="dialog" aria-labelledby="title-modal"> <div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				L’essence de  ton projet !
+			</h2>
+			<h3>
+				“Le génie, c’est 1% de talent, 99% de travail acharné”
+			</h3>
+			<p class="reference">
+				Albert Einstein
+			</p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+				<div class="form-element">
+					<p>
+						Vision globale
+					</p>
+					<p class="max-infos">
+						La vocation, l’objectif long terme du projet en 1/2 tweet
+					</p>
+					<textarea name="vision global" id="global-vision" cols="30" rows="10"></textarea>
+					<p class="label-input">
+						Elevator Pitch i
+					</p>
+
+					<p class="max-infos">
+						Explique brièvement ton projet
+						<br>
+						Motive tes futurs collaborateurs à te rejoindre
+					</p>
+					<textarea name="elevator pitch" id="pitch" cols="30" rows="10"></textarea>
+				</div>
+
+				<div class="upload">
+					<p>
+						Mood de la team
+					</p>
+					<select name="team mood" id="select">
+						<option value="mood 1">
+							mood 1
+						</option>
+						<option value="mood 2">
+							mood 2
+						</option>
+					</select>
+					<p>
+						En recherche de
+					</p>
+					<select name="aide requise" id="select">
+						<option value="aide 1">
+							aide 1
+						</option>
+						<option value="aide 2">
+							aide 2
+						</option>
+					</select>
+					<p>
+						Atouts du projet
+					</p>
+					<select name="atouts du projet" id="select">
+						<option value="atout 1">
+							atout 1
+						</option>
+						<option value="atout 2">
+							atout 2
+						</option>
+					</select>
+					<p>
+						Ton projet est-il une avancée sociale/environnementale?	i
+					</p>
+
+					<div class="radio-choice">
+						<input class="radio-btn" type="radio" id="oui" name="avance-projet" value="true" checked>
+						<label for="oui">
+							Oui
+						</label>
+					</div>
+					<div class="radio-choice">
+						<input class="radio-btn" type="radio" id="non" name="avance-projet" value="false">
+						<label for="non">
+							Non
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#modal-form-projet-page1" class="previous-form-page">
+					Retour
+				</a>
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<a href="#modal-form-projet-page3" class="next-form-page">
+					La suite
+				</a>
+			</div>
+		</div>
+	</aside>
+
+
+	{#     PAGE 3 FORMULAIRE PROJET     #}
+	{#     PAGE 3 FORMULAIRE PROJET     #}
+	{#     PAGE 3 FORMULAIRE PROJET     #}
+	{#     PAGE 3 FORMULAIRE PROJET     #}
+
+
+		<aside id="modal-form-projet-page3" class="modal" role="dialog" aria-labelledby="title-modal"> <div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				T’en es où ?
+			</h2>
+			<h3>
+				“Un jour, vous pourrez dire : Ça n’a pas été facile mais j’ai reussi”
+			</h3>
+			<p class="reference">
+				L’équipe Stud’up
+			</p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+				<div class="form-element">
+					<p>
+						Quelle phase réalises-tu actuellement ?
+					</p>
+					<select name="phase" id="phase">
+						<option value="Étude de marché">
+							Étude de marché
+						</option>
+						<option value="Étude de besoins">
+							Étude de besoins
+						</option>
+						<option value="Validation du concept">
+							Validation du concept
+						</option>
+						<option value="Rédaction du business plan">
+							Rédaction du business plan
+						</option>
+						<option value="Création d’un MVP">
+							Création d’un MVP
+						</option>
+						<option value="Tests utilisateurs">
+							Tests utilisateurs
+						</option>
+						<option value="Lancement sur le marché">
+							Lancement sur le marché
+						</option>
+						<option value="En activité">
+							En activité
+						</option>
+					</select>
+
+					<p class="question">
+						Coche les phases que tu as déjà réalisées
+					</p>
+				</div>
+				<div class="phase-check-list">
+					<div>
+						<input type="checkbox">
+						<p>
+							Étude de marché
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Étude de besoins
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Validation du concept
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Rédaction du business plan
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Création d’un MVP
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Tests utilisateurs
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							Lancement sur le marché
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<div>
+						<input type="checkbox">
+						<p>
+							En activité
+						</p>
+						<span>
+							i
+						</span>
+					</div>
+					<span class="phase-bar-bg"></span>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<a href="#modal-form-projet-page2" class="previous-form-page">
+					Retour
+				</a>
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<a href="#modal-form-projet-page4" class="next-form-page">
+					La suite
+				</a>
+			</div>
+		</div>
+	</aside>
+
+
+	{#     PAGE 4 FORMULAIRE PROJET     #}
+	{#     PAGE 4 FORMULAIRE PROJET     #}
+	{#     PAGE 4 FORMULAIRE PROJET     #}
+	{#     PAGE 4 FORMULAIRE PROJET     #}
+
+
+		<aside id="modal-form-projet-page4" class="modal" role="dialog" aria-labelledby="title-modal"> <div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				Déjà bien entouré.e ?
+			</h2>
+			<h3>
+				“Que des numéros 10 dans ma team”
+			</h3>
+			<p class="reference">
+				Le Duc de Boulogne
+			</p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+				<div class="form-element">
+					<p>
+						Ton équipe est-elle déjà sur Stud’up ?
+					</p>
+					<input type="search" list="tags" name="team" id="team-up">
+					<datalist id="tags">
+						<option value="nom 1"></option>
+						<option value="nom 2"></option>
+						<option value="nom 3"></option>
+					</datalist>
+					<a href="">
+						Ta team n’est pas sur Stud’up ?
+					</a>
+				</div>
+				<div class="form-card">
+					<div class="header-card">
+						<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profile">
+						<p>
+							NOM PRENOM
+						</p>
+						<h4>
+							Ses compétences sur le projet
+						</h4>
+						<select name="competences" id="comp">
+							<option value="Compétence 1">
+								Compétence 1
+							</option>
+							<option value="Compétence 2">
+								Compétence 2
+							</option>
+							<option value="Compétence 3">
+								Compétence 3
+							</option>
+						</select>
+						<a href="">
+							Tu ne trouves pas les compétences dont tu as besoin
+						</a>
+					</div>
+					<div class="body-card">
+						<p>
+							Type de collaboration établi
+						</p>
+						<select name="type de colaboration" id="colab">
+							<option value="Associé.e">
+								Associé.e
+							</option>
+							<option value="consultant">
+								consultant
+							</option>
+							<option value="autre">
+								autre
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="validated-teamate-card">
+					<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+					<h4>
+						Nom & Prénom
+					</h4>
+					<p>
+						Etud / Alumnis + Niveau + Cursus
+					</p>
+					<ul>
+						<li>
+							Compétence 1
+						</li>
+						<li>
+							Compétence 2
+						</li>
+						<li>
+							Compétence 3
+						</li>
+						<li>
+							Compétence 4
+						</li>
+						<li>
+							Compétence 5
+						</li>
+					</ul>
+					<button>
+						Actualiser
+					</button>
+				</div>
+			</div>
+
+
+			<div class="modal-footer">
+				<a href="#modal-form-projet-page3" class="previous-form-page">
+					Retour
+				</a>
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<a href="#modal-form-projet-page5" class="next-form-page">
+					La suite
+				</a>
+			</div>
+		</div>
+
+	</aside>
+
+	{#     PAGE 5 FORMULAIRE PROJET     #}
+	{#     PAGE 5 FORMULAIRE PROJET     #}
+	{#     PAGE 5 FORMULAIRE PROJET     #}
+	{#     PAGE 5 FORMULAIRE PROJET     #}
+
+		<aside id="modal-form-projet-page5" class="modal" role="dialog" aria-labelledby="title-modal"> <div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				Construis ta dream team
+			</h2>
+			<h3>
+				“Tout.e seul.e on va plus vite, ensemble on va plus loin”
+			</h3>
+			<p class="reference"></p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+				<p>
+					Trouve les compétences qu’il te manque pour poursuivre l’aventure !
+				</p>
+				<span>
+					Tu ne peux rechercher que 3 collaborateurs en même temps
+				</span>
+
+
+				{# PREMIERE CARTE OU ON FAIT LA DESCRIPTION DU JOB #}
+
+
+				<div class="container">
+					<div class="selected-comp">
+						<div class="card-searched-comp">
+							<div class="header-card">
+								<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+								<h4>
+									Community manager
+								</h4>
+							</div>
+							<div class="body-card">
+								<p>
+									Type de collaboration souhaitée
+								</p>
+								<select name="type de collaboration" id="collab">
+									<option value="Associé.e">
+										Associé.e
+									</option>
+									<option value="Consultant">
+										Consultant
+									</option>
+									<option value="Autre..">
+										Autre..
+									</option>
+								</select>
+								<p>
+									Rétribution proposée
+								</p>
+								<select name="type de rétribution" id="retribution">
+									<option value="à discuter">
+										à discuter
+									</option>
+									<option value="part de l'entreprise">
+										part de l'entreprise
+									</option>
+									<option value="un verre en terrasse">
+										un verre en terrasse
+									</option>
+								</select>
+							</div>
+						</div>
+						<p>
+							<b>
+								Qu’attends-tu de cette collab ?
+							</b>
+							<br>
+							Parle du rythme, de l’ambiance, des compétences exactes que tu recherches ...
+						</p>
+						<textarea name="decrit la collaboration" id="collab-description" cols="30" rows="10"></textarea>
+						<div class="yes-no-btn">
+							<button class="cancel" href="#">
+								Annuler
+							</button>
+							<button class="validate" type="submit">
+								Valider
+							</button>
+						</div>
+					</div>
+
+					{# DEUXIEME CARTE RESUME DE L'ANNONCE #}
+
+					<div class="resume-annonce">
+						<div class="card-annonce">
+							<div class="header-card">
+								<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+								<h4>
+									Community manager
+								</h4>
+							</div>
+							<div class="body-card">
+								<h4>
+									Associé
+								</h4>
+								<p>
+									Menthe à l’eau
+								</p>
+							</div>
+						</div>
+						<textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
+						<button>
+							Actualiser
+						</button>
+					</div>
+
+					{# TROISIEME CARTE COMPETENCES RECHERCHE #}
+
+					<div class="form-element">
+						<h4>
+							Compétences récherchées
+						</h4>
+						<select type="search" list="skills">
+							<datalist id="skills">
+								<option value="compétence 1">
+									compétence 1
+								</option>
+								<option value="skill 2">
+									skill 2
+								</option>
+								<option value="klk chose 3">
+									klk chose 3
+								</option>
+							</datalist>
+						</select>
+						<a href="">
+							Tu ne trouves pas les compétences dont tu as besoin
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#modal-form-projet-page4" class="previous-form-page">
+					Retour
+				</a>
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<a href="#modal-form-projet-pageFinal" class="next-form-page">
+					La suite
+				</a>
+			</div>
+		</div>
+
+	</aside>
+
+
+	{#     PAGE FINALE FORMULAIRE PROJET     #}
+	{#     PAGE FINALE FORMULAIRE PROJET     #}
+	{#     PAGE FINALE FORMULAIRE PROJET     #}
+	{#     PAGE FINALE FORMULAIRE PROJET     #}
+
+		<aside id="modal-form-projet-pageFinal" class="modal" role="dialog" aria-labelledby="title-modal"> <div class="main-projet-form-Modal">
+			<a href="#" class="modal-close">
+				X
+				{# Fermer la boite modal #}
+			</a>
+			<h2 id="title-modal">
+				Petit récap’
+			</h2>
+			<h3>
+				“Une équipe, la famille dont on choisit les membres”
+			</h3>
+			<p class="reference"></p>
+			<div class="navProjet-form">
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page1">
+						1
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page2">
+						2
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page3">
+						3
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page4">
+						4
+					</a>
+				</div>
+				<div class="nav-projet-form-btn">
+					<a href="#modal-form-projet-page5">
+						5
+					</a>
+				</div>
+				<span class="nav-span"></span>
+			</div>
+			<div class="bodyProjet-form">
+
+
+				<div
+					class="container">
+					{# PREMIERE CARTE COMPETENCES DU CHEF DE PROJET #}
+
+					<div class="form-element">
+						<img src="../img/caroline-CBD.png" alt="photo de profil" class="img-card">
+						<p>
+							Bastien Chaussard
+						</p>
+						<span>
+							Porteur de projet
+						</span>
+						<h4>
+							Tes compétences sur le projet
+						</h4>
+						<select type="search" list="skills">
+							<datalist id="skills">
+								<option value="compétence 1">
+									compétence 1
+								</option>
+								<option value="skill 2">
+									skill 2
+								</option>
+								<option value="klk chose 3">
+									klk chose 3
+								</option>
+							</datalist>
+						</select>
+						<a href="">
+							Tu ne trouves pas les compétences dont tu as besoin
+						</a>
+						<button>
+							Valider
+						</button>
+					</div>
+
+					<div class="validated-teamate-card">
+						<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+						<h4>
+							Nom & Prénom
+						</h4>
+						<p>
+							Etud / Alumnis + Niveau + Cursus
+						</p>
+						<ul>
+							<li>
+								Compétence 1
+							</li>
+							<li>
+								Compétence 2
+							</li>
+							<li>
+								Compétence 3
+							</li>
+							<li>
+								Compétence 4
+							</li>
+							<li>
+								Compétence 5
+							</li>
+						</ul>
+					</div>
+
+					{# DEUXIEME CARTE RESUME DE L'ANNONCE #}
+
+					<div class="resume-annonce">
+						<div class="card-annonce">
+							<div class="header-card">
+								<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+								<h4>
+									Community manager
+								</h4>
+							</div>
+							<div class="body-card">
+								<h4>
+									Associé
+								</h4>
+								<p>
+									Menthe à l’eau
+								</p>
+							</div>
+						</div>
+						<textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
+						<button>
+							Actualiser
+						</button>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#modal-form-projet-page5" class="previous-form-page">
+					Retour
+				</a>
+				<span class="hashtag">
+					#Stud’uppers
+				</span>
+				<button type="submit" href="#" class="next-form-page">
+					La fin
+				</button>
+			</div>
+		</div>
+	</aside>
 {% endblock %}
