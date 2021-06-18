@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Hello PageProjetController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="content-page-projet">
+		<div class="top-page-projet">
+			<img src="../img/chaussetteArt.png" alt="Image du projet">
+			<div class="over_img">
+				<p>
+					Rédaction du Business Plan
+				</p>
+				<span>
+					Q
+				</span>
+				<span>
+					Q
+				</span>
+				<span>
+					Q
+				</span>
+			</div>
+			<div class="info-projet">
+				<h3>
+					Stud’up
+				</h3>
+				<span>
+					Accompagné par :
+					<strong>
+						Skema Venture & Enactus France
+					</strong>
+				</span>
+				<h4>
+					Education - Technologie
+				</h4>
+				<p>
+					App Web de mise en relation de compétences étudiantes. Stud’up te trouve les collaborateurs qu’il te faut
+				</p>
+				<ul>
+					<li>
+						Impact Social
+					</li>
+					<li>
+						Equipe de choc
+					</li>
+					<li>
+						Didactique
+					</li>
+					<li>
+						Ambitieux
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="page-projet-btns">
+			<button class="edit-projet-btn">
+				Modifier ma page projet
+			</button>
+			<button class="check-add-request-btn">
+				Voir les demandes de collaborations
+			</button>
+		</div>
+		<div class="progress-bar-wrapper">
+			<div class="progress-bar-container">
+				<div class="progress-bar-content"></div>
+			</div>
+			<span>
+				Étude de marché
+			</span>
+			<span>
+				Étude de besoins
+			</span>
+			<span>
+				Validation du concept
+			</span>
+			<span>
+				Rédaction du business plan
+			</span>
+			<span>
+				Création d’un MVP
+			</span>
+			<span>
+				Test utilisateurs
+			</span>
+			<span>
+				Lancement sur le marché
+			</span>
+			<span>
+				En activité
+			</span>
+		</div>
+		<div class="main-content">
+			<div class="alinea"></div>
+			<h3>
+				Elevator Pitch
+			</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nobis cum provident iure quis atque recusandae quae, eaque culpa et animi corrupti voluptates quisquam dolorem vero explicabo neque omnis doloremque?
+																																																																																																																																																																																																																																																																												        Numquam soluta enim ex cupiditate blanditiis voluptates tempora placeat atque iusto rem doloremque magnam eos iste nulla sint, qui natus laboriosam quos sit molestias, consectetur, eaque expedita error! Ad, possimus!
+																																																																																																																																																																																																																																																																												        Sit praesentium aliquid, repellendus dolores quisquam quo, iure quasi nostrum perferendis quia sed. Est quo facilis adipisci, quos assumenda aut deleniti, doloribus deserunt nesciunt, corrupti consectetur vero hic? Reiciendis, enim!
+																																																																																																																																																																																																																																																																												        Animi nesciunt ratione distinctio ipsa inventore iusto impedit fugit totam ducimus magni, molestias minus nostrum. Impedit, labore reprehenderit officia iure magnam ad aut tenetur, molestiae in harum non porro quas?
+																																																																																																																																																																																																																																																																												        Veritatis, fugiat numquam soluta aspernatur vel magni, itaque, perspiciatis pariatur voluptate dolorem aliquid! Modi similique inventore totam, vero error accusamus voluptatibus ex magni impedit ullam molestiae perferendis recusandae debitis. Atque.
+			</p>
+			<div class="alinea type-2"></div>
+			<h3>
+				L’équipe Stud’up
+			</h3>
+			<span>
+				Sprinter
+			</span>
+			<div class="team-member-card">
+				<img src="../img/caroline-CBD.png" alt="photo de profil">
+				<h4>
+					Pauline Boussarsar
+				</h4>
+				<p>
+					Etudiant.e master International Marketing and Business development
+				</p>
+				<h4>
+					Porteur de projet
+				</h4>
+				<p>
+					UX/UI Designer - Product manager - Business développement
+				</p>
+			</div>
+			<div class="alinea type-2"></div>
+			<h3>
+				Les collab recherchées
+			</h3>
+			<span>
+				Sprinter
+			</span>
+			<div class="add-request">
+				<input id="toggle-ad" type="checkbox" checked>
+				<label for="toggle-ad">
+					<div class="card-annonce">
+						<div class="header-card">
+							<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+							<h4>
+								Community manager
+							</h4>
+						</div>
+						<div class="body-card">
+							<h4>
+								Associé
+							</h4>
+							<p>
+								Menthe à l’eau
+							</p>
+						</div>
+					</div>
+				</label>
+				<button class="actualiser">
+					Actualiser
+				</button>
+				<div id="expand">
+					<img src="../img/caroline-CBD.png" alt="photo de profil">
+					<span>
+						En attente depuis
+						<br>
+						Janvier 2021
+					</span>
+					<h4>
+						Lyam Marie-Jeanne
+					</h4>
+					<p>
+						Etudiant - Master Social media et Webmarketing
+					</p>
+					<div class="response">
+						<button class="active">
+							Contacter
+						</button>
+						<button>
+							Accepter
+						</button>
+						<button>
+							Décliner
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ include('/home/_projets_display_block.html.twig') }}
+{% endblock %}

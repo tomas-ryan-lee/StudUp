@@ -20,7 +20,7 @@
 		<link
 		rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"/>
 		{# Run `composer require symfony/webpack-encore-bundle`
-																																																																														and uncomment the following Encore helpers to start using Symfony UX #}
+																																																																																						and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -87,7 +87,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="{{ path('page_projet') }}">
 						Ton Projet
 
 
@@ -182,17 +182,16 @@
 		{% block inscription %}
 		{% endblock %}
 		<!-- Partie contenue de la page -->
-		<div class="container">
-			<main role="main"> {% block body %}{% endblock %}
-				</main>
-				{% block promo %}
-				{% endblock %}
-				{% block Projets_display %}
-				{% endblock %}
-			</div>
-			<!-- Fin Partie contenue de la page -->
+		{% block body %}
+		{% endblock %}
 
-			{% block footer %}
-			{% endblock %}
-		</body>
-	</html>
+		{% block promo %}
+		{% endblock %}
+		{% block Projets_display %}
+		{% endblock %}
+		<!-- Fin Partie contenue de la page -->
+
+		{% block footer %}
+		{% endblock %}
+	</body>
+</html>

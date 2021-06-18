@@ -2850,3 +2850,358 @@ div.main-projet-form-Modal .modal-footer a.next-form-page {
   font-size: 24px;
   color: #FFFFFF;
 }
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS PAGE PROJET !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS PAGE PROJET !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS PAGE PROJET !VVVVVVVVVVVVVVV! */
+div.content-page-projet {
+  margin: 73px auto 0 auto;
+  width: 100%;
+  padding: 5%;
+  background-color: white;
+}
+div.content-page-projet div.top-page-projet {
+  display: flex;
+  width: 100%;
+}
+div.content-page-projet div.top-page-projet img {
+  width: 574px;
+  height: 332px;
+  object-fit: cover;
+}
+div.content-page-projet div.top-page-projet .over_img {
+  margin-top: 20px;
+  position: absolute;
+  width: 250px;
+  height: 71px;
+  background: rgba(242, 242, 242, 0.75);
+  border-radius: 0px 10px 10px 0px;
+}
+div.content-page-projet div.top-page-projet .over_img p {
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #474B5A;
+  margin: 10px;
+}
+div.content-page-projet div.top-page-projet .over_img span {
+  margin: 0 12%;
+}
+div.content-page-projet div.top-page-projet .info-projet {
+  width: 615px;
+  padding: 10px;
+}
+div.content-page-projet div.top-page-projet .info-projet h3 {
+  margin: 0;
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 63px;
+  color: #474B5A;
+}
+div.content-page-projet div.top-page-projet .info-projet span {
+  font-family: Sora;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(71, 75, 90, 0.6);
+}
+div.content-page-projet div.top-page-projet .info-projet h4 {
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #474B5A;
+  margin: 28px 0;
+}
+div.content-page-projet div.top-page-projet .info-projet p {
+  margin: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  color: #474B5A;
+}
+div.content-page-projet div.top-page-projet .info-projet ul {
+  padding: 0;
+  margin: 5px 0;
+}
+div.content-page-projet div.top-page-projet .info-projet ul li {
+  display: inline-block;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #474B5A;
+  background: #FFFFFF;
+  border: 1px solid #474B5A;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px 15px;
+}
+div.content-page-projet .page-projet-btns {
+  width: 100%;
+  display: flex;
+  margin: 50px auto;
+}
+div.content-page-projet button {
+  margin: 0 auto;
+  height: 46px;
+  font-family: Sora;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 46px;
+  border-radius: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+}
+div.content-page-projet .edit-projet-btn {
+  width: 284px;
+  background-color: white;
+  color: #474B5A;
+}
+div.content-page-projet .check-add-request-btn {
+  width: 415px;
+  background-color: #474B5A;
+  color: white;
+}
+div.content-page-projet .progress-bar-wrapper {
+  width: 1221px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+div.content-page-projet .progress-bar-wrapper .progress-bar-container {
+  width: 100%;
+  height: 44px;
+  background: #D8D8D8;
+  border-radius: 40px;
+}
+div.content-page-projet .progress-bar-wrapper .progress-bar-container .progress-bar-content {
+  width: 60%;
+  height: 44px;
+  background: #704DFF;
+  border-radius: 40px;
+}
+div.content-page-projet .progress-bar-wrapper span {
+  margin: 15px 0;
+  width: 80px;
+  font-family: Sora;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content .alinea {
+  float: left;
+  width: 5px;
+  height: 40px;
+  background: #704DFF;
+  border-radius: 10px;
+  margin-right: 26px;
+}
+div.content-page-projet div.main-content .type-2 {
+  height: 60px;
+}
+div.content-page-projet div.main-content h3 {
+  margin: 0;
+  font-family: Sora;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 40px;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content p {
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 35px;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content span {
+  font-family: Sora;
+  font-size: 26px;
+  line-height: 30px;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content .team-member-card {
+  margin-top: 120px;
+  margin-bottom: 90px;
+  display: block;
+  width: 378px;
+  height: 295px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+div.content-page-projet div.main-content .team-member-card img {
+  transform: translateY(-60px);
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+  border-radius: 100%;
+  display: block;
+}
+div.content-page-projet div.main-content .team-member-card h4 {
+  transform: translateY(-60px);
+  font-family: Sora;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #474B5A;
+  margin: 13px 0 0 0;
+}
+div.content-page-projet div.main-content .team-member-card p {
+  width: 85%;
+  transform: translateY(-60px);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 23px;
+  color: #474B5A;
+  text-align: center;
+  margin: 0 auto;
+}
+div.content-page-projet div.main-content .add-request {
+  margin-top: 30px;
+  width: 458px;
+  background: #F2F2F2;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.content-page-projet div.main-content .add-request img {
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+div.content-page-projet div.main-content .add-request .card-annonce {
+  margin: 20px auto;
+  margin-top: 100px;
+  width: 318px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+div.content-page-projet div.main-content .add-request .card-annonce .header-card {
+  background: #704CFF;
+  border-radius: 30px 30px 0px 0px;
+  max-height: 127px;
+}
+div.content-page-projet div.main-content .add-request .card-annonce .header-card .img-card {
+  transform: translateY(-53px);
+}
+div.content-page-projet div.main-content .add-request .card-annonce .header-card h4 {
+  transform: translateY(-63px);
+  font-family: Sora, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+div.content-page-projet div.main-content .add-request .card-annonce .body-card {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 0 0 30px 30px;
+  padding: 5px;
+  text-align: center;
+}
+div.content-page-projet div.main-content .add-request .card-annonce .body-card h4 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #555555;
+}
+div.content-page-projet div.main-content .add-request button.actualiser {
+  width: 110px;
+  margin: 15%;
+  font-family: Sora;
+  font-size: 18px;
+  height: 33px;
+  line-height: 23px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #474B5A;
+  border-radius: 50px;
+}
+div.content-page-projet div.main-content .add-request #expand {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  text-align: center;
+}
+div.content-page-projet div.main-content .add-request #expand span {
+  margin-right: 15px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: Sora;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content .add-request #expand h4 {
+  font-family: Sora;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #474B5A;
+  margin: 0;
+}
+div.content-page-projet div.main-content .add-request #expand p {
+  margin: 0;
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #474B5A;
+}
+div.content-page-projet div.main-content .add-request #expand .response {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+div.content-page-projet div.main-content .add-request #expand button {
+  margin: 5% 0;
+  font-weight: normal;
+  font-family: Sora;
+  height: 33px;
+  width: 120px;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #474B5A;
+  border-radius: 50px;
+}
+div.content-page-projet div.main-content .add-request #expand .active {
+  font-weight: bold;
+  color: white;
+  background: #704CFF;
+  border: none;
+}
+div.content-page-projet div.main-content label {
+  transition: 0.3s;
+  cursor: pointer;
+}
+div.content-page-projet div.main-content input {
+  display: none;
+  visibility: hidden;
+}
+div.content-page-projet div.main-content #toggle-ad:checked ~ #expand {
+  height: 100%;
+}
