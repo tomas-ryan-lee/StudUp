@@ -122,4 +122,72 @@ class ProjectMember {
     public function clearApplicant() {
         $this->applicants->clear();
     }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getProject() {
+        return $this->project;
+    }
+
+    public function getStudent() {
+        return $this->student;
+    }
+
+    public function getJob() {
+        return $this->job;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function getDetail() {
+        return $this->detail;
+    }
+
+    public function getRetribution() {
+        return $this->retribution;
+    }
+
+    public function getIsFree() {
+        return $this->isFree;
+    }
+
+    public function getApplicants() {
+        return $this->applicants;
+    }
+
+    public function toArray($exclude = []) {
+        $data = [
+            'id' => $this->getId(),
+            'job' => $this->getJob()->toArray(),
+            'type' => $this->getType(),
+            'detail' => $this->getDetail(),
+            'retribution' => $this->getRetribution(),
+            'isFree' => $this->getIsFree()
+        ];
+
+        if($this->getStudent() != null) {
+            $data['student'] = $this->getStudent()->toArray();
+        } else {
+            $data['student'] = null; 
+        }
+
+        $applicantsArray = [];
+        $applicants = $this->getApplicants();
+        foreach($applicants as $applicant) {
+            $applicantsArray[] = $applicant->toArray();
+        }
+        $data['applicants'] = $applicantsArray;
+
+        $data['project'] = !in_array('project', $exclude) ? $this->project->toArray($exclude=['members']) : Null;
+
+        foreach($exclude as $key) {
+            unset($data[$key]);
+        }
+
+        return $data;
+    }
 }
