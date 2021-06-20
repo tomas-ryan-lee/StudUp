@@ -66,7 +66,6 @@ class Project {
     private $currentPhase;
 
     # array of phases with True or False if done or not
-    # /!\ keep the same order for the phases
     /**
      * @ORM\Column(type="array")
      */
@@ -183,5 +182,115 @@ class Project {
 
     public function removeMember(ProjectMember $projectMember) {
         $this->members->removeElement($projectMember);
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getDomains() {
+        return $this->domains;
+    }
+
+    public function getIncubator() {
+        return $this->incubator;
+    }
+
+    public function getLocation() {
+        return $this->location;
+    }
+
+    public function getLogo() {
+        return $this->logo;
+    }
+
+    public function getVideo() {
+        return $this->video;
+    }
+
+    public function getVideoOrLogoDisplayed() {
+        return $this->videoOrLogoDisplayed;
+    }
+
+    public function getCurrentPhase() {
+        return $this->currentPhase;
+    }
+
+    public function getPhases () {
+        return $this->phases;
+    }
+
+    public function getGlobalVision() {
+        return $this->globalVision;
+    }
+
+    public function getElevatorSpeech() {
+        return $this->elevatorSpeech;
+    }
+
+    public function getAsset() {
+        return $this->asset;
+    }
+
+    public function getLookingFor() {
+        return $this->lookingFor;
+    }
+
+    public function getMood() {
+        return $this->mood;
+    }
+
+    public function getHasImpact() {
+        return $this->hasImpact;
+    }
+
+    public function getMembers() {
+        return $this->members;
+    }
+
+    public function toArray(array $exclude = []) {
+        $data = [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'incubator' => $this->getIncubator(),
+            'location' => $this->getLocation(),
+            'logo' => $this->getLogo(),
+            'video' => $this->getVideo(),
+            'videoOrLogo' => $this->getVideoOrLogoDisplayed(),
+            'currentPhase' => $this->getCurrentPhase(),
+            'phases' => $this->getPhases(),
+            'globalVision' => $this->getGlobalVision(),
+            'elevatorSpeech' => $this->getElevatorSpeech(),
+            'asset' => $this->getAsset(),
+            'lookingFor' => $this->getLookingFor(),
+            'mood' => $this->getMood(),
+            'hasImpact' => $this->getHasImpact(),
+        ];
+        
+        if(!isset($exclude['domains'])) {
+            $data['domains'] = [];
+            $domains = $this->getDomains();
+            foreach($domains as $domain) {
+                $data['domains'][] = $domain->toArray();
+            }
+        }
+
+        if(!isset($exclude['members'])) {
+            $data['members'] = [];
+            $members = $this->getMembers();
+            foreach($members as $member) {
+                $data['members'][] = $member->toArray($exclude = ['project']);
+            }
+        }
+
+        foreach($exclude as $key) {
+            unset($data[$key]);
+        }
+
+        return $data;
     }
 }
