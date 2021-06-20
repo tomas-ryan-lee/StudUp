@@ -34,7 +34,7 @@ class User {
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\Student", mappedBy="user", cascade={"persist"})
      */
-    private $profil;
+    private $profile;
 
     /**
      * @ORM\Column(type="datetime")
@@ -61,7 +61,7 @@ class User {
         $this->password = $password;
     }
 
-    public function setProfile(Student $student) {
+    public function setProfile(?Student $student) {
         $this->profile = $student;
     }
 
@@ -75,5 +75,43 @@ class User {
 
     public function deleteConfirmatinUUID() {
         $this->confirmationUUID = NULL;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getLogin() {
+        return $this->login;
+    }
+
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function getProfile() {
+        return $this->profile;
+    }
+
+    public function getLastConnection() {
+        return $this->lastConnection;
+    }
+
+    public function getConfirmationUUID() {
+        return $this->confimationUUID;
+    }
+
+    public function toArray(array $exclude = []) {
+        $data = [
+            'id' => $this->getId(),
+            'login' => $this->getLogin(),
+            // needs to avoid recursiv call
+            'profile' => !in_array('profile', $exclude) ? $this->getProfile()->toArray($exclude = ['user']) : Null,
+            'lastConnection' => $this->getLastConnection(),
+        ];
+        foreach($exclude as $key) {
+            unset($data[$key]);
+        }
+        return $data;
     }
 }
