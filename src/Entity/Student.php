@@ -236,4 +236,137 @@ class Student {
         $this->isActif = $isActif;
     }
 
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    public function getSurname() {
+        return $this->surname;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getGender() {
+        return $this->gender;
+    }
+
+    public function getBirthday() {
+        return $this->birthday;
+    }
+
+    public function getSchool() {
+        return $this->school;
+    }
+
+    public function getStudyLevel() {
+        return $this->studyLevel;
+    }
+
+    public function getGraduationYear() {
+        return $this->graduationYear;
+    }
+
+    public function getStudentNumber() {
+        return $this->studentNumber;
+    }
+
+    public function getStudentCardPic() {
+        return $this->studentCardPic;
+    }
+
+    public function getMail() {
+        return $this->mail;
+    }
+
+    public function getUser() {
+        return $this->user;
+    } 
+
+    public function getWantedJobs() {
+        return $this->wantedJobs;
+    }
+
+    public function getDomains() {
+        return $this->domains;
+    }
+
+    public function getNewsFrequency() {
+        return $this->newsFrequency;
+    }
+
+    public function getProfilePic() {
+        return $this->profilePic;
+    }
+
+    public function getWebsite() {
+        return $this->website;
+    }
+
+    public function getLinkedin() {
+        return $this->linkedin;
+    }
+
+    public function getInstagram() {
+        return $this->instagram;
+    }
+
+    public function getFacebook() {
+        return $this->facebook;
+    }
+
+    public function getIsActif() {
+        return $this->isActif;
+    }
+
+    public function toArray(array $exclude = []) {
+        $data = [
+            'id' => $this->getId(),
+            'status' => $this->getStatus(),
+            'surname' => $this->getSurname(),
+            'name' => $this->getName(),
+            'gender' => $this->getGender(),
+            'birthday' => $this->getBirthday(),
+            'school' => $this->getSchool()->toArray(),
+            'studyLevel' => $this->getStudyLevel(),
+            'graduationYear' => $this->getGraduationYear(),
+            'studentNumber' => $this->getStudentNumber(),
+            'studentCardPic' => $this->getStudentCardPic(),
+            'mail' => $this->getMail(),
+            // needs to avoid recursiv call
+            'user' => !in_array('user', $exclude) ? $this->getUser()->toArray($exclude = ['profile']) : Null,
+            'newsFrequency' => $this->getNewsFrequency(),
+            'profilePic' => $this->getProfilePic(),
+            'website' => $this->getWebsite(),
+            'linkedin' => $this->getLinkedin(),
+            'instagram' => $this->getInstagram(),
+            'facebook' => $this->getFacebook(),
+            'isActif' => $this->getIsActif()
+        ];
+
+        $wantedJobs = $this->getWantedJobs();
+        $wjArray = [];
+        foreach($wantedJobs as $job) {
+            $jwArray[] = $job->toArray();
+        }
+        $data['wantedJobs'] = $wjArray;
+
+        $domains = $this->getDomains();
+        $domArray = [];
+        foreach($domains as $domain) {
+            $domArray[] = $domain->toArray();
+        }
+        $data['domains'] = $domArray;
+
+        foreach($exclude as $key) {
+            unset($data[$key]);
+        }
+        return $data;
+    }
+
 }
