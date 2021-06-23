@@ -1512,7 +1512,7 @@ div.parametres-compte img {
   display: block;
 }
 div.parametres-compte .param-content {
-  padding: 3% 3% 3% 3%;
+  padding: 3%;
   width: 83.5%;
   right: 0;
   background-color: #D7D7D7;
@@ -2960,15 +2960,35 @@ div.content-page-projet button {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border: none;
 }
-div.content-page-projet .edit-projet-btn {
+div.content-page-projet a.edit-projet-btn {
+  margin: 0 auto;
+  height: 46px;
+  font-family: Sora;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 46px;
+  border-radius: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   width: 284px;
   background-color: white;
   color: #474B5A;
+  text-decoration: none;
+  text-align: center;
 }
-div.content-page-projet .check-add-request-btn {
+div.content-page-projet a.check-add-request-btn {
+  margin: 0 auto;
+  height: 46px;
+  font-family: Sora;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 46px;
+  border-radius: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   width: 415px;
   background-color: #474B5A;
   color: white;
+  text-decoration: none;
+  text-align: center;
 }
 div.content-page-projet .progress-bar-wrapper {
   width: 1221px;
@@ -3204,4 +3224,494 @@ div.content-page-projet div.main-content input {
 }
 div.content-page-projet div.main-content #toggle-ad:checked ~ #expand {
   height: 100%;
+}
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS PAGE EDIT PROJET !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS PAGE EDIT PROJET !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS PAGE EDIT PROJET !VVVVVVVVVVVVVVV! */
+div.content-page-edit-projet {
+  margin: 73px auto 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 5% 10%;
+  background-color: white;
+}
+div.content-page-edit-projet .section-header h3 {
+  margin: 0;
+  font-family: Sora;
+  font-weight: 800;
+  font-size: 45px;
+  line-height: 57px;
+  text-align: center;
+  color: #606060;
+}
+div.content-page-edit-projet .section-header span {
+  font-family: Nunito;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  text-align: center;
+  color: #606060;
+  margin: 0 auto;
+  display: block;
+}
+div.content-page-edit-projet .btn-tab-wrapper {
+  margin: 2% auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+div.content-page-edit-projet div.btn-tab.active {
+  background: black;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 55px;
+}
+div.content-page-edit-projet div.btn-tab {
+  width: 210px;
+  height: 55px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 55px;
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS ONGLET MON PROJET !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS ONGLET MON PROJET !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS ONGLET MON PROJET !VVVVVVVVVVVVVVV! */
+div.tab-content.my-project {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background: #FFFFFF;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+div.tab-content.my-project p {
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin-bottom: 0;
+}
+div.tab-content.my-project .checkbox-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+div.tab-content.my-project .checkbox-wrapper div {
+  align-items: center;
+  display: flex;
+}
+div.tab-content.my-project .checkbox-wrapper div label {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+div.tab-content.my-project input.checkbox {
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+  width: 25px;
+  height: 25px;
+}
+div.tab-content.my-project input, div.tab-content.my-project select {
+  width: 320px;
+  height: 45px;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+div.tab-content.my-project li {
+  display: inline-block;
+  font-family: Sora;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+}
+div.tab-content.my-project span {
+  font-family: Sora;
+  font-size: 16px;
+  line-height: 20px;
+  color: #B5B5B5;
+}
+div.tab-content.my-project #global-vision {
+  height: 75px;
+}
+div.tab-content.my-project textarea {
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  resize: none;
+  width: 530px;
+  height: 160px;
+}
+div.tab-content.my-project img {
+  width: 290px;
+  height: 160px;
+  border-radius: 15px;
+  margin-right: 50%;
+}
+div.tab-content.my-project div.left-container {
+  width: 50%;
+}
+div.tab-content.my-project div.right-container {
+  width: 50%;
+}
+div.tab-content.my-project .bottom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+div.tab-content.my-project .bottom-container .progress-bar-wrapper {
+  width: 1221px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+div.tab-content.my-project .bottom-container .progress-bar-wrapper .progress-bar-container {
+  width: 100%;
+  height: 44px;
+  background: #D8D8D8;
+  border-radius: 40px;
+}
+div.tab-content.my-project .bottom-container .progress-bar-wrapper .progress-bar-container .progress-bar-content {
+  width: 60%;
+  height: 44px;
+  background: #704DFF;
+  border-radius: 40px;
+}
+div.tab-content.my-project .bottom-container .progress-bar-wrapper span {
+  margin: 15px 0;
+  width: 80px;
+  font-family: Sora;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #474B5A;
+}
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS ONGLET MA TEAM !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS ONGLET MA TEAM !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS ONGLET MA TEAM !VVVVVVVVVVVVVVV! */
+div.tab-content.my-team {
+  opacity: 0;
+  visibility: hidden;
+}
+div.tab-content.my-team p.intro {
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin-left: 20%;
+  margin-bottom: 0;
+}
+div.tab-content.my-team input {
+  width: 845px;
+  height: 45px;
+  background: #FFFFFF;
+  border: 1.5px solid #C4C4C4;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: block;
+}
+div.tab-content.my-team a {
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  float: right;
+  margin-right: 20%;
+}
+div.tab-content.my-team .member-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+div.tab-content.my-team div.validated-teamate-card {
+  display: block;
+  margin: 80px auto 80px auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 543px;
+  max-width: 45%;
+  height: 258px;
+}
+div.tab-content.my-team div.validated-teamate-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+div.tab-content.my-team div.validated-teamate-card h4 {
+  transform: translateY(-53px);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #000000;
+  margin: 15px 0 0 0;
+}
+div.tab-content.my-team div.validated-teamate-card p {
+  transform: translateY(-53px);
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+div.tab-content.my-team div.validated-teamate-card ul {
+  transform: translateY(-53px);
+  margin: 30px;
+}
+div.tab-content.my-team div.validated-teamate-card ul li {
+  display: inline;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+}
+div.tab-content.my-team div.validated-teamate-card button {
+  display: block;
+  margin: 0 auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+}
+div.tab-content.my-team .form-card {
+  display: block;
+  /* remettre à : block */
+  width: 443px;
+  height: 338px;
+  margin: 15px auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+div.tab-content.my-team .form-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+div.tab-content.my-team .form-card .header-card {
+  height: 237px;
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  margin: 65px auto 0 auto;
+}
+div.tab-content.my-team .form-card .header-card p {
+  transform: translateY(-50px);
+  text-align: center;
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+}
+div.tab-content.my-team .form-card .header-card h4 {
+  transform: translateY(-50px);
+  font-family: Sora, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 33px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 5px 0;
+}
+div.tab-content.my-team .form-card .header-card select {
+  transform: translateY(-50px);
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+}
+div.tab-content.my-team .form-card .header-card a {
+  transform: translateY(-50px);
+  margin-right: 0;
+  float: none;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+}
+div.tab-content.my-team .form-card .body-card {
+  height: 101px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 30px 30px;
+  padding: 10px;
+}
+div.tab-content.my-team .form-card .body-card p {
+  margin: 0;
+  text-align: center;
+  font-family: Sora;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}
+div.tab-content.my-team .form-card .body-card select {
+  margin: 10px auto;
+  display: block;
+  background: #E8E8E8;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 200px;
+}
+div.tab-content.my-team .annonce-wrapper {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+div.tab-content.my-team .resume-annonce {
+  max-width: 30%;
+  width: 318px;
+  margin-top: 50px;
+}
+div.tab-content.my-team .resume-annonce .card-annonce {
+  height: 208px;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .header-card {
+  background: #757575;
+  border-radius: 30px 30px 0px 0px;
+  max-height: 127px;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .header-card .img-card {
+  transform: translateY(-53px);
+  display: block;
+  margin: 0 auto;
+  width: 106px;
+  height: 106px;
+  border-radius: 100%;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .header-card h4 {
+  transform: translateY(-63px);
+  font-family: Sora, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .body-card {
+  background: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 0 0 30px 30px;
+  padding: 5px;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .body-card h4 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #555555;
+}
+div.tab-content.my-team .resume-annonce .card-annonce .body-card p {
+  font-family: Sora;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #555555;
+}
+div.tab-content.my-team .resume-annonce textarea#collab-description {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 319px;
+  height: 109px;
+  border: none;
+  resize: none;
+  margin-top: 60px;
+  padding: 5px;
+}
+div.tab-content.my-team .resume-annonce button {
+  display: block;
+  margin: 10px auto;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #000000;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 50px;
+}
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS FIN DE PAGE MODFIER PROJET !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS FIN DE PAGE MODFIER PROJET !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS FIN DE PAGE MODFIER PROJET !VVVVVVVVVVVVVVV! */
+.validation-btn {
+  display: block;
+  margin: 10% auto;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  width: 450px;
+  height: 60px;
+  font-family: Sora;
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
+  color: #000000;
 }

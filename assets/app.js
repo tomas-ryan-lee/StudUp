@@ -21,40 +21,49 @@ import './bootstrap';
  *  FONCTIONNALITE ONGLETS 
  */
 
+ const btnTabs = document.querySelectorAll('.btn-tab');
+ const content = document.querySelectorAll('.tab-content')
  const onglets = document.querySelectorAll('.onglets');
  const contenu = document.querySelectorAll('.param-content')
  let activeContent = document.querySelector('.activeContenu')
  let index = 0;
  
- onglets.forEach(onglet => {
+/* 
+    ONGLETS MODIFIER PAGE PROJET
+    ONGLETS MODIFIER PAGE PROJET
+    ONGLETS MODIFIER PAGE PROJET
+*/
+
+
+ btnTabs.forEach(btnTab => {
  
-     onglet.addEventListener('click', () => {
+     btnTab.addEventListener('click', () => {
  
-         if(onglet.classList.contains('active')){
+         if(btnTab.classList.contains('active')){
              return;
          } else {
-             onglet.classList.add('active');
+             btnTab.classList.add('active');
          }
  
-         index = onglet.getAttribute('data-anim');
+         index = btnTab.getAttribute('data-anim');
          console.log(index);
          
-         for(let i = 0; i < onglets.length; i++) {
+         for(let i = 0; i < btnTabs.length; i++) {
  
-             if(onglets[i].getAttribute('data-anim') != index) {
-                 onglets[i].classList.remove('active');
+             if(btnTabs[i].getAttribute('data-anim') != index) {
+                 btnTabs[i].classList.remove('active');
              }
  
          }
  
-         for(let j = 0; j < contenu.length; j++){
+         for(let j = 0; j < content.length; j++){
             activeContent.style.visibility = "visible";
-             if(contenu[j].getAttribute('data-anim') == index) {
-                 contenu[j].classList.add('activeContenu');
-                 contenu[j].style.visibility = "visible";
+             if(content[j].getAttribute('data-anim') == index) {
+                 content[j].classList.add('activeContenu');
+                 content[j].style.visibility = "visible";
              } else {
-                 contenu[j].classList.remove('activeContenu');
-                 contenu[j].style.visibility = "hidden";
+                 content[j].classList.remove('activeContenu');
+                 content[j].style.visibility = "hidden";
              }
              
  
@@ -65,6 +74,50 @@ import './bootstrap';
  
  })
 
+/* 
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+*/
+
+ onglets.forEach(onglet => {
+ 
+    onglet.addEventListener('click', () => {
+
+        if(onglet.classList.contains('active')){
+            return;
+        } else {
+            onglet.classList.add('active');
+        }
+
+        index = onglet.getAttribute('data-anim');
+        console.log(index);
+
+        for(let i = 0; i < onglets.length; i++) {
+
+            if(onglets[i].getAttribute('data-anim') != index) {
+                onglets[i].classList.remove('active');
+            }
+
+        }
+
+        for(let j = 0; j < contenu.length; j++){
+           activeContent.style.visibility = "visible";
+            if(contenu[j].getAttribute('data-anim') == index) {
+                contenu[j].classList.add('activeContenu');
+                contenu[j].style.visibility = "visible";
+            } else {
+                contenu[j].classList.remove('activeContenu');
+                contenu[j].style.visibility = "hidden";
+            }
+            
+
+        }
+
+
+    })
+
+})
 
  /** 
  *  FONCTIONNALITE BURGER

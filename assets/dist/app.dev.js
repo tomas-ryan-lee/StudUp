@@ -18,10 +18,54 @@ require("./bootstrap");
  *  FONCTIONNALITE ONGLETS 
  *  FONCTIONNALITE ONGLETS 
  */
+var btnTabs = document.querySelectorAll('.btn-tab');
+var content = document.querySelectorAll('.tab-content');
 var onglets = document.querySelectorAll('.onglets');
 var contenu = document.querySelectorAll('.param-content');
 var activeContent = document.querySelector('.activeContenu');
 var index = 0;
+/* 
+    ONGLETS MODIFIER PAGE PROJET
+    ONGLETS MODIFIER PAGE PROJET
+    ONGLETS MODIFIER PAGE PROJET
+*/
+
+btnTabs.forEach(function (btnTab) {
+  btnTab.addEventListener('click', function () {
+    if (btnTab.classList.contains('active')) {
+      return;
+    } else {
+      btnTab.classList.add('active');
+    }
+
+    index = btnTab.getAttribute('data-anim');
+    console.log(index);
+
+    for (var i = 0; i < btnTabs.length; i++) {
+      if (btnTabs[i].getAttribute('data-anim') != index) {
+        btnTabs[i].classList.remove('active');
+      }
+    }
+
+    for (var j = 0; j < content.length; j++) {
+      activeContent.style.visibility = "visible";
+
+      if (content[j].getAttribute('data-anim') == index) {
+        content[j].classList.add('activeContenu');
+        content[j].style.visibility = "visible";
+      } else {
+        content[j].classList.remove('activeContenu');
+        content[j].style.visibility = "hidden";
+      }
+    }
+  });
+});
+/* 
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+*/
+
 onglets.forEach(function (onglet) {
   onglet.addEventListener('click', function () {
     if (onglet.classList.contains('active')) {
