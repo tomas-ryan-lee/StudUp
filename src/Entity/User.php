@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Datetime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 use App\Entity\Student;
 
@@ -11,7 +12,7 @@ use App\Entity\Student;
  * @ORM\Entity()
  * @ORM\Table(name="user")
  */
-class User {
+class User implements UserInterface {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -37,6 +38,11 @@ class User {
     private $profile;
 
     /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $lastConnection;
@@ -53,6 +59,10 @@ class User {
         $this->lastConnection = new DateTime();
     }
 
+    public function getUsername() {
+        return $this->login;
+    }
+
     public function setLogin(string $login) {
         $this->login = $login;
     }
@@ -63,6 +73,10 @@ class User {
 
     public function setProfile(?Student $student) {
         $this->profile = $student;
+    }
+
+    public function setRole(array $roles) {
+        $this->roles = $roles;
     }
 
     public function updateLastConnection() {
@@ -93,6 +107,10 @@ class User {
         return $this->profile;
     }
 
+    public function getRoles() {
+        return $this->roles;
+    }
+
     public function getLastConnection() {
         return $this->lastConnection;
     }
@@ -100,6 +118,12 @@ class User {
     public function getConfirmationUUID() {
         return $this->confimationUUID;
     }
+
+    public function getSalt() {
+        return null;
+    }
+
+    public function eraseCredentials() {}
 
     public function toArray(array $exclude = []) {
         $data = [
@@ -109,6 +133,12 @@ class User {
             'profile' => !in_array('profile', $exclude) ? $this->getProfile()->toArray($exclude = ['user']) : Null,
             'lastConnection' => $this->getLastConnection(),
         ];
+
+        $roles = $this->getRoles();
+        foreach($roles as $role) {
+            $data['roles'][] = $role;
+        }
+
         foreach($exclude as $key) {
             unset($data[$key]);
         }
