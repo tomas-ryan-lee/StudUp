@@ -1,184 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>
-            {% block title %}
-                StudUp, la plateforme qui aide les étudiants à réaliser leurs projets
-                			
-            {% endblock %}
-        </title>
-        <meta name="keywords" content="étudiants, entrepreneurs, aides pédagogique">
-        <meta name="author" content="Benjamin Bourdeleau">
-        <meta name="description" content="plateforme d'aide à la réalisation de projets étudiants">
-        <meta name="robots" content="">
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" />
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" />
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" />
-        {# Run `composer require symfony/webpack-encore-bundle`
-        																																																																																																		and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-        {% endblock %}
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title %} StudUp, la plateforme qui aide les étudiants à réaliser leurs projets {% endblock %}
+    </title>
+    <meta name="keywords" content="étudiants, entrepreneurs, aides pédagogique">
+    <meta name="author" content="Benjamin Bourdeleau">
+    <meta name="description" content="plateforme d'aide à la réalisation de projets étudiants">
+    <meta name="robots" content="">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" /> {# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #} {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %} {% block javascripts %} {{ encore_entry_script_tags('app')
+    }}
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    {% endblock %}
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <a rel="canonical" class="" href="{{ path('home') }}">
-                <img class="logo" src="../img/logo.png" alt="Logo du site Stud'Up">
-            </a>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="{{ path('directory') }}">Annuaire personnalisé</a></li>
-                    <li><a href="#">Tes collaborations</a></li>
-                    <li><a href="{{ path('projet_form') }}#modal-form-projet-page1">Poste ton projet</a></li>
-                    <li><a class="js-modal-signIn" href="#modalConnexion">Connexion</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="btn-burger">
-            <div class="barre"></div>
-            <div class="barre"></div>
-            <div class="barre"></div>
-        </div>
-        <div class="burger">
-            <ul class="left-menu">
-                <li>
-                    <a href="{{ path('projet_form') }}#modal-form-projet-page1">
+    <header>
+        <a rel="canonical" class="" href="{{ path('home') }}">
+            <img class="logo" src="../img/logo.png" alt="Logo du site Stud'Up">
+        </a>
+        <nav class="navigation">
+            <ul>
+                <li><a href="{{ path('directory') }}">Annuaire personnalisé</a></li>
+                <li><a href="#">Tes collaborations</a></li>
+                <li><a href="{{ path('projet_form') }}#modal-form-projet-page1">Poste ton projet</a></li>
+                <li><a class="js-modal-signIn" href="#modalConnexion">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="btn-burger">
+        <div class="barre"></div>
+        <div class="barre"></div>
+        <div class="barre"></div>
+    </div>
+    <div class="burger">
+        <ul class="left-menu">
+            <li>
+                <a href="{{ path('projet_form') }}#modal-form-projet-page1">
                         Poster ton projet
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('page_projet') }}">
+            </li>
+            <li>
+                <a href="{{ path('page_projet') }}">
                         Ton Projet
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="">
+            </li>
+            <li>
+                <a href="">
                         Tes collaborations
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('directory') }}">
+            </li>
+            <li>
+                <a href="{{ path('directory') }}">
                         Annuaire Personnalisé
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('favorites') }}">
+            </li>
+            <li>
+                <a href="{{ path('favorites') }}">
                         Tes Projets Favoris
                         
                         
                         					
                     </a>
-                </li>
-            </ul>
-            <ul class="right-menu">
-                <li>
-                    <a href="{{ path('parametre') }}">
+            </li>
+        </ul>
+        <ul class="right-menu">
+            <li>
+                <a href="{{ path('parametre') }}">
                         Parametres du compte
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="">
+            </li>
+            <li>
+                <a href="">
                         L'équipe Stud'up
                         
                         
                         					
                     </a>
-                </li>
-                <li>
-                    <a href="">
+            </li>
+            <li>
+                <a href="">
                         Nous contacter
                         
                         
                         					
                     </a>
-                </li>
-            </ul>
-            <button class="deconnect">
+            </li>
+        </ul>
+        <button class="deconnect">
                 Déconnexion
                 			
             </button>
-            <div class="citation">
-                <h4>
-                    “Seuls, ceux qui sont assez fous pour penser qu’ils peuvent changer le monde, y parviennent !”
-                    				
-                </h4>
-                <p>
-                    Steve Jobs
-                    				
-                </p>
-            </div>
-        </div>
+        <div class="citation">
+            <h4>
+                “Seuls, ceux qui sont assez fous pour penser qu’ils peuvent changer le monde, y parviennent !”
 
-        <aside id="modalConnexion" class="modal" role="dialog" aria-labelledby="title-modal">
-            <div class="modal-wrapper js-modal-stop">
-                <a href="#" class="js-modal-close">
+            </h4>
+            <p>
+                Steve Jobs
+
+            </p>
+        </div>
+    </div>
+
+    <aside id="modalConnexion" class="modal" role="dialog" aria-labelledby="title-modal">
+        <div class="modal-wrapper js-modal-stop">
+            <a href="#" class="js-modal-close">
                     &times;
                     					
                 {# Fermer la boite modal #}
                 </a>
-                <h4 id="title-modal">
-                    Te revoilà parmis nous !
-                    				
-                </h4>
-                <p>
-                    Adresse mail  :
-                    				
-                </p>
-                <input type="username" placeholder="Je jure solennellement que mes intentions sont studieuses!">
-                <p>
-                    Mot de passe :
-                    				
-                </p>
-                <input type="password" placeholder="Césameouvretoi!">
-                <a href="">
+            <h4 id="title-modal">
+                Te revoilà parmis nous !
+
+            </h4>
+            <p>
+                Adresse mail :
+
+            </p>
+            <input type="username" placeholder="Je jure solennellement que mes intentions sont studieuses!">
+            <p>
+                Mot de passe :
+
+            </p>
+            <input type="password" placeholder="Césameouvretoi!">
+            <a href="">
                     Mot de passe oublié ?
                     				
                 </a>
-                <a href="{{ path('home') }}#modal-inscription-page1">
+            <a href="{{ path('home') }}#modal-inscription-page1">
                     inscrit toi
                     				
                 </a>
-                <button type="submit">
+            <button type="submit">
                     Connexion
                     				
                 </button>
-            </div>
-        </aside>
-        {% block inscription %}{% endblock %}
-        <!-- Partie contenue de la page -->
-        {% block body %}{% endblock %}
+        </div>
+    </aside>
+    {% block inscription %}{% endblock %}
+    <!-- Partie contenue de la page -->
+    {% block body %}{% endblock %} {% block promo %}{% endblock %} {% block Projets_display %}{% endblock %}
+    <!-- Fin Partie contenue de la page -->
 
-        {% block promo %}{% endblock %}
-        {% block Projets_display %}{% endblock %}
-        <!-- Fin Partie contenue de la page -->
+    {% block footer %}{% endblock %}
+</body>
 
-        {% block footer %}{% endblock %}
-    </body>
 </html>

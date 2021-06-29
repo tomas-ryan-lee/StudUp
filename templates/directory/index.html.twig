@@ -1,24 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %} Hello DirectoryController! {% endblock %} {% block body %}
 
-{% block title %}
-    Hello DirectoryController!
-            
-        
-    
-{% endblock %}
+<div class="content-directory">
+    <h2>
+        Explore le champs des possibles
 
-{% block body %}
 
-    <div class="content-directory">
-        <h2>
-            Explore le champs des possibles
-                                                                    
-                                                        
-                                            
-                                
-                    
-        </h2>
-        <span>
+
+
+
+    </h2>
+    <span>
             Entreprend ! Trouve les collaborateurs.ices idéal.e.s
                                                                     
                                                         
@@ -26,10 +17,10 @@
                                 
                     
         </span>
-        <aside class="filters">
-            <div class="filter">
-                <input type="checkbox" name="toggle-searched-comp" id="toggle-searched-comp" checked>
-                    <label for="toggle-searched-comp">
+    <aside class="filters">
+        <div class="filter">
+            <input type="checkbox" name="toggle-searched-comp" id="toggle-searched-comp" checked>
+            <label for="toggle-searched-comp">
                         <h3>
                             COMPÉTENCES RECHERCHÉES 
                                                                                                                                                                     
@@ -39,10 +30,10 @@
                                                     
                         </h3>
                     </label>
-                    <div id="expand-searched-comp" class="filter-wrapper">
-                        <div class="inline-filter">
-                            <input type="checkbox" name="label-1" id="label-1">
-                                <label for="label-1">
+            <div id="expand-searched-comp" class="filter-wrapper">
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-1" id="label-1">
+                    <label for="label-1">
                                     label-1
                                                                                                                                                                                                                     
                                                                                                                                                                                 
@@ -50,10 +41,10 @@
                                                                                                         
                                                                     
                                 </label>
-                            </div>
-                            <div class="inline-filter">
-                                <input type="checkbox" name="label-2" id="label-2">
-                                    <label for="label-2">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-2" id="label-2">
+                    <label for="label-2">
                                         label-2
                                                                                                                                                                                                                                             
                                                                                                                                                                                                     
@@ -61,10 +52,10 @@
                                                                                                                     
                                                                             
                                     </label>
-                                </div>
-                                <div class="inline-filter">
-                                    <input type="checkbox" name="label-3" id="label-3">
-                                        <label for="label-3">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-3" id="label-3">
+                    <label for="label-3">
                                             label-3
                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                         
@@ -72,13 +63,13 @@
                                                                                                                                 
                                                                                     
                                         </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter">
+                </div>
+            </div>
+        </div>
+        <div class="filter">
 
-                                <input type="checkbox" name="toggle-mission-types" id="toggle-mission-types">
-                                    <label for="toggle-mission-types">
+            <input type="checkbox" name="toggle-mission-types" id="toggle-mission-types">
+            <label for="toggle-mission-types">
                                         <h3>
                                             TYPES DE MISSIONS 
                                                                                                                                                                                                                                                                     
@@ -88,10 +79,10 @@
                                                                                     
                                         </h3>
                                     </label>
-                                    <div id="expand-mission-types" class="filter-wrapper">
-                                        <div class="inline-filter">
-                                            <input type="checkbox" name="label-1" id="label-1">
-                                                <label for="label-1">
+            <div id="expand-mission-types" class="filter-wrapper">
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-1" id="label-1">
+                    <label for="label-1">
                                                     label-1
                                                                                                                                                                                                                 																				
                                                                                                                                                                                                                 											
@@ -99,10 +90,10 @@
                                                                                                                                                         
                                                                                                     
                                                 </label>
-                                            </div>
-                                            <div class="inline-filter">
-                                                <input type="checkbox" name="label-2" id="label-2">
-                                                    <label for="label-2">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-2" id="label-2">
+                    <label for="label-2">
                                                         label-2
                                                                                                                                                                                                                                 																						
                                                                                                                                                                                                                                 												
@@ -110,10 +101,10 @@
                                                                                                                                                                     
                                                                                                             
                                                     </label>
-                                                </div>
-                                                <div class="inline-filter">
-                                                    <input type="checkbox" name="label-3" id="label-3">
-                                                        <label for="label-3">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-3" id="label-3">
+                    <label for="label-3">
                                                             label-3
                                                                                                                                                                                                                                                 																								
                                                                                                                                                                                                                                                 													
@@ -121,13 +112,13 @@
                                                                                                                                                                                 
                                                                                                                     
                                                         </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="filter">
+                </div>
+            </div>
+        </div>
+        <div class="filter">
 
-                                                <input type="checkbox" name="toggle-sectors" id="toggle-sectors">
-                                                    <label for="toggle-sectors">
+            <input type="checkbox" name="toggle-sectors" id="toggle-sectors">
+            <label for="toggle-sectors">
                                                         <h3>
                                                             SECTEURS D’ACTIVITÉS
                                                                                                                                                                                                                                                                                                                                             
@@ -137,10 +128,10 @@
                                                                                                                     
                                                         </h3>
                                                     </label>
-                                                    <div id="expand-sectors" class="filter-wrapper">
-                                                        <div class="inline-filter">
-                                                            <input type="checkbox" name="label-1" id="label-1">
-                                                                <label for="label-1">
+            <div id="expand-sectors" class="filter-wrapper">
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-1" id="label-1">
+                    <label for="label-1">
                                                                     label-1
                                                                                                                                                                                                                                                                                 																					
                                                                                                                                                                                                                                                                                 												
@@ -148,10 +139,10 @@
                                                                                                                                                                                                         
                                                                                                                                     
                                                                 </label>
-                                                            </div>
-                                                            <div class="inline-filter">
-                                                                <input type="checkbox" name="label-2" id="label-2">
-                                                                    <label for="label-2">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-2" id="label-2">
+                    <label for="label-2">
                                                                         label-2
                                                                                                                                                                                                                                                                                                 																							
                                                                                                                                                                                                                                                                                                 													
@@ -159,10 +150,10 @@
                                                                                                                                                                                                                     
                                                                                                                                             
                                                                     </label>
-                                                                </div>
-                                                                <div class="inline-filter">
-                                                                    <input type="checkbox" name="label-3" id="label-3">
-                                                                        <label for="label-3">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-3" id="label-3">
+                    <label for="label-3">
                                                                             label-3
                                                                                                                                                                                                                                                                                                                 																									
                                                                                                                                                                                                                                                                                                                 														
@@ -170,13 +161,13 @@
                                                                                                                                                                                                                                 
                                                                                                                                                     
                                                                         </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="filter">
+                </div>
+            </div>
+        </div>
+        <div class="filter">
 
-                                                                <input type="checkbox" name="toggle-locals" id="toggle-locals">
-                                                                    <label for="toggle-locals">
+            <input type="checkbox" name="toggle-locals" id="toggle-locals">
+            <label for="toggle-locals">
                                                                         <h3>
                                                                             LOCALISATIONS
                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -186,10 +177,10 @@
                                                                                                                                                     
                                                                         </h3>
                                                                     </label>
-                                                                    <div id="expand-locals" class="filter-wrapper">
-                                                                        <div class="inline-filter">
-                                                                            <input type="checkbox" name="label-1" id="label-1">
-                                                                                <label for="label-1">
+            <div id="expand-locals" class="filter-wrapper">
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-1" id="label-1">
+                    <label for="label-1">
                                                                                     label-1
                                                                                                                                                                                                                                                                                                                                                 																						
                                                                                                                                                                                                                                                                                                                                                 													
@@ -197,10 +188,10 @@
                                                                                                                                                                                                                                                         
                                                                                                                                                                     
                                                                                 </label>
-                                                                            </div>
-                                                                            <div class="inline-filter">
-                                                                                <input type="checkbox" name="label-2" id="label-2">
-                                                                                    <label for="label-2">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-2" id="label-2">
+                    <label for="label-2">
                                                                                         label-2
                                                                                                                                                                                                                                                                                                                                                                 																								
                                                                                                                                                                                                                                                                                                                                                                 														
@@ -208,10 +199,10 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </label>
-                                                                                </div>
-                                                                                <div class="inline-filter">
-                                                                                    <input type="checkbox" name="label-3" id="label-3">
-                                                                                        <label for="label-3">
+                </div>
+                <div class="inline-filter">
+                    <input type="checkbox" name="label-3" id="label-3">
+                    <label for="label-3">
                                                                                             label-3
                                                                                                                                                                                                                                                                                                                                                                                 																										
                                                                                                                                                                                                                                                                                                                                                                                 															
@@ -219,51 +210,51 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </label>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </aside>
-                                                                        <div class="project-wrapper">
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="project-wrapper">
 
-                                                                            <div class="card">
-                                                                                <div class="card-image"></div>
+        <div class="card">
+            <div class="card-image"></div>
 
-                                                                                <div class="card-text">
-                                                                                    <h3>
-                                                                                        You Clothes
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h3>
-                                                                                    <p>
-                                                                                        Environnement - Technologie
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                    <p>
-                                                                                        Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="card-infos">
-                                                                                    <h4>
-                                                                                        Etude de besoins
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h4>
-                                                                                    <span>
+            <div class="card-text">
+                <h3>
+                    You Clothes
+
+
+
+
+
+                </h3>
+                <p>
+                    Environnement - Technologie
+
+
+
+
+
+                </p>
+                <p>
+                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+
+
+
+
+
+                </p>
+            </div>
+            <div class="card-infos">
+                <h4>
+                    Etude de besoins
+
+
+
+
+
+                </h4>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -271,7 +262,7 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <span>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -279,34 +270,34 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <div class="card-list">
-                                                                                        <p>
-                                                                                            Associé - Community manager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Associé - Graphiste
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Préstataire - Expert en référencement
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="card-footer">
-                                                                                        <span class="info">
+                <div class="card-list">
+                    <p>
+                        Associé - Community manager
+
+
+
+
+
+                    </p>
+                    <p>
+                        Associé - Graphiste
+
+
+
+
+
+                    </p>
+                    <p>
+                        Préstataire - Expert en référencement
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span class="info">
                                                                                             Monaco
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -314,10 +305,10 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                        <span>
+                    <span>
                                                                                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                                                                                         </span>
-                                                                                        <span class="info">
+                    <span class="info">
                                                                                             Actif
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -325,49 +316,49 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                </div>
+            </div>
+        </div>
 
-                                                                            <div class="card">
-                                                                                <div class="card-image"></div>
+        <div class="card">
+            <div class="card-image"></div>
 
-                                                                                <div class="card-text">
-                                                                                    <h3>
-                                                                                        You Clothes
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h3>
-                                                                                    <p>
-                                                                                        Environnement - Technologie
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                    <p>
-                                                                                        Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="card-infos">
-                                                                                    <h4>
-                                                                                        Etude de besoins
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h4>
-                                                                                    <span>
+            <div class="card-text">
+                <h3>
+                    You Clothes
+
+
+
+
+
+                </h3>
+                <p>
+                    Environnement - Technologie
+
+
+
+
+
+                </p>
+                <p>
+                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+
+
+
+
+
+                </p>
+            </div>
+            <div class="card-infos">
+                <h4>
+                    Etude de besoins
+
+
+
+
+
+                </h4>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -375,7 +366,7 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <span>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -383,34 +374,34 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <div class="card-list">
-                                                                                        <p>
-                                                                                            Associé - Community manager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Associé - Graphiste
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Préstataire - Expert en référencement
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="card-footer">
-                                                                                        <span class="info">
+                <div class="card-list">
+                    <p>
+                        Associé - Community manager
+
+
+
+
+
+                    </p>
+                    <p>
+                        Associé - Graphiste
+
+
+
+
+
+                    </p>
+                    <p>
+                        Préstataire - Expert en référencement
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span class="info">
                                                                                             Monaco
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -418,10 +409,10 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                        <span>
+                    <span>
                                                                                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                                                                                         </span>
-                                                                                        <span class="info">
+                    <span class="info">
                                                                                             Actif
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -429,49 +420,49 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                </div>
+            </div>
+        </div>
 
-                                                                            <div class="card">
-                                                                                <div class="card-image"></div>
+        <div class="card">
+            <div class="card-image"></div>
 
-                                                                                <div class="card-text">
-                                                                                    <h3>
-                                                                                        You Clothes
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h3>
-                                                                                    <p>
-                                                                                        Environnement - Technologie
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                    <p>
-                                                                                        Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="card-infos">
-                                                                                    <h4>
-                                                                                        Etude de besoins
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h4>
-                                                                                    <span>
+            <div class="card-text">
+                <h3>
+                    You Clothes
+
+
+
+
+
+                </h3>
+                <p>
+                    Environnement - Technologie
+
+
+
+
+
+                </p>
+                <p>
+                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+
+
+
+
+
+                </p>
+            </div>
+            <div class="card-infos">
+                <h4>
+                    Etude de besoins
+
+
+
+
+
+                </h4>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -479,7 +470,7 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <span>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -487,34 +478,34 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <div class="card-list">
-                                                                                        <p>
-                                                                                            Associé - Community manager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Associé - Graphiste
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Préstataire - Expert en référencement
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="card-footer">
-                                                                                        <span class="info">
+                <div class="card-list">
+                    <p>
+                        Associé - Community manager
+
+
+
+
+
+                    </p>
+                    <p>
+                        Associé - Graphiste
+
+
+
+
+
+                    </p>
+                    <p>
+                        Préstataire - Expert en référencement
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span class="info">
                                                                                             Monaco
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -522,10 +513,10 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                        <span>
+                    <span>
                                                                                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                                                                                         </span>
-                                                                                        <span class="info">
+                    <span class="info">
                                                                                             Actif
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -533,49 +524,49 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                </div>
+            </div>
+        </div>
 
-                                                                            <div class="card">
-                                                                                <div class="card-image"></div>
+        <div class="card">
+            <div class="card-image"></div>
 
-                                                                                <div class="card-text">
-                                                                                    <h3>
-                                                                                        You Clothes
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h3>
-                                                                                    <p>
-                                                                                        Environnement - Technologie
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                    <p>
-                                                                                        Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="card-infos">
-                                                                                    <h4>
-                                                                                        Etude de besoins
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                    
-                                                                                                                                                                            
-                                                                                    </h4>
-                                                                                    <span>
+            <div class="card-text">
+                <h3>
+                    You Clothes
+
+
+
+
+
+                </h3>
+                <p>
+                    Environnement - Technologie
+
+
+
+
+
+                </p>
+                <p>
+                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+
+
+
+
+
+                </p>
+            </div>
+            <div class="card-infos">
+                <h4>
+                    Etude de besoins
+
+
+
+
+
+                </h4>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -583,7 +574,7 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <span>
+                <span>
                                                                                         Q
                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                 
@@ -591,34 +582,34 @@
                                                                                                                                                                                                                                                                     
                                                                                                                                                                             
                                                                                     </span>
-                                                                                    <div class="card-list">
-                                                                                        <p>
-                                                                                            Associé - Community manager
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Associé - Graphiste
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                        <p>
-                                                                                            Préstataire - Expert en référencement
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                    
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="card-footer">
-                                                                                        <span class="info">
+                <div class="card-list">
+                    <p>
+                        Associé - Community manager
+
+
+
+
+
+                    </p>
+                    <p>
+                        Associé - Graphiste
+
+
+
+
+
+                    </p>
+                    <p>
+                        Préstataire - Expert en référencement
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <span class="info">
                                                                                             Monaco
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -626,10 +617,10 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                        <span>
+                    <span>
                                                                                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                                                                                         </span>
-                                                                                        <span class="info">
+                    <span class="info">
                                                                                             Actif
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                                                                                                                                                                     
@@ -637,13 +628,11 @@
                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                     
                                                                                         </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            {{ include('/home/_projets_display_block.html.twig') }}
-                                                        {% endblock %}
-                                                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{{ include('/home/_projets_display_block.html.twig') }} {% endblock %}
