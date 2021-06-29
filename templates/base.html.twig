@@ -20,7 +20,7 @@
 		<link
 		rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap"/>
 		{# Run `composer require symfony/webpack-encore-bundle`
-																																																																																						and uncomment the following Encore helpers to start using Symfony UX #}
+																																																																																										and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -40,7 +40,7 @@
 			<nav class="navigation">
 				<ul>
 					<li>
-						<a href="#">
+						<a href="{{ path('directory') }}">
 							Annuaire personnalisé
 
 
@@ -101,14 +101,14 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="{{ path('directory') }}">
 						Annuaire Personnalisé
 
 
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="{{ path('favorites') }}">
 						Tes Projets Favoris
 
 
