@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Hello DirectoryController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="content-directory">
+		<h2>
+			WORK IN PROGRESS
+		</h2>
+		<aside class="filters"></aside>
+		<div class="project-wrapper">
+
+			<div class="card">
+				<div class="card-image"></div>
+
+				<div class="card-text">
+					<h3>
+						You Clothes
+					</h3>
+					<p>
+						Environnement - Technologie
+					</p>
+					<p>
+						Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+					</p>
+				</div>
+				<div class="card-infos">
+					<h4>
+						Etude de besoins
+					</h4>
+					<span>
+						Q
+					</span>
+					<span>
+						Q
+					</span>
+					<div class="card-list">
+						<p>
+							Associé - Community manager
+						</p>
+						<p>
+							Associé - Graphiste
+						</p>
+						<p>
+							Préstataire - Expert en référencement
+						</p>
+					</div>
+					<div class="card-footer">
+						<span class="info">
+							Monaco
+						</span>
+						<span>
+							<img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil"/>
+						</span>
+						<span class="info">
+							Actif
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>{{ include('/home/_projets_display_block.html.twig') }}{% endblock %}
