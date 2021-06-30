@@ -16,10 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&display=swap" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" /> {# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #} {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %} {% block javascripts %} {{ encore_entry_script_tags('app')
-    }}
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> {# Run `composer require symfony/webpack-encore-bundle` and uncomment the following Encore helpers to start using Symfony UX #} {% block stylesheets %} {{ encore_entry_link_tags('app') }} {% endblock %} {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" crossorigin=></script>
+    {{ encore_entry_script_tags('app') }} {% endblock %}
 </head>
 
 <body>
@@ -31,7 +32,7 @@
         <nav class="navigation">
             <ul>
                 <li><a href="{{ path('directory') }}">Annuaire personnalisé</a></li>
-                <li><a href="#">Tes collaborations</a></li>
+                <li><a href="{{ path('collab') }}">Tes collaborations</a></li>
                 <li><a href="{{ path('projet_form') }}#modal-form-projet-page1">Poste ton projet</a></li>
                 <li><a class="js-modal-signIn" href="#modalConnexion">Connexion</a></li>
             </ul>
@@ -47,41 +48,26 @@
             <li>
                 <a href="{{ path('projet_form') }}#modal-form-projet-page1">
                         Poster ton projet
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
-                <a href="{{ path('page_projet') }}">
+                <a href="{{ path('page_projet', {'id': 4}) }}">
                         Ton Projet
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ path('collab') }}">
                         Tes collaborations
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
                 <a href="{{ path('directory') }}">
                         Annuaire Personnalisé
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
                 <a href="{{ path('favorites') }}">
                         Tes Projets Favoris
-                        
-                        
-                        					
                     </a>
             </li>
         </ul>
@@ -89,40 +75,28 @@
             <li>
                 <a href="{{ path('parametre') }}">
                         Parametres du compte
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
                 <a href="">
                         L'équipe Stud'up
-                        
-                        
-                        					
                     </a>
             </li>
             <li>
                 <a href="">
                         Nous contacter
-                        
-                        
-                        					
                     </a>
             </li>
         </ul>
         <button class="deconnect">
                 Déconnexion
-                			
             </button>
         <div class="citation">
             <h4>
                 “Seuls, ceux qui sont assez fous pour penser qu’ils peuvent changer le monde, y parviennent !”
-
             </h4>
             <p>
                 Steve Jobs
-
             </p>
         </div>
     </div>
@@ -131,35 +105,32 @@
         <div class="modal-wrapper js-modal-stop">
             <a href="#" class="js-modal-close">
                     &times;
-                    					
                 {# Fermer la boite modal #}
                 </a>
             <h4 id="title-modal">
                 Te revoilà parmis nous !
-
             </h4>
-            <p>
-                Adresse mail :
+            <form id="login_form" action="{{ path('security_login') }}" method="POST">
+                <p>
+                    Adresse mail :
+                </p>
+                <input type="text" name="username" placeholder="Je jure solennellement que mes intentions sont studieuses!">
+                <p>
+                    Mot de passe :
+                </p>
+                <input type="password" name="password" placeholder="Césameouvretoi!">
+                <a href="">
+                        Mot de passe oublié ?
+                    </a>
+                <a href="{{ path('home') }}#modal-inscription-page1">
+                        inscrit toi
+                    </a>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
-            </p>
-            <input type="username" placeholder="Je jure solennellement que mes intentions sont studieuses!">
-            <p>
-                Mot de passe :
-
-            </p>
-            <input type="password" placeholder="Césameouvretoi!">
-            <a href="">
-                    Mot de passe oublié ?
-                    				
-                </a>
-            <a href="{{ path('home') }}#modal-inscription-page1">
-                    inscrit toi
-                    				
-                </a>
-            <button type="submit">
-                    Connexion
-                    				
-                </button>
+                <button id="login_button" type="submit">
+                        Connexion
+                    </button>
+            </form>
         </div>
     </aside>
     {% block inscription %}{% endblock %}
