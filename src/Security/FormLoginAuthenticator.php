@@ -43,8 +43,7 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 
     public function supports(Request $request)
     {
-        return 'security_login' === $request->attributes->get('_route')
-            && $request->isMethod('POST');
+        return $request->isMethod('POST');
     }
 
     public function getCredentials(Request $request)
@@ -69,7 +68,7 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['username']]);
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['login' => $credentials['username']]);
 
         if (!$user) {
             // fail authentication with a custom error
@@ -95,6 +94,7 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 
     protected function getLoginUrl()
     {
+        
         return $this->router->generate('security_login');
     }
 }
