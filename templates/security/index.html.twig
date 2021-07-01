@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main">
+    <div class="home_tag_line">
+        {% if error %}
+        <div class="alert alert-danger">
+            {{ error.messageKey }}
+        </div>
+        {% endif %}
+
+        
+        <form action="{{ path('security_login') }}" method="post">
+            <fieldset>
+                <p>
+                    Adresse mail  :
+                                    
+                </p>
+                <input type="text" name="username" placeholder="Je jure solennellement que mes intentions sont studieuses!">
+                <p>
+                    Mot de passe :
+                                    
+                </p>
+                <input type="password" name="password" placeholder="Césameouvretoi!">
+                <a href="">
+                    Mot de passe oublié ?
+                                    
+                </a>
+                <a href="{{ path('home') }}#modal-inscription-page1">
+                    inscrit toi
+                                    
+                </a>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                <button type="submit">
+                    Connexion
+                                    
+                </button>
+            </fieldset>
+        </form>
+                
+    </div>
+</main>
+{% endblock %}
