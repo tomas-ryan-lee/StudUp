@@ -373,7 +373,7 @@ body {
 
 .liste-projets {
   background: #c2c2c2;
-  padding: 10%;
+  padding: 5% 10%;
   h3 {
     width: 100%;
     font-family: Sora, sans-serif;
@@ -389,7 +389,7 @@ body {
 
 .card {
   width: 355px;
-  height: 450px;
+  height: 410px;
   display: grid;
   grid-template-columns: 355px;
   grid-template-rows: 220px 220px 450px;
@@ -421,12 +421,15 @@ body {
   line-height: 20px;
   text-align: center;
   h3 {
-    margin-top: 5%;
+    margin: 5% 0 0 0;
     font-family: Sora, sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
     line-height: 30px;
+  }
+  p {
+    margin: 0;
   }
 }
 .card-infos {
@@ -476,8 +479,7 @@ body {
   .card-footer {
     width: 100%;
     position: absolute;
-    bottom: -10%;
-    margin-top: 40%;
+    margin-top: 20%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -3790,6 +3792,126 @@ div.tab-content.my-team {
 div.content-directory {
   margin-top: 73px;
   padding: 1% 5% 5% 5%;
+  background-color: #848484;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  h2 {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 27px;
+    color: #ffffff;
+    margin: 20px 0;
+  }
+  h2 + span {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 33px;
+    color: white;
+    height: 33px;
+    width: 100%;
+  }
+  aside {
+    width: 25%;
+    margin-right: 5%;
+    div.filter {
+      background: #ffffff;
+      border: 1px solid #f2f2f2;
+      box-sizing: border-box;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05), -4px 4px 3px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      width: 335px;
+      margin: 20px;
+      h3 {
+        font-family: Sora;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 31px;
+        color: #474b5a;
+        cursor: pointer;
+        margin: 16px 20px;
+      }
+      #expand-searched-comp {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        text-align: center;
+      }
+      #expand-mission-types {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        text-align: center;
+      }
+      #expand-sectors {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        text-align: center;
+      }
+      #expand-locals {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s;
+        text-align: center;
+      }
+      .filter-wrapper {
+        margin: 0 0px 30px 30px;
+        div.inline-filter {
+          width: 100%;
+          display: flex;
+        }
+        input {
+          visibility: visible;
+          display: block;
+          margin: 0 8px;
+        }
+        label {
+          font-family: Sora;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 40px;
+          color: #474b5a;
+        }
+      }
+      input {
+        visibility: hidden;
+        display: none;
+      }
+      #toggle-searched-comp:checked ~ #expand-searched-comp {
+        height: 100%;
+      }
+      #toggle-mission-types:checked ~ #expand-mission-types {
+        height: 100%;
+      }
+      #toggle-sectors:checked ~ #expand-sectors {
+        height: 100%;
+      }
+      #toggle-locals:checked ~ #expand-locals {
+        height: 100%;
+      }
+    }
+  }
+  .project-wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card {
+      margin: 20px 5%;
+      span {
+        font-size: 16px;
+        line-height: 20px;
+        color: #474b5a;
+      }
+    }
+  }
 }
 
 /*_________________________________________________________*/

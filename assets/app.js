@@ -131,3 +131,9 @@ import './bootstrap';
         $('.burger').toggleClass('isOpen');
     })
 });
+
+ /** 
+ *  FONCTIONNALITE CAROUSSEL
+ *  FONCTIONNALITE CAROUSSEL
+ *  FONCTIONNALITE CAROUSSEL
+ */

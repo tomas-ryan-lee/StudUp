@@ -107,3 +107,8 @@ $('document').ready(function () {
     $('.citation').toggleClass('isOpen'), $('.burger').toggleClass('isOpen');
   });
 });
+/** 
+*  FONCTIONNALITE CAROUSSEL
+*  FONCTIONNALITE CAROUSSEL
+*  FONCTIONNALITE CAROUSSEL
+*/
