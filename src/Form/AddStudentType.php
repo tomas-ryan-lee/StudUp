@@ -32,7 +32,10 @@ class AddStudentType extends AbstractType
                 "Homme" => "Homme",
                 "Femme" => "Femme",
             ], "label" => "Tu es ?"])
-            ->add('birthday', DateType::class, ["label" => "Date de naissance"])
+            ->add('birthday', DateType::class, [
+                'widget' => 'single_text', 
+                "label" => "Date de naissance",
+            ])
             ->add('school', TextType::class, ["label" => "Ton école"])
             ->add('study_level', ChoiceType::class, ["choices" => [
                 "BAC" => "BAC",
