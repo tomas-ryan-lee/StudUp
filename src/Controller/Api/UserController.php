@@ -103,4 +103,49 @@ class UserController {
         return new JsonResponse($updatedUser->toArray(), Response::HTTP_OK);
 
     }
+
+    /**
+     * @Route("/api/users/isValid", name="check_credentials", methods={"POST"})
+     */
+    public function isValid(Request $request) : JsonResponse {
+        $data = json_decode($request->getContent(), true);
+        $login = $data['login'];
+        $encryptedPassword = $data['password'];
+
+        $user = $this->userRepository->findOneBy(["login" => $login]);
+
+        if(empty($user)) {
+            return new JsonResponse(
+                [
+                    'isValid' => false,
+                    'error' => 'Non valid credentials'
+                ],
+                Response::HTTP_OK
+            );
+        } else {
+            if ($user->getPassword() == $encryptedPassword) {
+                return new JsonResponse(
+                    [
+                        'isValid' => true,
+                    ],
+                    Response::HTTP_OK
+                );
+            } else {
+                return new JsonResponse(
+                    [
+                        'isValid' => false,
+                        'error' => 'Login and password do not match'
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+        }
+        return new JsonResponse(
+            [
+                'isValid' => false,
+                'error' => "Unknown error"
+            ],
+            Response::HTTP_OK
+        );
+    }
 }

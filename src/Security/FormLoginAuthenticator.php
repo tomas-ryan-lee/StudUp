@@ -43,9 +43,11 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 
     public function supports(Request $request)
     {
-        return $request->isMethod('POST') &&
-            isset(json_decode($request->getContent(), true)["login"]) &&
-            isset(json_decode($request->getContent(), true)["password"]);
+        return  $request->isMethod('POST') &&
+            'security_login' === $request->attributes->get('_route');
+            // isset(json_decode($request->getContent(), true)["username"]) &&
+            // isset(json_decode($request->getContent(), true)["password"]) &&
+            // !('check_credentials' === $request->attributes->get('_route'));
     }
 
     public function getCredentials(Request $request)
