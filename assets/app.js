@@ -132,8 +132,75 @@ import './bootstrap';
     })
 });
 
- /** 
- *  FONCTIONNALITE CAROUSSEL
- *  FONCTIONNALITE CAROUSSEL
- *  FONCTIONNALITE CAROUSSEL
- */
+
+/**
+*   CONNECTION SUBMISSION
+*   CONNECTION SUBMISSION
+*   CONNECTION SUBMISSION
+*/
+
+function success(input) {
+    // input.className = 'success';
+    // // hide the error message
+    // const error = input.previousElementSibling;
+    // error.innerText = '';
+    return true;
+}
+
+function error(input, message) {
+    // TODO : display missing field message
+    // input.className = 'error';
+    // show the error message
+    // const error = input.previousElementSibling;
+    // error.innerText = message;
+    return false;
+}
+
+const form = document.getElementById('login_form');
+
+const login = form.elements[0];
+const password = form.elements[1];
+
+const requiredFields = [
+    {input: login, message: 'Login is required'},
+    {input: password, message: 'Password is required'}
+]
+
+function requireValue(input, message) {
+    return input.value.trim() === '' ?
+        error(input, message) : 
+        success(input);
+}
+
+document.getElementById("login_button").onclick = check_credentials;
+
+
+function check_credentials() {
+
+        let valid = true;
+        requiredFields.forEach((input) => {
+            valid = requireValue(input.input, input.message);
+        });
+
+        if (valid) {
+            const form = document.getElementById('login_form');
+
+            const login = form.elements[0];
+            const password = form.elements[1];
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/api/users/isValid", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.onload = function() {
+                var jsonResponse = JSON.parse(xhttp.responseText);
+                if (jsonResponse['isValid']) {
+                    document.forms["login_form"].submit();
+                } else {
+                    // TODO : display error message
+                    return false;
+                }
+            };
+            xhttp.send(JSON.stringify({"login": login.value, "password": password.value}));
+        }
+        return false;
+    }
