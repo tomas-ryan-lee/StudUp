@@ -1,38 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InscriptionController!
-{% endblock %}
+{% block title %}Hello InscriptionController!{% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
+	<div style="
+		padding: 10rem 4rem;
+		line-height: 200%;
+	">
+		{{ form_start(form) }}
+			<!-- Onglet 1 -->
+			{{ form_row(form.surname) }}
+			{{ form_row(form.name) }}
+			{{ form_row(form.gender) }}
+			{{ form_row(form.birthday) }}
+			{{ form_row(form.school) }}
+			{{ form_row(form.study_level) }}
+			{{ form_row(form.graduation_year) }}
+			{{ form_row(form.school_name) }}
 
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
+			<!-- Onglet 2 -->
+			{{ form_row(form.skills) }}
+			{{ form_row(form.domains) }}
+			{{ form_row(form.contact) }}
+			{{ form_row(form.bio) }}
 
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ 'C:/wamp64/www/LAB/StudUp/src/Controller/InscriptionController.php'|file_link(0) }}">src/Controller/InscriptionController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ 'C:/wamp64/www/LAB/StudUp/templates/inscription/index.html.twig'|file_link(0) }}">templates/inscription/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
+			<!-- Onglet 3 -->
+			{{ form_row(form.phone) }}
+			{{ form_row(form.social) }}
+			{{ form_row(form.social_url) }}
+			{{ form_row(form.email) }}
+			{{ form_row(form.password) }}
+			{{ form_row(form.agreeTerms) }}
+			{{ form_row(form.submit) }}
+		{{ form_end(form) }}
 	</div>
 {% endblock %}
