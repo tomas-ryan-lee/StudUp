@@ -60,6 +60,11 @@ class Student {
      */
     private $studyLevel;
 
+    /** 
+     * @ORM\Column(type="string")
+     */
+    private $cursus;
+
     /**
      * @ORM\Column(type="integer")
      */
@@ -80,6 +85,11 @@ class Student {
      * @ORM\Column(type="string")
      */
     private $mail;
+
+    /**
+     * @ORM\Column(type="string", nullable=True)
+     */
+    private $phoneNumber;
 
     # link to user entity (one to one)
     /**
@@ -180,6 +190,10 @@ class Student {
         $this->studyLevel = $studyLevel;
     }
 
+    public function setCursus(string $cursus) {
+        $this->cursus = $cursus;
+    }
+
     public function setGraduationYear(int $graduationYear) {
         $this->graduationYear = $graduationYear;
     }
@@ -194,6 +208,10 @@ class Student {
 
     public function setMail(string $mail) {
         $this->mail = $mail;
+    }
+
+    public function setPhoneNumber(?string $phone) {
+        $this->phoneNumber = $phone;
     }
 
     public function setUser(User $user) {
@@ -268,6 +286,10 @@ class Student {
         return $this->studyLevel;
     }
 
+    public function getCursus() {
+        return $this->cursus;
+    }
+
     public function getGraduationYear() {
         return $this->graduationYear;
     }
@@ -282,6 +304,10 @@ class Student {
 
     public function getMail() {
         return $this->mail;
+    }
+
+    public function getPhoneNumber() {
+        return $this->phoneNumber;
     }
 
     public function getUser() {
@@ -334,10 +360,12 @@ class Student {
             'birthday' => $this->getBirthday(),
             'school' => $this->getSchool()->toArray(),
             'studyLevel' => $this->getStudyLevel(),
+            'cursus' => $this->getCursus(),
             'graduationYear' => $this->getGraduationYear(),
             'studentNumber' => $this->getStudentNumber(),
             'studentCardPic' => $this->getStudentCardPic(),
             'mail' => $this->getMail(),
+            'phoneNumber' => $this->getPhoneNumber(),
             // needs to avoid recursiv call
             'user' => !in_array('user', $exclude) ? $this->getUser()->toArray($exclude = ['profile']) : Null,
             'newsFrequency' => $this->getNewsFrequency(),
