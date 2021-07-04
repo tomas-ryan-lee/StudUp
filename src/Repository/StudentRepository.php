@@ -31,10 +31,12 @@ class StudentRepository extends ServiceEntityRepository {
         string $birthday,
         School $school,
         string $studyLevel,
+        string $cursus,
         int $graduationYear,
         ?string $studentNumber,
         ?string $studentCardPic,
         string $mail,
+        ?string $phoneNumber,
         ?User $user,
         ArrayCollection $jobs,
         ArrayCollection $domains,
@@ -55,10 +57,12 @@ class StudentRepository extends ServiceEntityRepository {
         $student->setBirthday($birthday);
         $student->setSchool($school);
         $student->setStudyLevel($studyLevel);
+        $student->setCursus($cursus);
         $student->setGraduationYear($graduationYear);
         $student->setStudentNumber($studentNumber);
         $student->setStudentCardPic($studentCardPic);
         $student->setMail($mail);
+        $student->setPhoneNumber($phoneNumber);
         $student->setUser($user);
         $student->setWantedJobs($jobs);
         $student->setDomains($domains);

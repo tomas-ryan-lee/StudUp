@@ -66,6 +66,7 @@ class StudentController {
             !isset($data['birthday']) ||
             !isset($data['schoolId']) ||
             !isset($data['studyLevel']) ||
+            !isset($data['cursus']) ||
             !isset($data['graduationYear']) ||
             !isset($data['mail']) ||
             !isset($data['jobIds']) ||
@@ -86,6 +87,7 @@ class StudentController {
         $birthday = $data['birthday'];
         $school = $schoolRepository->findOneBy(['id' => $data['schoolId']]);
         $studyLevel = $data['studyLevel'];
+        $cursus = $data['cursus'];
         $graduationYear = $data['graduationYear'];
         $mail = $data['mail'];
         $jobs = $jobRepository->findBy(['id' => $data['jobIds']]);
@@ -95,6 +97,7 @@ class StudentController {
 
         $studentNumber = isset($data['studentNumber']) ? $data['studentNumber'] : Null;
         $studentCardPic = isset($data['studentCardPic']) ? $data['studentCardPic'] : Null;
+        $phoneNumber = isset($data['phoneNumber']) ? $data['phoneNumber'] : Null;
         $website = isset($data['website']) ? $data['website'] : Null;
         $linkedin = isset($data['linkedin']) ? $data['linkedin'] : Null;
         $instagram = isset($data['instagram']) ? $data['instagram'] : Null;
@@ -110,10 +113,12 @@ class StudentController {
             $birthday,
             $school,
             $studyLevel,
+            $cursus,
             $graduationYear,
             $studentNumber,
             $studentCardPic,
             $mail,
+            $phoneNumber,
             $user,
             $jobs,
             $domains,
@@ -157,8 +162,10 @@ class StudentController {
             $student->setSchool($schoolRepository->findOneBy(['id' => $data['schoolId']]));
         }
         isset($data['studyLevel']) ? $student->setStudyLevel($data['studyLevel']) : true;
+        isset($data['cursus']) ? $student->setCursus(data['cursus']) : true;
         isset($data['graduationYear']) ? $student->setGraduationYear($data['graduationYear']) : true;
         isset($data['mail']) ? $student->setMail($data['mail']) : true;
+        isset($data['phoneNumber']) ? $student->setPhoneNumber($data['phoneNumber']) : true;
         if(issert($data['jobsId'])) {
             $student->setWantedJobs($jobRepository->findBy(['id' => $jobIds]));
         }
