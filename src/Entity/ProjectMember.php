@@ -170,7 +170,7 @@ class ProjectMember {
         ];
 
         if($this->getStudent() != null) {
-            $data['student'] = $this->getStudent()->toArray();
+            $data['student'] = $this->getStudent()->toArray($exclude=['favorites']);
         } else {
             $data['student'] = null; 
         }
@@ -178,7 +178,7 @@ class ProjectMember {
         $applicantsArray = [];
         $applicants = $this->getApplicants();
         foreach($applicants as $applicant) {
-            $applicantsArray[] = $applicant->toArray();
+            $applicantsArray[] = $applicant->toArray($exclude=['favorites']);
         }
         $data['applicants'] = $applicantsArray;
 
