@@ -221,8 +221,10 @@ class AppFixtures extends Fixture
                 "other",
                 "2018-07-14",
                 "Bac +0",
+                "Sieste et manger",
                 2020,
                 "user1@example.com",
+                "0612345679",
                 "daily",
                 "example.com",
                 False
@@ -233,8 +235,10 @@ class AppFixtures extends Fixture
                 "female",
                 "1996-02-14",
                 "Bac +2",
+                "Montage audiovisuel",
                 2016,
                 "user2@example.com",
+                null,
                 "weekly",
                 "example.com",
                 True
@@ -245,8 +249,10 @@ class AppFixtures extends Fixture
                 "male",
                 "1996-03-15",
                 "Bac +5",
+                "Ingénieur informatique",
                 2020,
                 "jordan.kevin57@gmail.com",
+                "0763422779",
                 "monthly",
                 "racontard.fr",
                 True
@@ -260,8 +266,10 @@ class AppFixtures extends Fixture
             $gender,
             $birthday,
             $studyLevel,
+            $cursus,
             $graduationYear,
             $mail,
+            $phoneNumber,
             $newsFrequency,
             $website,
             $isActif
@@ -273,8 +281,10 @@ class AppFixtures extends Fixture
             $student->setGender($gender);
             $student->setBirthday($birthday);
             $student->setStudyLevel($studyLevel);
+            $student->setCursus($cursus);
             $student->setGraduationYear($graduationYear);
             $student->setMail($mail);
+            $student->setPhoneNumber($phoneNumber);
             $student->setNewsFrequency($newsFrequency);
             $student->setWebsite($website);
             $student->setIsActif($isActif);
