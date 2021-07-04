@@ -40,6 +40,7 @@ class StudentRepository extends ServiceEntityRepository {
         ?User $user,
         ArrayCollection $jobs,
         ArrayCollection $domains,
+        ArrayCollection $favorites,
         string $newsFrequency,
         string $profilePic,
         ?string $website,
@@ -73,6 +74,10 @@ class StudentRepository extends ServiceEntityRepository {
         $student->setInstagram($instagram);
         $student->setFacebook($facebook);
         $student->setIsActif($isActif);
+
+        foreach($favorites as $fav) {
+            $student->addFavorite($fav);
+        }
 
         $this->manager->persist($student);
         $this->manager->flush();

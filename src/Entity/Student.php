@@ -119,6 +119,15 @@ class Student {
     private $domains;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Project")
+     * @ORM\JoinTable(name="jt_student_favorites",
+     *     joinColumns={@ORM\JoinColumn(name="student_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")}
+     * )
+     */
+    private $favorites;
+    
+    /**
      * @ORM\Column(type="string")
      */
     private $newsFrequency;
@@ -160,6 +169,7 @@ class Student {
     public function __construct() {
         $this->wantedJobs = new ArrayCollection();
         $this->domains = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
     }
 
     public function setStatus(string $status) {
@@ -224,6 +234,21 @@ class Student {
 
     public function setDomains(ArrayCollection $domains) {
         $this->domains = $domains;
+    }
+
+    public function addFavorite(Project $favorite) {
+        if($this->favorites == Null) {
+            $this->favorites = new ArrayCollection();
+        }
+        $this->favorites->add($favorite);
+    }
+
+    public function removeFavorite(Project $favorite) {
+        $this->favorites->removeElement($favorite);
+    }
+
+    public function clearFavorites() {
+        $this->favorites = new ArrayCollection();
     }
 
     public function setNewsFrequency(string $newsFrequency) {
@@ -322,6 +347,10 @@ class Student {
         return $this->domains;
     }
 
+    public function getFavorites() {
+        return $this->favorites;
+    }
+
     public function getNewsFrequency() {
         return $this->newsFrequency;
     }
@@ -390,6 +419,15 @@ class Student {
             $domArray[] = $domain->toArray();
         }
         $data['domains'] = $domArray;
+
+        if(!in_array('favorites', $exclude)) {
+            $favorites = $this->getFavorites();
+            $favArray = [];
+            foreach($favorites as $fav) {
+                $favArray[] = $fav->getId();
+            }
+            $data['favorites'] = $favArray;
+        }
 
         foreach($exclude as $key) {
             unset($data[$key]);

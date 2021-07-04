@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Domain;
 use App\Entity\Job;
+use App\Entity\Project;
 use App\Entity\School;
 use App\Repository\StudentRepository;
 
@@ -26,7 +27,7 @@ class StudentController {
         $students = $this->studentRepository->findAll();
         $data = [];
         foreach($students as $student) {
-            $data[] = $student->toArray();
+            $data[] = $student->toArray($exclude=['favorites']);
         }
         return new JsonResponse($data, Response::HTTP_OK);
     }
@@ -44,7 +45,7 @@ class StudentController {
             );
         }
 
-        $data = $student->toArray();
+        $data = $student->toArray($exclude=['favorites']);
 
         return new JsonResponse($data, Response::HTTP_OK);
     }
@@ -105,6 +106,8 @@ class StudentController {
         $user = isset($data['userId']) ? $userRepository->findOneBy(['id' => $data['userId']]): Null;
         $isActif = true;
 
+        $favorites = isset($data['favoriteIds']) ? $projectRepository->findBy(['id' => $data['favoriteIds']]) : Null;
+
         $student = $this->studentRepository->saveStudent(
             $status,
             $surname,
@@ -122,6 +125,7 @@ class StudentController {
             $user,
             $jobs,
             $domains,
+            $favorites,
             $newsFrequency,
             $profilePic,
             $website,
@@ -185,6 +189,14 @@ class StudentController {
             $student->setUser($userRepository->findOneBy(['id' => $data['userId']]));
         }
         $updatedStudent = $this->studentRepository->updateStudent($student);
+        if(isset($data['favoriteIds'])) {
+            $student->clearFavorites();
+            $projectRepository = $this->getDoctrine()->getRepository(Project::class);
+            $favorites = $projectRepository->findBy(['id' => $data['favoriteIds']]);
+            foreach($favorites as $fav) {
+                $student->addFavorite($fav);
+            }
+        }
 
         return new JsonResponse($updatedStudent->toArray(), Response::HTTP_OK);
     }
