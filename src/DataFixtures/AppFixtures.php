@@ -430,6 +430,17 @@ class AppFixtures extends Fixture
 
         ## end of project fixtures
 
+        ## begin of favorites addition to student
+        // choose 1 to 3 random project amoung those stored in DB
+        for($i=0; $i<3; $i++) {
+            $student = $this->getReference('student'.$i);
+            $favIds = array_rand(range(0, count($projects)-1), rand(2,3));
+            $studentFav = new ArrayCollection();
+            foreach($favIds as $id) {
+                $student->addFavorite($this->getReference('project'.$id));
+            }
+        }
+
         ## begin of projectMember fixtures (and link it in project fixtures)
 
         $projectMembers = [
