@@ -182,7 +182,9 @@ class ProjectMember {
         }
         $data['applicants'] = $applicantsArray;
 
-        $data['project'] = !in_array('project', $exclude) ? $this->project->toArray($exclude=['members']) : Null;
+        if (!in_array('project', $exclude)) {
+            $data['project'] = $this->getProject()->toArray($exclude=['members']);
+        }
 
         foreach($exclude as $key) {
             unset($data[$key]);
