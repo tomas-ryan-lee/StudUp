@@ -270,7 +270,10 @@ class Project {
         $data = [
             'id' => $this->getId(),
             'name' => $this->getName(),
-            'author' => $this->getAuthor(),
+            'author' => [
+                'id' => $this->getAuthor()->getId(),
+                'profilePic' => $this->getAuthor()->getProfilePic(),
+            ],
             'incubator' => $this->getIncubator(),
             'location' => $this->getLocation(),
             'logo' => $this->getLogo(),

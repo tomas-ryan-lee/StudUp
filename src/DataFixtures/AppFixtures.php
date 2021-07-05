@@ -334,6 +334,7 @@ class AppFixtures extends Fixture
         $projects = [
             [
                 "Dummy Project",
+                1,
                 Null,
                 "Paris",
                 Null,
@@ -350,9 +351,10 @@ class AppFixtures extends Fixture
             ],
             [
                 "You Clothes",
+                1,
                 "racontard.fr",
                 "Monaco",
-                "/public/img/youclothes.jpg",
+                "/img/youclothes.jpg",
                 Null,
                 "logo",
                 "Étude de marché",
@@ -366,9 +368,10 @@ class AppFixtures extends Fixture
             ],
             [
                 "Sockart",
+                2,
                 Null,
                 "Bordeaux",
-                "/public/img/chaussetteArt.png",
+                "/img/chaussetteArt.png",
                 Null,
                 "logo",
                 "Rédaction du business plan",
@@ -384,6 +387,7 @@ class AppFixtures extends Fixture
         $i = 0;
         foreach($projects as list(
             $name,
+            $authorId,
             $incubator,
             $location,
             $logo,
@@ -400,6 +404,8 @@ class AppFixtures extends Fixture
         )) {
             $project = new Project();
             $project->setName($name);
+            $author = $this->getReference('student'.$authorId);
+            $project->setAuthor($author);
             $project->setIncubator($incubator);
             $project->setLocation($location);
             $project->setLogo($logo);
