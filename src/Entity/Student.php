@@ -136,7 +136,7 @@ class Student {
     /**
      * @ORM\Column(type="string")
      */
-    private $profilePic = "/public/img/amineTousmi.png";
+    private $profilePic = "/img/amineTousmi.png";
 
     # where is it ?
     /**
@@ -424,7 +424,7 @@ class Student {
             $favorites = $this->getFavorites();
             $favArray = [];
             foreach($favorites as $fav) {
-                $favArray[] = $fav->getId();
+                $favArray[] = $fav->toArray($exclude=['members']);
             }
             $data['favorites'] = $favArray;
         }
