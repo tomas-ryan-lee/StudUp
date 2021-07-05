@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\Project;
+use App\Entity\Student;
 
 class ProjectRepository extends ServiceEntityRepository {
 
@@ -23,6 +24,7 @@ class ProjectRepository extends ServiceEntityRepository {
 
     public function saveProject(
         string $name,
+        Student $author,
         string $incubator,
         string $location,
         ?string $logo,
@@ -42,6 +44,7 @@ class ProjectRepository extends ServiceEntityRepository {
         $project = new Project();
 
         $project->setName($name);
+        $project->setAuhtor($author);
         $project->setIncubator($incubator);
         $project->setLocation($location);
         $project->setLogo($logo);

@@ -59,6 +59,7 @@ class ProjectController {
 
         if(
             !isset($data['name']) ||
+            !isset($data['authorId']) ||
             !isset($data['incubator']) ||
             !isset($data['location']) ||
             !isset($data['currentPhase']) ||
@@ -78,6 +79,7 @@ class ProjectController {
         }
 
         $name = $data['name'];
+        $author = $studentRepository->findOneBy(['id' => $data['authorId']]);
         $domains = $domainRepository->findBy(['id' => $data['domainIds']]);
         $location = $data['location'];
         $currentPhase = $data['currentPhase'];
@@ -96,6 +98,7 @@ class ProjectController {
     
         $project = $this->projectRepository->saveProject(
             $name,
+            $author,
             $incubator,
             $location,
             $logo,
@@ -138,6 +141,7 @@ class ProjectController {
         $data = json_decode($request->getContent(), true);
 
         isset($data['name']) ? $project->setName($data['name']) : true;
+        isset($data['authorId']) ? $project->setAuthor($studentRepository->findOneBy(['id' => $data['authorId']])) : true;
         isset($data['incubator']) ? $project->setIncubator($data['incubator']) : true;
         isset($data['location']) ? $project->setLocation($data['location']) : true;
         isset($data['logo']) ? $project->setLogo($data['logo']) : true;
