@@ -13,9 +13,64 @@
         </h2>
         <p>
             Les projets qui te font vibrer
-                    
         </p>
         <div class="project-list-wrapper">
+            {% for fav in favorites %}
+                <div class="card">
+                <div class="card-image"></div>
+
+                <div class="card-text">
+                    <h3>
+                        BDD - {{ fav.name }}
+                                    
+                    </h3>
+                    <p>
+                        Environnement - Technologie
+                                    
+                    </p>
+                    <p>
+                        {{ fav.elevatorSpeech }}           
+                    </p>
+                </div>
+                <div class="card-infos">
+                    <h4>
+                        {{ fav.currentPhase }}
+                                    
+                    </h4>
+                    <span>
+                        Q
+                                    
+                    </span>
+                    <span>
+                        Q
+                                    
+                    </span>
+                    <div class="card-list">
+                        {% for member in fav.members %}
+                            {% if member.student == null %}
+                                <p>
+                                    {{ member.id }} - {{ member.type }} - {{ member.job.name }}
+                                                    
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="card-footer">
+                        <span class="info">
+                            {{ fav.location }}
+                                            
+                        </span>
+                        <span>
+                            <img class="profil-mini" src="{{ fav.author.profilePic }}" alt="image de profil" />
+                        </span>
+                        <span class="info">
+                            Actif
+                                            
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
             <div class="card">
                 <div class="card-image"></div>
