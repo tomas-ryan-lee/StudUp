@@ -361,7 +361,7 @@ body .content p {
 .liste-projets {
   background: #c2c2c2;
   padding: 5% 0%;
-  height: 700px;
+  height: 750px;
 }
 .liste-projets h3 {
   width: 100%;
@@ -374,6 +374,13 @@ body .content p {
 
 .carousel {
   width: 100%;
+}
+
+.carousel__element.slick-slide {
+  height: 480px;
+}
+.carousel__element.slick-slide .card {
+  margin: 0 auto;
 }
 
 /* !|||||||||||||||! THIS IS MINIATURE PROJET !|||||||||||||||! */

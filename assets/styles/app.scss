@@ -374,7 +374,7 @@ body {
 .liste-projets {
   background: #c2c2c2;
   padding: 5% 0%;
-  height: 700px;
+  height: 750px;
   h3 {
     width: 100%;
     font-family: Sora, sans-serif;
@@ -386,6 +386,12 @@ body {
 }
 .carousel {
   width: 100%;
+}
+.carousel__element.slick-slide {
+  height: 480px;
+  .card {
+    margin: 0 auto;
+  }
 }
 
 /* !|||||||||||||||! THIS IS MINIATURE PROJET !|||||||||||||||! */
