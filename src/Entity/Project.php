@@ -23,6 +23,12 @@ class Project {
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Student")
+     * @ORM\JoinColumn(name="student_id", referencedColumnName="id")
+     */
+    private $author;
+
     # link to domain entity (many to many)
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Domain")
@@ -117,6 +123,10 @@ class Project {
         $this->name = $name;
     }
 
+    public function setAuthor(Student $author) {
+        $this->author = $author;
+    }
+
     public function setDomains(ArrayCollection $domains) {
         $this->domains = $domains;
     }
@@ -192,6 +202,10 @@ class Project {
         return $this->name;
     }
 
+    public function getAuthor() {
+        return $this->author;
+    }
+
     public function getDomains() {
         return $this->domains;
     }
@@ -256,6 +270,10 @@ class Project {
         $data = [
             'id' => $this->getId(),
             'name' => $this->getName(),
+            'author' => [
+                'id' => $this->getAuthor()->getId(),
+                'profilePic' => $this->getAuthor()->getProfilePic(),
+            ],
             'incubator' => $this->getIncubator(),
             'location' => $this->getLocation(),
             'logo' => $this->getLogo(),
@@ -279,7 +297,7 @@ class Project {
             }
         }
 
-        if(!isset($exclude['members'])) {
+        if(!in_array('members', $exclude)) {
             $data['members'] = [];
             $members = $this->getMembers();
             foreach($members as $member) {

@@ -60,6 +60,11 @@ class Student {
      */
     private $studyLevel;
 
+    /** 
+     * @ORM\Column(type="string")
+     */
+    private $cursus;
+
     /**
      * @ORM\Column(type="integer")
      */
@@ -80,6 +85,11 @@ class Student {
      * @ORM\Column(type="string")
      */
     private $mail;
+
+    /**
+     * @ORM\Column(type="string", nullable=True)
+     */
+    private $phoneNumber;
 
     # link to user entity (one to one)
     /**
@@ -109,6 +119,15 @@ class Student {
     private $domains;
 
     /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Project")
+     * @ORM\JoinTable(name="jt_student_favorites",
+     *     joinColumns={@ORM\JoinColumn(name="student_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")}
+     * )
+     */
+    private $favorites;
+    
+    /**
      * @ORM\Column(type="string")
      */
     private $newsFrequency;
@@ -117,7 +136,7 @@ class Student {
     /**
      * @ORM\Column(type="string")
      */
-    private $profilePic = "/public/img/amineTousmi.png";
+    private $profilePic = "/img/amineTousmi.png";
 
     # where is it ?
     /**
@@ -150,6 +169,7 @@ class Student {
     public function __construct() {
         $this->wantedJobs = new ArrayCollection();
         $this->domains = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
     }
 
     public function setStatus(string $status) {
@@ -180,6 +200,10 @@ class Student {
         $this->studyLevel = $studyLevel;
     }
 
+    public function setCursus(string $cursus) {
+        $this->cursus = $cursus;
+    }
+
     public function setGraduationYear(int $graduationYear) {
         $this->graduationYear = $graduationYear;
     }
@@ -196,6 +220,10 @@ class Student {
         $this->mail = $mail;
     }
 
+    public function setPhoneNumber(?string $phone) {
+        $this->phoneNumber = $phone;
+    }
+
     public function setUser(User $user) {
         $this->user = $user;
     } 
@@ -206,6 +234,21 @@ class Student {
 
     public function setDomains(ArrayCollection $domains) {
         $this->domains = $domains;
+    }
+
+    public function addFavorite(Project $favorite) {
+        if($this->favorites == Null) {
+            $this->favorites = new ArrayCollection();
+        }
+        $this->favorites->add($favorite);
+    }
+
+    public function removeFavorite(Project $favorite) {
+        $this->favorites->removeElement($favorite);
+    }
+
+    public function clearFavorites() {
+        $this->favorites = new ArrayCollection();
     }
 
     public function setNewsFrequency(string $newsFrequency) {
@@ -268,6 +311,10 @@ class Student {
         return $this->studyLevel;
     }
 
+    public function getCursus() {
+        return $this->cursus;
+    }
+
     public function getGraduationYear() {
         return $this->graduationYear;
     }
@@ -284,6 +331,10 @@ class Student {
         return $this->mail;
     }
 
+    public function getPhoneNumber() {
+        return $this->phoneNumber;
+    }
+
     public function getUser() {
         return $this->user;
     } 
@@ -294,6 +345,10 @@ class Student {
 
     public function getDomains() {
         return $this->domains;
+    }
+
+    public function getFavorites() {
+        return $this->favorites;
     }
 
     public function getNewsFrequency() {
@@ -334,10 +389,12 @@ class Student {
             'birthday' => $this->getBirthday(),
             'school' => $this->getSchool()->toArray(),
             'studyLevel' => $this->getStudyLevel(),
+            'cursus' => $this->getCursus(),
             'graduationYear' => $this->getGraduationYear(),
             'studentNumber' => $this->getStudentNumber(),
             'studentCardPic' => $this->getStudentCardPic(),
             'mail' => $this->getMail(),
+            'phoneNumber' => $this->getPhoneNumber(),
             // needs to avoid recursiv call
             'user' => !in_array('user', $exclude) ? $this->getUser()->toArray($exclude = ['profile']) : Null,
             'newsFrequency' => $this->getNewsFrequency(),
@@ -362,6 +419,15 @@ class Student {
             $domArray[] = $domain->toArray();
         }
         $data['domains'] = $domArray;
+
+        if(!in_array('favorites', $exclude)) {
+            $favorites = $this->getFavorites();
+            $favArray = [];
+            foreach($favorites as $fav) {
+                $favArray[] = $fav->toArray($exclude=['members']);
+            }
+            $data['favorites'] = $favArray;
+        }
 
         foreach($exclude as $key) {
             unset($data[$key]);

@@ -221,8 +221,10 @@ class AppFixtures extends Fixture
                 "other",
                 "2018-07-14",
                 "Bac +0",
+                "Sieste et manger",
                 2020,
                 "user1@example.com",
+                "0612345679",
                 "daily",
                 "example.com",
                 False
@@ -233,8 +235,10 @@ class AppFixtures extends Fixture
                 "female",
                 "1996-02-14",
                 "Bac +2",
+                "Montage audiovisuel",
                 2016,
                 "user2@example.com",
+                null,
                 "weekly",
                 "example.com",
                 True
@@ -245,8 +249,10 @@ class AppFixtures extends Fixture
                 "male",
                 "1996-03-15",
                 "Bac +5",
+                "Ingénieur informatique",
                 2020,
                 "jordan.kevin57@gmail.com",
+                "0763422779",
                 "monthly",
                 "racontard.fr",
                 True
@@ -260,8 +266,10 @@ class AppFixtures extends Fixture
             $gender,
             $birthday,
             $studyLevel,
+            $cursus,
             $graduationYear,
             $mail,
+            $phoneNumber,
             $newsFrequency,
             $website,
             $isActif
@@ -273,8 +281,10 @@ class AppFixtures extends Fixture
             $student->setGender($gender);
             $student->setBirthday($birthday);
             $student->setStudyLevel($studyLevel);
+            $student->setCursus($cursus);
             $student->setGraduationYear($graduationYear);
             $student->setMail($mail);
+            $student->setPhoneNumber($phoneNumber);
             $student->setNewsFrequency($newsFrequency);
             $student->setWebsite($website);
             $student->setIsActif($isActif);
@@ -324,6 +334,7 @@ class AppFixtures extends Fixture
         $projects = [
             [
                 "Dummy Project",
+                1,
                 Null,
                 "Paris",
                 Null,
@@ -340,9 +351,10 @@ class AppFixtures extends Fixture
             ],
             [
                 "You Clothes",
+                1,
                 "racontard.fr",
                 "Monaco",
-                "/public/img/youclothes.jpg",
+                "/img/youclothes.jpg",
                 Null,
                 "logo",
                 "Étude de marché",
@@ -356,9 +368,10 @@ class AppFixtures extends Fixture
             ],
             [
                 "Sockart",
+                2,
                 Null,
                 "Bordeaux",
-                "/public/img/chaussetteArt.png",
+                "/img/chaussetteArt.png",
                 Null,
                 "logo",
                 "Rédaction du business plan",
@@ -374,6 +387,7 @@ class AppFixtures extends Fixture
         $i = 0;
         foreach($projects as list(
             $name,
+            $authorId,
             $incubator,
             $location,
             $logo,
@@ -390,6 +404,8 @@ class AppFixtures extends Fixture
         )) {
             $project = new Project();
             $project->setName($name);
+            $author = $this->getReference('student'.$authorId);
+            $project->setAuthor($author);
             $project->setIncubator($incubator);
             $project->setLocation($location);
             $project->setLogo($logo);
@@ -419,6 +435,17 @@ class AppFixtures extends Fixture
         }
 
         ## end of project fixtures
+
+        ## begin of favorites addition to student
+        // choose 1 to 3 random project amoung those stored in DB
+        for($i=0; $i<3; $i++) {
+            $student = $this->getReference('student'.$i);
+            $favIds = array_rand(range(0, count($projects)-1), rand(2,3));
+            $studentFav = new ArrayCollection();
+            foreach($favIds as $id) {
+                $student->addFavorite($this->getReference('project'.$id));
+            }
+        }
 
         ## begin of projectMember fixtures (and link it in project fixtures)
 

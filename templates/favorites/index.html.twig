@@ -2,6 +2,7 @@
 
 {% block title %}
     Hello FavoritesController!
+        
     
 {% endblock %}
 
@@ -9,6 +10,7 @@
     <div class="content-favorites">
         <h2>
             Tes favoris
+                                
                     
         </h2>
         <p>
@@ -16,6 +18,71 @@
                     
         </p>
         <div class="project-list-wrapper">
+            {% for fav in favorites %}
+                <div class="card">
+                    <div class="card-image"></div>
+
+                    <div class="card-text">
+                        <h3>
+                            BDD - 
+                            {{ fav.name }}
+
+                        </h3>
+                        <p>
+                            Environnement - Technologie
+                                                                
+                                                
+                        </p>
+                        <p>
+                            {{ fav.elevatorSpeech }}
+                        </p>
+                    </div>
+                    <div class="card-infos">
+                        <h4>
+                            {{ fav.currentPhase }}
+
+                        </h4>
+                        <span>
+                            Q
+                                                                
+                                                
+                        </span>
+                        <span>
+                            Q
+                                                                
+                                                
+                        </span>
+                        <div class="card-list">
+                            {% for member in fav.members %}
+                                {% if member.student == null %}
+                                    <p>
+                                        {{ member.id }}
+                                        - 
+                                        {{ member.type }}
+                                        - 
+                                        {{ member.job.name }}
+
+                                    </p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="card-footer">
+                            <span class="info">
+                                {{ fav.location }}
+
+                            </span>
+                            <span>
+                                <img class="profil-mini" src="{{ fav.author.profilePic }}" alt="image de profil" />
+                            </span>
+                            <span class="info">
+                                Actif
+                                                                            
+                                                        
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
 
             <div class="card">
                 <div class="card-image"></div>
@@ -23,55 +90,66 @@
                 <div class="card-text">
                     <h3>
                         You Clothes
-                                    
+                                                            
+                                            
                     </h3>
                     <p>
                         Environnement - Technologie
-                                    
+                                                            
+                                            
                     </p>
                     <p>
                         Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                    
+                                                            
+                                            
                     </p>
                 </div>
                 <div class="card-infos">
                     <h4>
                         Etude de besoins
-                                    
+                                                            
+                                            
                     </h4>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <div class="card-list">
                         <p>
                             Associé - Community manager
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Associé - Graphiste
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Préstataire - Expert en référencement
-                                            
+                                                                        
+                                                    
                         </p>
                     </div>
                     <div class="card-footer">
                         <span class="info">
                             Monaco
-                                            
+                                                                        
+                                                    
                         </span>
                         <span>
                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                         </span>
                         <span class="info">
                             Actif
-                                            
+                                                                        
+                                                    
                         </span>
                     </div>
                 </div>
@@ -82,55 +160,66 @@
                 <div class="card-text">
                     <h3>
                         You Clothes
-                                    
+                                                            
+                                            
                     </h3>
                     <p>
                         Environnement - Technologie
-                                    
+                                                            
+                                            
                     </p>
                     <p>
                         Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                    
+                                                            
+                                            
                     </p>
                 </div>
                 <div class="card-infos">
                     <h4>
                         Etude de besoins
-                                    
+                                                            
+                                            
                     </h4>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <div class="card-list">
                         <p>
                             Associé - Community manager
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Associé - Graphiste
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Préstataire - Expert en référencement
-                                            
+                                                                        
+                                                    
                         </p>
                     </div>
                     <div class="card-footer">
                         <span class="info">
                             Monaco
-                                            
+                                                                        
+                                                    
                         </span>
                         <span>
                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                         </span>
                         <span class="info">
                             Actif
-                                            
+                                                                        
+                                                    
                         </span>
                     </div>
                 </div>
@@ -141,55 +230,66 @@
                 <div class="card-text">
                     <h3>
                         You Clothes
-                                    
+                                                            
+                                            
                     </h3>
                     <p>
                         Environnement - Technologie
-                                    
+                                                            
+                                            
                     </p>
                     <p>
                         Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                    
+                                                            
+                                            
                     </p>
                 </div>
                 <div class="card-infos">
                     <h4>
                         Etude de besoins
-                                    
+                                                            
+                                            
                     </h4>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <div class="card-list">
                         <p>
                             Associé - Community manager
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Associé - Graphiste
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Préstataire - Expert en référencement
-                                            
+                                                                        
+                                                    
                         </p>
                     </div>
                     <div class="card-footer">
                         <span class="info">
                             Monaco
-                                            
+                                                                        
+                                                    
                         </span>
                         <span>
                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                         </span>
                         <span class="info">
                             Actif
-                                            
+                                                                        
+                                                    
                         </span>
                     </div>
                 </div>
@@ -200,55 +300,66 @@
                 <div class="card-text">
                     <h3>
                         You Clothes
-                                    
+                                                            
+                                            
                     </h3>
                     <p>
                         Environnement - Technologie
-                                    
+                                                            
+                                            
                     </p>
                     <p>
                         Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                    
+                                                            
+                                            
                     </p>
                 </div>
                 <div class="card-infos">
                     <h4>
                         Etude de besoins
-                                    
+                                                            
+                                            
                     </h4>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <div class="card-list">
                         <p>
                             Associé - Community manager
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Associé - Graphiste
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Préstataire - Expert en référencement
-                                            
+                                                                        
+                                                    
                         </p>
                     </div>
                     <div class="card-footer">
                         <span class="info">
                             Monaco
-                                            
+                                                                        
+                                                    
                         </span>
                         <span>
                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                         </span>
                         <span class="info">
                             Actif
-                                            
+                                                                        
+                                                    
                         </span>
                     </div>
                 </div>
@@ -259,55 +370,66 @@
                 <div class="card-text">
                     <h3>
                         You Clothes
-                                    
+                                                            
+                                            
                     </h3>
                     <p>
                         Environnement - Technologie
-                                    
+                                                            
+                                            
                     </p>
                     <p>
                         Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
-                                    
+                                                            
+                                            
                     </p>
                 </div>
                 <div class="card-infos">
                     <h4>
                         Etude de besoins
-                                    
+                                                            
+                                            
                     </h4>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <span>
                         Q
-                                    
+                                                            
+                                            
                     </span>
                     <div class="card-list">
                         <p>
                             Associé - Community manager
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Associé - Graphiste
-                                            
+                                                                        
+                                                    
                         </p>
                         <p>
                             Préstataire - Expert en référencement
-                                            
+                                                                        
+                                                    
                         </p>
                     </div>
                     <div class="card-footer">
                         <span class="info">
                             Monaco
-                                            
+                                                                        
+                                                    
                         </span>
                         <span>
                             <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
                         </span>
                         <span class="info">
                             Actif
-                                            
+                                                                        
+                                                    
                         </span>
                     </div>
                 </div>

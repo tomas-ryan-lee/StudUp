@@ -39,7 +39,7 @@ class ProjectMemberController {
 
         if (empty($projectMembers)) {
             return new JsonResponse(
-                ['error' => 'Student with id '.$id.' not found'],
+                ['error' => 'Project member with id '.$id.' not found'],
                 Response::HTTP_NOT_FOUND
             );
         }
