@@ -373,7 +373,8 @@ body {
 
 .liste-projets {
   background: #c2c2c2;
-  padding: 5% 10%;
+  padding: 5% 0%;
+  height: 700px;
   h3 {
     width: 100%;
     font-family: Sora, sans-serif;
@@ -383,13 +384,17 @@ body {
     line-height: 38px;
   }
 }
+.carousel {
+  width: 100%;
+}
+
 /* !|||||||||||||||! THIS IS MINIATURE PROJET !|||||||||||||||! */
 /* !|||||||||||||||! THIS IS MINIATURE PROJET !|||||||||||||||! */
 /* !VVVVVVVVVVVVVVV! THIS IS MINIATURE PROJET !VVVVVVVVVVVVVVV! */
 
 .card {
-  width: 355px;
-  height: 410px;
+  max-width: 355px;
+  max-height: 410px;
   display: grid;
   grid-template-columns: 355px;
   grid-template-rows: 220px 220px 450px;
