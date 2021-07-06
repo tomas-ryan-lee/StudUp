@@ -21,13 +21,13 @@ import './bootstrap';
  *  FONCTIONNALITE ONGLETS 
  */
 
- const btnTabs = document.querySelectorAll('.btn-tab');
- const content = document.querySelectorAll('.tab-content')
- const onglets = document.querySelectorAll('.onglets');
- const contenu = document.querySelectorAll('.param-content')
- let activeContent = document.querySelector('.activeContenu')
- let index = 0;
- 
+const btnTabs = document.querySelectorAll('.btn-tab');
+const content = document.querySelectorAll('.tab-content')
+const onglets = document.querySelectorAll('.onglets');
+const contenu = document.querySelectorAll('.param-content')
+let activeContent = document.querySelector('.activeContenu')
+let index = 0;
+
 /* 
     ONGLETS MODIFIER PAGE PROJET
     ONGLETS MODIFIER PAGE PROJET
@@ -35,82 +35,37 @@ import './bootstrap';
 */
 
 
- btnTabs.forEach(btnTab => {
- 
-     btnTab.addEventListener('click', () => {
- 
-         if(btnTab.classList.contains('active')){
-             return;
-         } else {
-             btnTab.classList.add('active');
-         }
- 
-         index = btnTab.getAttribute('data-anim');
-         console.log(index);
-         
-         for(let i = 0; i < btnTabs.length; i++) {
- 
-             if(btnTabs[i].getAttribute('data-anim') != index) {
-                 btnTabs[i].classList.remove('active');
-             }
- 
-         }
- 
-         for(let j = 0; j < content.length; j++){
-            activeContent.style.visibility = "visible";
-             if(content[j].getAttribute('data-anim') == index) {
-                 content[j].classList.add('activeContenu');
-                 content[j].style.visibility = "visible";
-             } else {
-                 content[j].classList.remove('activeContenu');
-                 content[j].style.visibility = "hidden";
-             }
-             
- 
-         }
- 
- 
-     })
- 
- })
+btnTabs.forEach(btnTab => {
 
-/* 
-    ONGLETS PARAMETRES
-    ONGLETS PARAMETRES
-    ONGLETS PARAMETRES
-*/
+    btnTab.addEventListener('click', () => {
 
- onglets.forEach(onglet => {
- 
-    onglet.addEventListener('click', () => {
-
-        if(onglet.classList.contains('active')){
+        if (btnTab.classList.contains('active')) {
             return;
         } else {
-            onglet.classList.add('active');
+            btnTab.classList.add('active');
         }
 
-        index = onglet.getAttribute('data-anim');
+        index = btnTab.getAttribute('data-anim');
         console.log(index);
 
-        for(let i = 0; i < onglets.length; i++) {
+        for (let i = 0; i < btnTabs.length; i++) {
 
-            if(onglets[i].getAttribute('data-anim') != index) {
-                onglets[i].classList.remove('active');
+            if (btnTabs[i].getAttribute('data-anim') != index) {
+                btnTabs[i].classList.remove('active');
             }
 
         }
 
-        for(let j = 0; j < contenu.length; j++){
-           activeContent.style.visibility = "visible";
-            if(contenu[j].getAttribute('data-anim') == index) {
-                contenu[j].classList.add('activeContenu');
-                contenu[j].style.visibility = "visible";
+        for (let j = 0; j < content.length; j++) {
+            activeContent.style.visibility = "visible";
+            if (content[j].getAttribute('data-anim') == index) {
+                content[j].classList.add('activeContenu');
+                content[j].style.visibility = "visible";
             } else {
-                contenu[j].classList.remove('activeContenu');
-                contenu[j].style.visibility = "hidden";
+                content[j].classList.remove('activeContenu');
+                content[j].style.visibility = "hidden";
             }
-            
+
 
         }
 
@@ -119,16 +74,61 @@ import './bootstrap';
 
 })
 
- /** 
- *  FONCTIONNALITE BURGER
- *  FONCTIONNALITE BURGER
- *  FONCTIONNALITE BURGER
- */
+/* 
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+    ONGLETS PARAMETRES
+*/
 
- $('document').ready(function(){
-    $('.btn-burger').click(function(){
+onglets.forEach(onglet => {
+
+    onglet.addEventListener('click', () => {
+
+        if (onglet.classList.contains('active')) {
+            return;
+        } else {
+            onglet.classList.add('active');
+        }
+
+        index = onglet.getAttribute('data-anim');
+        console.log(index);
+
+        for (let i = 0; i < onglets.length; i++) {
+
+            if (onglets[i].getAttribute('data-anim') != index) {
+                onglets[i].classList.remove('active');
+            }
+
+        }
+
+        for (let j = 0; j < contenu.length; j++) {
+            activeContent.style.visibility = "visible";
+            if (contenu[j].getAttribute('data-anim') == index) {
+                contenu[j].classList.add('activeContenu');
+                contenu[j].style.visibility = "visible";
+            } else {
+                contenu[j].classList.remove('activeContenu');
+                contenu[j].style.visibility = "hidden";
+            }
+
+
+        }
+
+
+    })
+
+})
+
+/** 
+*  FONCTIONNALITE BURGER
+*  FONCTIONNALITE BURGER
+*  FONCTIONNALITE BURGER
+*/
+
+$('document').ready(function () {
+    $('.btn-burger').click(function () {
         $('.citation').toggleClass('isOpen'),
-        $('.burger').toggleClass('isOpen');
+            $('.burger').toggleClass('isOpen');
     })
 });
 
@@ -162,13 +162,13 @@ const login = form.elements[0];
 const password = form.elements[1];
 
 const requiredFields = [
-    {input: login, message: 'Login is required'},
-    {input: password, message: 'Password is required'}
+    { input: login, message: 'Login is required' },
+    { input: password, message: 'Password is required' }
 ]
 
 function requireValue(input, message) {
     return input.value.trim() === '' ?
-        error(input, message) : 
+        error(input, message) :
         success(input);
 }
 
@@ -177,43 +177,44 @@ document.getElementById("login_button").onclick = check_credentials;
 
 function check_credentials() {
 
-        let valid = true;
-        requiredFields.forEach((input) => {
-            valid = requireValue(input.input, input.message);
-        });
-
-        if (valid) {
-            const form = document.getElementById('login_form');
-
-            const login = form.elements[0];
-            const password = form.elements[1];
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "/api/users/isValid", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.onload = function() {
-                var jsonResponse = JSON.parse(xhttp.responseText);
-                if (jsonResponse['isValid']) {
-                    document.forms["login_form"].submit();
-                } else {
-                    // TODO : display error message
-                    return false;
-                }
-            };
-            xhttp.send(JSON.stringify({"login": login.value, "password": password.value}));
-        }
-        return false;
-    }
- /** 
- *  FONCTIONNALITE CAROUSSEL
- *  FONCTIONNALITE CAROUSSEL
- *  FONCTIONNALITE CAROUSSEL
- */
-
-  $(document).ready(function(){
-    $('.carousel').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slideToScroll: 1,
+    let valid = true;
+    requiredFields.forEach((input) => {
+        valid = requireValue(input.input, input.message);
     });
-  });
+
+    if (valid) {
+        const form = document.getElementById('login_form');
+
+        const login = form.elements[0];
+        const password = form.elements[1];
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api/users/isValid", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.onload = function () {
+            var jsonResponse = JSON.parse(xhttp.responseText);
+            if (jsonResponse['isValid']) {
+                document.forms["login_form"].submit();
+            } else {
+                // TODO : display error message
+                return false;
+            }
+        };
+        xhttp.send(JSON.stringify({ "login": login.value, "password": password.value }));
+    }
+    return false;
+}
+/** 
+*  FONCTIONNALITE CAROUSSEL
+*  FONCTIONNALITE CAROUSSEL
+*  FONCTIONNALITE CAROUSSEL
+*/
+
+$(document).ready(function () {
+    $('.carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slideToScroll: 1,
+        adaptiveHeight: true
+    });
+});

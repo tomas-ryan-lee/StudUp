@@ -192,6 +192,7 @@ $(document).ready(function () {
   $('.carousel').slick({
     infinite: true,
     slidesToShow: 3,
-    slideToScroll: 1
+    slideToScroll: 1,
+    adaptiveHeight: true
   });
 });
