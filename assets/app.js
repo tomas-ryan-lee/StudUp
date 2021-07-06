@@ -204,3 +204,16 @@ function check_credentials() {
         }
         return false;
     }
+ /** 
+ *  FONCTIONNALITE CAROUSSEL
+ *  FONCTIONNALITE CAROUSSEL
+ *  FONCTIONNALITE CAROUSSEL
+ */
+
+  $(document).ready(function(){
+    $('.carousel').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slideToScroll: 1,
+    });
+  });

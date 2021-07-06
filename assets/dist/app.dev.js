@@ -107,8 +107,91 @@ $('document').ready(function () {
     $('.citation').toggleClass('isOpen'), $('.burger').toggleClass('isOpen');
   });
 });
+/**
+*   CONNECTION SUBMISSION
+*   CONNECTION SUBMISSION
+*   CONNECTION SUBMISSION
+*/
+
+function success(input) {
+  // input.className = 'success';
+  // // hide the error message
+  // const error = input.previousElementSibling;
+  // error.innerText = '';
+  return true;
+}
+
+function error(input, message) {
+  // TODO : display missing field message
+  // input.className = 'error';
+  // show the error message
+  // const error = input.previousElementSibling;
+  // error.innerText = message;
+  return false;
+}
+
+var form = document.getElementById('login_form');
+var login = form.elements[0];
+var password = form.elements[1];
+var requiredFields = [{
+  input: login,
+  message: 'Login is required'
+}, {
+  input: password,
+  message: 'Password is required'
+}];
+
+function requireValue(input, message) {
+  return input.value.trim() === '' ? error(input, message) : success(input);
+}
+
+document.getElementById("login_button").onclick = check_credentials;
+
+function check_credentials() {
+  var valid = true;
+  requiredFields.forEach(function (input) {
+    valid = requireValue(input.input, input.message);
+  });
+
+  if (valid) {
+    var _form = document.getElementById('login_form');
+
+    var _login = _form.elements[0];
+    var _password = _form.elements[1];
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/api/users/isValid", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+
+    xhttp.onload = function () {
+      var jsonResponse = JSON.parse(xhttp.responseText);
+
+      if (jsonResponse['isValid']) {
+        document.forms["login_form"].submit();
+      } else {
+        // TODO : display error message
+        return false;
+      }
+    };
+
+    xhttp.send(JSON.stringify({
+      "login": _login.value,
+      "password": _password.value
+    }));
+  }
+
+  return false;
+}
 /** 
 *  FONCTIONNALITE CAROUSSEL
 *  FONCTIONNALITE CAROUSSEL
 *  FONCTIONNALITE CAROUSSEL
 */
+
+
+$(document).ready(function () {
+  $('.carousel').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slideToScroll: 1
+  });
+});
