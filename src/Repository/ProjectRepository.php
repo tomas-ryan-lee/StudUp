@@ -13,6 +13,24 @@ use App\Entity\Student;
 class ProjectRepository extends ServiceEntityRepository {
 
     private $manager;
+    private $fieldList = [
+        'id',
+        'name',
+        'domains',
+        'incubator',
+        'location',
+        'logo',
+        'video',
+        'videoOrLogoDisplayed',
+        'currentPhase',
+        'phases',
+        'globalVision', 
+        'elevatorSpeech',
+        'asset',
+        'lookingFor',
+        'mood',
+        'hasImpact',
+    ]
 
     public function __construct(
         ManagerRegistry $registry,
@@ -68,16 +86,50 @@ class ProjectRepository extends ServiceEntityRepository {
         $this->manager->flush();
     }
 
-    public function removeProject(Student $student) {
-        $this->manager->remove($student);
+    public function removeProject(Project $project) {
+        $this->manager->remove($project);
         $this->manager->flush();
     }
 
-    public function updateStudent(Student $student) {
-        $this->manager->persist($student);
+    public function updateStudent(Project $project) {
+        $this->manager->persist($project);
         $this->manager->flush();
 
         return $student;
+    }
+    
+    
+    public function findOrFilteredProjects(...$filters) {
+        $query = $this->createQueryBuilder('p');
+        foreach($filters as $key => $value) {
+            if (!in_array($key, $this->fieldList)) {
+                throw new UnexpectedValueException();
+            }
+            if (!is_array($value)) {
+                throw new InvalidArgumentException();
+            }
+            
+            $query->orWhere('p.? IN :array', array($key))
+                ->setParameter('array', $value);
+        }
+        return $query->getQuery()->execute();
+    }
+    
+    // for later use
+    public function findAndFilteredProjects(...$filters) {
+        $query = $this->createQueryBuilder('p');
+        foreach($filters as $key => $value) {
+            if (!in_array($key, $this->fieldList)) {
+                throw new UnexpectedValueException();
+            }
+            if (!is_array($value)) {
+                throw new InvalidArgumentException();
+            }
+            
+            $query->AndWhere('p.? IN :array', array($key))
+                ->setParameter('array', $value);
+        }
+        return $query->getQuery()->execute();
     }
 
 }
