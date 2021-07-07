@@ -272,6 +272,10 @@ class Project {
             'name' => $this->getName(),
             'author' => [
                 'id' => $this->getAuthor()->getId(),
+                'name' => $this->getAuthor()->getName(),
+                'surname' => $this->getAuthor()->getSurname(),
+                'cursus' => $this->getAuthor()->getCursus(),
+                'jobs' => $this->getAuthor()->getWantedJobs(),
                 'profilePic' => $this->getAuthor()->getProfilePic(),
             ],
             'incubator' => $this->getIncubator(),
