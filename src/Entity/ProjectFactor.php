@@ -3,13 +3,13 @@
 namespace App\Entity;
 
 class ProjectFactor {
-    public const int $DOMAIN_FACTOR = 1;
-    public const int $LOCATION_FACTOR = 1;
-    public const int $CURRENT_PHASE_FACTOR = 1;
-    public const int $ASSET_FACTOR = 1;
-    public const int $LOOKING_FOR_FACTOR = 1;
-    public const int $MOOD_FACTOR = 1;
-    public const int $HAS_IMPACT_FACTOR = 1;
-    public const int $JOB_FACTOR = 1;
-    public const int $JOB_CATEGORY_FACTOR = 1;
+    const DOMAIN_FACTOR = 1;
+    const LOCATION_FACTOR = 1;
+    const CURRENT_PHASE_FACTOR = 1;
+    const ASSET_FACTOR = 1;
+    const LOOKING_FOR_FACTOR = 1;
+    const MOOD_FACTOR = 1;
+    const HAS_IMPACT_FACTOR = 1;
+    const JOB_FACTOR = 1;
+    const JOB_CATEGORY_FACTOR = 1;
 }
