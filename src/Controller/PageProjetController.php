@@ -15,10 +15,14 @@ class PageProjetController extends AbstractController
     public function index(int $id): Response
     {
         $response = $this->forward('App\Controller\Api\ProjectController::get', ['id' => $id]);
-        $project = $response->data;
-        return $this->render('page_projet/index.html.twig', [
-            'controller_name' => 'PageProjetController',
-            'project' => $project,
-        ]);
+        $project = json_decode($response->getContent(), true);
+        $project['video'] = str_replace('watch?v=', 'embed/', $project['video']);
+        return $this->render(
+            'page_projet/index.html.twig',
+            [
+                'controller_name' => 'PageProjetController',
+                'project' => $project,
+            ]
+        );
     }
 }
