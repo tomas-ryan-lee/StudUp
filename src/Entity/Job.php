@@ -51,7 +51,7 @@ class Job {
         $data = [
             'id' => $this->getId(),
             'name' => $this->getName(),
-            'catogery' => $this->getCategory()
+            'category' => $this->getCategory()
         ];
         foreach($exclude as $key) {
             unset($data[$key]);
