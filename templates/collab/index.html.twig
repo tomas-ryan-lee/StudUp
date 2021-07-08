@@ -1,0 +1,665 @@
+{% extends 'base.html.twig' %} {% block title %} Hello CollabController! {% endblock %} {% block body %}
+<div class="content-collab">
+    <div class="info-perso">
+        <img class="profil" src="../img/caroline-CBD.png" alt="photo de profil">
+        <div>
+            <h3>
+                Prénom Nom
+            </h3>
+            <p class="infos">
+                Etudiant ingénieur informatique developpement web
+            </p>
+        </div>
+        <div class="list-comp">
+            <img src="https://dummyimage.com/60x60/000/fff.png" alt="icône de compétences">
+            <ul>
+                <li>
+                    Compétence 1
+                </li>
+                <li>
+                    Compétence 2
+                </li>
+                <li>
+                    Compétence 3
+                </li>
+            </ul>
+        </div>
+        <div class="list-sector">
+            <img src="https://dummyimage.com/60x60/000/fff.png" alt="icône de secteurs">
+            <ul>
+                <li>
+                    secteur
+                </li>
+                <li>
+                    secteur 2
+                </li>
+                <li>
+                    secteur 3
+                </li>
+            </ul>
+        </div>
+        <div class="intro-text">
+            <img src="https://dummyimage.com/60x60/000/fff.png" alt="icone de présentation">
+            <p>
+                Hello, Je cherche des projets tech cools et ambitieux sur lesquels donner des coups de mains dans mon domaine : le développement d’app Web & Mobile, une apétance pour le back-end. J’utilise majoritairement du CSS, Javascript A très vite
+            </p>
+        </div>
+    </div>
+    <div class="my-collabs">
+        <div class="top-right">
+            <div class="alinea"></div>
+            <h3>
+                Mes collab
+            </h3>
+        </div>
+        <div class="filters">
+            <input type="checkbox" name="span-filter" id="span-filter">
+            <label class="toggle-filters" for="span-filter">
+                        Trier par
+                </label>
+            <div id="expand-filter">
+                <h5>
+                    Type de mission
+                </h5>
+                <div>
+                    <input type="checkbox" name="filter-associate" id="filter-associate">
+                    <label for="filter-associate" value="Associé.e">
+                            Associé.e
+                        </label>
+                </div>
+                <div>
+                    <input type="checkbox" name="filter-provider" id="filter-provider">
+                    <label for="filter-provider" value="Prestataire.trice">
+                            Prestataire.trice
+                        </label>
+                </div>
+                <div>
+                    <input type="checkbox" name="filter-consultant" id="filter-consultant">
+                    <label for="filter-consultant" value="Consultant.e">
+                            Consultant.e
+                        </label>
+                </div>
+                <h5>
+                    Chronologie
+                </h5>
+                <div>
+                    <input type="radio" id="recent" name="sort_by" value="De la plus récente">
+                    <label for="recent">
+                        De la plus récente
+                        </label>
+                </div>
+                <div>
+                    <input type="radio" id="oldest" name="sort_by" value="De la plus ancienne">
+                    <label for="oldest">
+                            De la plus ancienne
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="collab__slider">
+            <div class="selected-collab">
+
+                <label id="toggle-flip" for="flip-card">
+                    Voir la fiche du poste
+                </label>
+                <div class="card-container">
+                    <input type="checkbox" name="flip-card" id="flip-card">
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text">
+                                <h3>
+                                    You Clothes
+                                </h3>
+                                <p>
+                                    Environnement - Technologie
+                                </p>
+                                <p>
+                                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                </p>
+                            </div>
+                            <div class="card-infos">
+                                <h4>
+                                    Etude de besoins
+                                </h4>
+                                <span>
+                                Q
+                            </span>
+                                <span>
+                                Q
+                            </span>
+                                <div class="card-list">
+                                    <p>
+                                        Associé - Community manager
+                                    </p>
+                                    <p>
+                                        Associé - Graphiste
+                                    </p>
+                                    <p>
+                                        Préstataire - Expert en référencement
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="info">
+                                    Monaco                                                              
+                                </span>
+                                    <span>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </span>
+                                    <span class="info">
+                                 Actif                                                                                
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="head-back-card">
+                                <h4>Community manager</h4>
+                                <p class="partnership">Associé</p>
+                                <p class="retribution">Part de la structure</p>
+                            </div>
+                            <p class="member-since">Membre depuis mois - année</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit ad corporis
+                                iste vel sed? Aperiam animi.</p>
+                            <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                        </div>
+                        <input type="checkbox" name="end-mission" id="end-mission">
+                        <div class="card-contact">
+                            <h3>
+                                You Clothes
+                            </h3>
+                            <h5>C’était comment ?</h5>
+                            <div>
+                                <label for="good">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="joyeu">
+                                </label>
+                                <label for="okay">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="content">
+                                </label>
+                                <label for="banal">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="banale">
+                                </label>
+                                <label for="bad">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="triste">
+                                </label>
+                                <input type="checkbox" name="good" id="good">
+                                <input type="checkbox" name="okay" id="okay">
+                                <input type="checkbox" name="banal" id="banal">
+                                <input type="checkbox" name="triste" id="triste">
+                            </div>
+                            <textarea placeholder="Promis, ça reste entre nous !"></textarea>
+                            <button class="send_end" type="submit">Envoyer mon avis à Stud’up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-btn">
+                    <a class="contact" href="#">Contacter</a>
+                    <label class="confirm_end" for="end-mission">Mission finie</label>
+                </div>
+            </div>
+            <div class="selected-collab">
+
+                <label id="toggle-flip" for="flip-card2">
+                    Voir la fiche du poste
+                </label>
+                <div class="card-container">
+                    <input type="checkbox" name="flip-card2" id="flip-card2">
+                    <div class="card-wrapper2">
+                        <div class="card">
+                            <div class="card-image"></div>
+                            <div class="card-text">
+                                <h3>
+                                    You Clothes
+                                </h3>
+                                <p>
+                                    Environnement - Technologie
+                                </p>
+                                <p>
+                                    Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                </p>
+                            </div>
+                            <div class="card-infos">
+                                <h4>
+                                    Etude de besoins
+                                </h4>
+                                <span>
+                                Q
+                            </span>
+                                <span>
+                                Q
+                            </span>
+                                <div class="card-list">
+                                    <p>
+                                        Associé - Community manager
+                                    </p>
+                                    <p>
+                                        Associé - Graphiste
+                                    </p>
+                                    <p>
+                                        Préstataire - Expert en référencement
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="info">
+                                    Monaco                                                              
+                                </span>
+                                    <span>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </span>
+                                    <span class="info">
+                                 Actif                                                                                
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="head-back-card">
+                                <h4>Community manager</h4>
+                                <p class="partnership">Associé</p>
+                                <p class="retribution">Part de la structure</p>
+                            </div>
+                            <p class="member-since">Membre depuis mois - année</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit ad corporis
+                                iste vel sed? Aperiam animi.</p>
+                            <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                        </div>
+                        <input type="checkbox" name="end-mission2" id="end-mission2">
+                        <div class="card-contact2">
+                            <h3>
+                                You Clothes
+                            </h3>
+                            <h5>C’était comment ?</h5>
+                            <div>
+                                <label for="good">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="joyeu">
+                                </label>
+                                <label for="okay">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="content">
+                                </label>
+                                <label for="banal">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="banale">
+                                </label>
+                                <label for="bad">
+                                    <img src="https://dummyimage.com/50x50/000/fff.png" alt="triste">
+                                </label>
+                                <input type="checkbox" name="good" id="good">
+                                <input type="checkbox" name="okay" id="okay">
+                                <input type="checkbox" name="banal" id="banal">
+                                <input type="checkbox" name="triste" id="triste">
+                            </div>
+                            <textarea placeholder="Promis, ça reste entre nous !"></textarea>
+                            <button class="send_end" type="submit">Envoyer mon avis à Stud’up</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-btn">
+                    <a class="contact" href="#">Contacter</a>
+                    <label class="confirm_end" for="end-mission2">Mission finie</label>
+                </div>
+            </div>
+        </div>
+        <div class="arrow_prev">
+            < </div>
+                <div class="arrow_next">
+                    >
+                </div>
+        </div>
+
+        {# PARTIE MES DEMANDES EN COURS #} {# PARTIE MES DEMANDES EN COURS #} {# PARTIE MES DEMANDES EN COURS #}
+
+
+        <div class="pending-collab">
+            <div class="pending-header">
+                <div>
+                    <div class="alinea"></div>
+                    <h3>Mes demandes</h3>
+                </div>
+                <div class="pending-filters">
+                    <label class="toggle-pending-filters" for="pending-filter">Trier par</label>
+                    <input type="checkbox" name="pending-filter" id="pending-filter">
+                    <div id="expand-pending-filters">
+                        <h5>Type de mission</h5>
+                        <div>
+                            <input type="checkbox" name="pending-filter-associate" id="pending-filter-associate">
+                            <label for="pending-filter-associate">Associé.e</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="pending-filter-provider" id="pending-filter-provider">
+                            <label for="pending-filter-provider" value="Prestataire.trice">
+                                Prestataire.trice
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="pending-filter-consultant" id="pending-filter-consultant">
+                            <label for="pending-filter-consultant" value="Consultant.e">
+                                Consultant.e
+                            </label>
+                        </div>
+                        <h5>
+                            Chronologie
+                        </h5>
+                        <div>
+                            <input type="radio" id="pending-recent" name="sort_by" value="De la plus récente">
+                            <label for="pending-recent">
+                            De la plus récente
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" id="pending-oldest" name="sort_by" value="De la plus ancienne">
+                            <label for="pending-oldest">
+                                De la plus ancienne
+                        </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# FIN TITRE MES DEMANDES #} {# FIN TITRE MES DEMANDES #} {# FIN TITRE MES DEMANDES #}
+
+            <div class="pending__collab__slider">
+                <div class="selected-pending-collab">
+                    <div class="slider_element">
+                        <label id="toggle-pending-flip" for="flip-pending-card">
+                        Voir la fiche du poste
+                    </label>
+                        <div class="card-container">
+                            <input type="checkbox" name="flip-pending-card" id="flip-pending-card">
+                            <div class="card-wrapper">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-text">
+                                        <h3>
+                                            You Clothes
+                                        </h3>
+                                        <p>
+                                            Environnement - Technologie
+                                        </p>
+                                        <p>
+                                            Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                        </p>
+                                    </div>
+                                    <div class="card-infos">
+                                        <h4>
+                                            Etude de besoins
+                                        </h4>
+                                        <span>
+                                    Q
+                                </span>
+                                        <span>
+                                    Q
+                                </span>
+                                        <div class="card-list">
+                                            <p>
+                                                Associé - Community manager
+                                            </p>
+                                            <p>
+                                                Associé - Graphiste
+                                            </p>
+                                            <p>
+                                                Préstataire - Expert en référencement
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="info">
+                                        Monaco                                                              
+                                    </span>
+                                            <span>
+                                        <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                    </span>
+                                            <span class="info">
+                                     Actif                                                                                
+                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="head-back-card">
+                                        <h4>Community manager</h4>
+                                        <p class="partnership">Associé</p>
+                                        <p class="retribution">Part de la structure</p>
+                                    </div>
+                                    <p class="member-since">Membre depuis mois - année</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit
+                                        ad corporis iste vel sed? Aperiam animi.</p>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-btn">
+                            <a class="contact" href="#">Contacter</a>
+                            <button type="submit" class="cancel-demand">Annuler ma demande</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="selected-pending-collab">
+                    <div class="slider_element">
+                        <label id="toggle-pending-flip" for="flip-pending-card2">
+                        Voir la fiche du poste
+                        </label>
+                        <div class="card-container">
+                            <input type="checkbox" name="flip-pending-card2" id="flip-pending-card2">
+                            <div class="card-wrapper2">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-text">
+                                        <h3>
+                                            You Clothes
+                                        </h3>
+                                        <p>
+                                            Environnement - Technologie
+                                        </p>
+                                        <p>
+                                            Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                        </p>
+                                    </div>
+                                    <div class="card-infos">
+                                        <h4>
+                                            Etude de besoins
+                                        </h4>
+                                        <span>
+                                Q
+                            </span>
+                                        <span>
+                                Q
+                            </span>
+                                        <div class="card-list">
+                                            <p>
+                                                Associé - Community manager
+                                            </p>
+                                            <p>
+                                                Associé - Graphiste
+                                            </p>
+                                            <p>
+                                                Préstataire - Expert en référencement
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="info">
+                                    Monaco                                                              
+                                </span>
+                                            <span>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </span>
+                                            <span class="info">
+                                 Actif                                                                                
+                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="head-back-card">
+                                        <h4>Community manager</h4>
+                                        <p class="partnership">Associé</p>
+                                        <p class="retribution">Part de la structure</p>
+                                    </div>
+                                    <p class="member-since">Membre depuis mois - année</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit
+                                        ad corporis iste vel sed? Aperiam animi.</p>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-btn">
+                            <a class="contact" href="#">Contacter</a>
+                            <button type="submit" class="cancel-demand">Annuler ma demande</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="selected-pending-collab">
+                    <div class="slider_element">
+                        <label id="toggle-pending-flip" for="flip-pending-card3">
+                        Voir la fiche du poste
+                        </label>
+                        <div class="card-container">
+                            <input type="checkbox" name="flip-pending-card3" id="flip-pending-card3">
+                            <div class="card-wrapper3">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-text">
+                                        <h3>
+                                            You Clothes
+                                        </h3>
+                                        <p>
+                                            Environnement - Technologie
+                                        </p>
+                                        <p>
+                                            Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                        </p>
+                                    </div>
+                                    <div class="card-infos">
+                                        <h4>
+                                            Etude de besoins
+                                        </h4>
+                                        <span>
+                                Q
+                            </span>
+                                        <span>
+                                Q
+                            </span>
+                                        <div class="card-list">
+                                            <p>
+                                                Associé - Community manager
+                                            </p>
+                                            <p>
+                                                Associé - Graphiste
+                                            </p>
+                                            <p>
+                                                Préstataire - Expert en référencement
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="info">
+                                    Monaco                                                              
+                                </span>
+                                            <span>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </span>
+                                            <span class="info">
+                                 Actif                                                                                
+                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="head-back-card">
+                                        <h4>Community manager</h4>
+                                        <p class="partnership">Associé</p>
+                                        <p class="retribution">Part de la structure</p>
+                                    </div>
+                                    <p class="member-since">Membre depuis mois - année</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit
+                                        ad corporis iste vel sed? Aperiam animi.</p>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-btn">
+                            <a class="contact" href="#">Contacter</a>
+                            <button type="submit" class="cancel-demand">Annuler ma demande</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="selected-pending-collab">
+                    <div class="slider_element">
+                        <label id="toggle-pending-flip" for="flip-pending-card4">
+                        Voir la fiche du poste
+                        </label>
+                        <div class="card-container">
+                            <input type="checkbox" name="flip-pending-card4" id="flip-pending-card4">
+                            <div class="card-wrapper4">
+                                <div class="card">
+                                    <div class="card-image"></div>
+                                    <div class="card-text">
+                                        <h3>
+                                            You Clothes
+                                        </h3>
+                                        <p>
+                                            Environnement - Technologie
+                                        </p>
+                                        <p>
+                                            Une application pour permettre aux gens de scanner les habits et pouvoir s’habiller de manière écologique.
+                                        </p>
+                                    </div>
+                                    <div class="card-infos">
+                                        <h4>
+                                            Etude de besoins
+                                        </h4>
+                                        <span>
+                                Q
+                            </span>
+                                        <span>
+                                Q
+                            </span>
+                                        <div class="card-list">
+                                            <p>
+                                                Associé - Community manager
+                                            </p>
+                                            <p>
+                                                Associé - Graphiste
+                                            </p>
+                                            <p>
+                                                Préstataire - Expert en référencement
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="info">
+                                    Monaco                                                              
+                                </span>
+                                            <span>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </span>
+                                            <span class="info">
+                                 Actif                                                                                
+                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="head-back-card">
+                                        <h4>Community manager</h4>
+                                        <p class="partnership">Associé</p>
+                                        <p class="retribution">Part de la structure</p>
+                                    </div>
+                                    <p class="member-since">Membre depuis mois - année</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nihil veniam itaque fugiat, incidunt quis at maxime blanditiis dignissimos nemo excepturi eveniet, vitae ad vero, animi sint ipsam voluptatibus pariatur. Sit
+                                        ad corporis iste vel sed? Aperiam animi.</p>
+                                    <img class="profil-mini" src="../img/caroline-CBD.png" alt="image de profil" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-btn">
+                            <a class="contact" href="#">Contacter</a>
+                            <button type="submit" class="cancel-demand">Annuler ma demande</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pending_arrow_prev">
+                < </div>
+                    <div class="pending_arrow_next">
+                        >
+                    </div>
+            </div>
+        </div>
+        {{ include('/home/_projets_display_block.html.twig') }} {% endblock %}

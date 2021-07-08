@@ -120,13 +120,13 @@ onglets.forEach(onglet => {
 })
 
 /** 
-*  FONCTIONNALITE BURGER
-*  FONCTIONNALITE BURGER
-*  FONCTIONNALITE BURGER
-*/
+ *  FONCTIONNALITE BURGER
+ *  FONCTIONNALITE BURGER
+ *  FONCTIONNALITE BURGER
+ */
 
-$('document').ready(function () {
-    $('.btn-burger').click(function () {
+$('document').ready(function() {
+    $('.btn-burger').click(function() {
         $('.citation').toggleClass('isOpen'),
             $('.burger').toggleClass('isOpen');
     })
@@ -134,10 +134,10 @@ $('document').ready(function () {
 
 
 /**
-*   CONNECTION SUBMISSION
-*   CONNECTION SUBMISSION
-*   CONNECTION SUBMISSION
-*/
+ *   CONNECTION SUBMISSION
+ *   CONNECTION SUBMISSION
+ *   CONNECTION SUBMISSION
+ */
 
 function success(input) {
     // input.className = 'success';
@@ -191,7 +191,7 @@ function check_credentials() {
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "/api/users/isValid", true);
         xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.onload = function () {
+        xhttp.onload = function() {
             var jsonResponse = JSON.parse(xhttp.responseText);
             if (jsonResponse['isValid']) {
                 document.forms["login_form"].submit();
@@ -205,12 +205,12 @@ function check_credentials() {
     return false;
 }
 /** 
-*  FONCTIONNALITE CAROUSSEL
-*  FONCTIONNALITE CAROUSSEL
-*  FONCTIONNALITE CAROUSSEL
-*/
+ *  FONCTIONNALITE CAROUSSEL PROJET FAIT POUR TOI
+ *  FONCTIONNALITE CAROUSSEL PROJET FAIT POUR TOI
+ *  FONCTIONNALITE CAROUSSEL PROJET FAIT POUR TOI
+ */
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.carousel').slick({
         infinite: true,
         slidesToShow: 3,
@@ -218,3 +218,48 @@ $(document).ready(function () {
         adaptiveHeight: true
     });
 });
+/** 
+ *  FONCTIONNALITE CAROUSSEL MES COLLABS
+ *  FONCTIONNALITE CAROUSSEL MES COLLABS
+ *  FONCTIONNALITE CAROUSSEL MES COLLABS
+ */
+$(document).ready(function() {
+    $('.collab__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slideToScroll: 1,
+        adaptiveHeight: true,
+        prevArrow: '.arrow_prev',
+        nextArrow: '.arrow_next'
+    });
+});
+
+$(document).ready(function() {
+    $('.pending__collab__slider').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slideToScroll: 1,
+        adaptiveHeight: true,
+        prevArrow: '.pending_arrow_prev',
+        nextArrow: '.pending_arrow_next',
+    });
+});
+
+/*
+ *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
+ *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
+ *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
+ */
+/**
+let btnConfirm = document.querySelector('.confirm_end');
+let btnSend = document.querySelector('.send_end');
+let btnCancel = document.querySelector('.cancel_end');
+btnConfirm.addEventListener('click', () => {
+    btnConfirm.innerText = "Annuler"
+    btnSend.style.display = "block";
+})
+btnCancel.addEventListener('click', () => {
+    btnCancel.style.display = "none";
+    btnSend.style.display = "none";
+    btnConfirm.innerText = "Mission finie";
+}) */
