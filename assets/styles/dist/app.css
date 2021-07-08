@@ -400,11 +400,6 @@ body .content p {
   cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 20px 20px 7px rgba(0, 0, 0, 0.01);
-}
-
 .card-image {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -495,7 +490,7 @@ body .content p {
   box-sizing: border-box;
   border-radius: 50px;
   margin-bottom: -50%;
-  margin-left: -10%;
+  margin-left: -16%;
 }
 
 /*_____________________________________________________*/
@@ -3933,4 +3928,783 @@ div.content-favorites .project-list-wrapper .card p {
 }
 div.content-favorites .project-list-wrapper .card .card-list p {
   margin: 1%;
+}
+
+/*_________________________________________________________*/
+/* !|||||||||||||||! THIS IS PAGE COLLAB !|||||||||||||||! */
+/* !|||||||||||||||! THIS IS PAGE COLLAB !|||||||||||||||! */
+/* !VVVVVVVVVVVVVVV! THIS IS PAGE COLLAB !VVVVVVVVVVVVVVV! */
+div.content-collab {
+  margin-top: 73px;
+  padding: 7%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+div.content-collab .info-perso {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 3%;
+  width: 535px;
+  max-height: 660px;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 30px;
+}
+div.content-collab .info-perso img.profil {
+  display: block;
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+}
+div.content-collab .info-perso img + div {
+  width: 50%;
+  margin: 20px 30px;
+}
+div.content-collab .info-perso h3 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  color: #474b5a;
+  margin: 0;
+}
+div.content-collab .info-perso p.infos {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 20px;
+  color: #474b5a;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+div.content-collab .info-perso .list-comp,
+div.content-collab .info-perso .list-sector,
+div.content-collab .info-perso .intro-text {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+div.content-collab .info-perso .list-comp img,
+div.content-collab .info-perso .list-sector img,
+div.content-collab .info-perso .intro-text img {
+  align-self: baseline;
+  border-radius: 100%;
+  margin-left: 20px;
+}
+div.content-collab .info-perso .list-comp li,
+div.content-collab .info-perso .list-sector li,
+div.content-collab .info-perso .intro-text li {
+  display: inline-block;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #474b5a;
+}
+div.content-collab .info-perso p {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #474b5a;
+  width: 80%;
+  display: block;
+  text-align: left;
+  padding-left: 40px;
+}
+div.content-collab .my-collabs {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+div.content-collab .my-collabs div.top-right {
+  height: 40px;
+}
+div.content-collab .my-collabs div.top-right .alinea {
+  float: left;
+  width: 5px;
+  height: 40px;
+  background: #704dff;
+  border-radius: 10px;
+  margin-right: 26px;
+}
+div.content-collab .my-collabs div.top-right h3 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 40px;
+  color: #474b5a;
+  width: 250px;
+  margin: 0;
+}
+div.content-collab .my-collabs div.top-right .filters {
+  float: right;
+}
+div.content-collab .my-collabs label.toggle-filters {
+  display: block;
+  width: 270px;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 10px;
+  height: 45px;
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 45px;
+  color: #474b5a;
+  cursor: pointer;
+}
+div.content-collab .my-collabs #expand-filter {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+  text-align: left;
+  width: 270px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.content-collab .my-collabs #expand-filter h5 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: #474b5a;
+  margin: 0 0px 0 15px;
+}
+div.content-collab .my-collabs #expand-filter div {
+  align-self: flex-start;
+  margin-left: 30px;
+}
+div.content-collab .my-collabs #expand-filter div label {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 45px;
+  color: #474b5a;
+}
+div.content-collab .my-collabs .collab__slider {
+  display: block;
+  max-width: 700px;
+  max-height: 900px;
+}
+div.content-collab .my-collabs .selected-collab.slick-slide {
+  height: 820px;
+}
+div.content-collab .my-collabs .selected-collab {
+  display: block;
+  margin: 0 auto;
+}
+div.content-collab .my-collabs .selected-collab label {
+  display: block;
+  width: 355px;
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+  color: #474b5a;
+  margin: 5% auto;
+  cursor: pointer;
+}
+div.content-collab .my-collabs .selected-collab .card-container {
+  width: 355px;
+  height: 410px;
+  margin: 0 auto;
+}
+div.content-collab .my-collabs .selected-collab .card-wrapper,
+div.content-collab .my-collabs .selected-collab .card-wrapper2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+div.content-collab .my-collabs .selected-collab .card,
+div.content-collab .my-collabs .selected-collab .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+div.content-collab .my-collabs .selected-collab .card {
+  backface-visibility: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+div.content-collab .my-collabs .selected-collab .card-back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+  max-height: 100%;
+  border: 1px solid #99a2c1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+div.content-collab .my-collabs .selected-collab .card-back .head-back-card {
+  padding: 3%;
+  background: #b8b8e8;
+  border-radius: 15px 15px 0 0;
+}
+div.content-collab .my-collabs .selected-collab .card-back h4 {
+  margin: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+div.content-collab .my-collabs .selected-collab .card-back p.partnership {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px;
+  padding: 0;
+}
+div.content-collab .my-collabs .selected-collab .card-back p.retribution {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0;
+}
+div.content-collab .my-collabs .selected-collab .card-back p.member-since {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #5e626e;
+  padding: 0;
+}
+div.content-collab .my-collabs .selected-collab .card-back p {
+  margin: 10px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #474b5a;
+  padding: 3%;
+}
+div.content-collab .my-collabs .selected-collab .card-back .profil-mini {
+  width: 85px;
+  height: 85px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  transform: translateY(22%);
+  margin: 0 auto;
+  display: block;
+}
+div.content-collab .my-collabs .selected-collab .card-contact,
+div.content-collab .my-collabs .selected-collab .card-contact2 {
+  height: 0;
+  width: 100%;
+  display: none;
+  position: absolute;
+  transition: 1s;
+  background-color: #fff;
+  border-radius: 15px;
+}
+div.content-collab .my-collabs .selected-collab .card-contact input,
+div.content-collab .my-collabs .selected-collab .card-contact2 input {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+div.content-collab .my-collabs .selected-collab .card-contact h5,
+div.content-collab .my-collabs .selected-collab .card-contact2 h5 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #474b5a;
+  margin: 0;
+}
+div.content-collab .my-collabs .selected-collab .card-contact div,
+div.content-collab .my-collabs .selected-collab .card-contact2 div {
+  display: flex;
+  justify-content: space-around;
+  margin: 0% 15%;
+}
+div.content-collab .my-collabs .selected-collab .card-contact div label,
+div.content-collab .my-collabs .selected-collab .card-contact2 div label {
+  box-shadow: none;
+  visibility: hidden;
+}
+div.content-collab .my-collabs .selected-collab .card-contact div img,
+div.content-collab .my-collabs .selected-collab .card-contact2 div img {
+  border-radius: 100%;
+  cursor: pointer;
+  visibility: visible;
+}
+div.content-collab .my-collabs .selected-collab .card-contact textarea,
+div.content-collab .my-collabs .selected-collab .card-contact2 textarea {
+  display: block;
+  margin: 0 auto;
+  resize: none;
+  width: 260px;
+  height: 80px;
+  background: #ffffff;
+  border: 1px solid #bec2d2;
+  border-radius: 10px;
+}
+div.content-collab .my-collabs .selected-collab .card-contact h3,
+div.content-collab .my-collabs .selected-collab .card-contact2 h3 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #474b5a;
+  margin: 15px;
+}
+div.content-collab .my-collabs .selected-collab .card-contact p,
+div.content-collab .my-collabs .selected-collab .card-contact2 p {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #474b5a;
+  margin: 0;
+}
+div.content-collab .my-collabs .selected-collab .contact-btn {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 60%;
+}
+div.content-collab .my-collabs .selected-collab .confirm_end {
+  margin: 0;
+  display: block;
+  width: 155px;
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  color: #474b5a;
+  cursor: pointer;
+}
+div.content-collab .my-collabs .selected-collab .send_end {
+  display: block;
+  width: 155px;
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  color: #474b5a;
+  margin: 5% auto;
+  cursor: pointer;
+}
+div.content-collab .my-collabs .selected-collab .contact {
+  display: block;
+  width: 155px;
+  height: 45px;
+  background: #474b5a;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+div.content-collab .my-collabs input#flip-card,
+div.content-collab .my-collabs input#flip-card2,
+div.content-collab .my-collabs input#end-mission,
+div.content-collab .my-collabs input#end-mission2,
+div.content-collab .my-collabs input#span-filter {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+}
+div.content-collab .my-collabs #span-filter:checked ~ #expand-filter {
+  height: 100%;
+  border: 1px solid #90a5f3;
+  max-height: 350px;
+}
+div.content-collab .my-collabs input#flip-card:checked ~ .card-wrapper {
+  transform: rotateY(180deg);
+}
+div.content-collab .my-collabs input#flip-card2:checked ~ .card-wrapper2 {
+  transform: rotateY(180deg);
+}
+div.content-collab .my-collabs input#end-mission:checked ~ .card-contact,
+div.content-collab .my-collabs input#end-mission2:checked ~ .card-contact2 {
+  height: 88%;
+  display: block;
+  transition: 0.5s;
+}
+div.content-collab .arrow_next {
+  position: absolute;
+  right: 15%;
+  top: 70%;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.content-collab .arrow_prev {
+  position: absolute;
+  right: 45%;
+  top: 70%;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.content-collab .pending-collab {
+  display: block;
+  width: 100%;
+}
+div.content-collab .pending-collab div.pending-header {
+  display: flex;
+  justify-content: space-between;
+}
+div.content-collab .pending-collab div.pending-header .alinea {
+  float: left;
+  width: 5px;
+  height: 40px;
+  background: #704dff;
+  border-radius: 10px;
+  margin-right: 26px;
+}
+div.content-collab .pending-collab div.pending-header h3 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 40px;
+  color: #474b5a;
+  width: 250px;
+  margin: 0;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters {
+  float: right;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters label.toggle-pending-filters {
+  display: block;
+  width: 270px;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 10px;
+  height: 45px;
+  text-align: center;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 45px;
+  color: #474b5a;
+  cursor: pointer;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters #expand-pending-filters {
+  height: 0;
+  overflow: hidden;
+  text-align: left;
+  width: 270px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters #expand-pending-filters h5 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: #474b5a;
+  margin: 0 0px 0 15px;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters #expand-pending-filters div {
+  align-self: flex-start;
+  margin-left: 30px;
+}
+div.content-collab .pending-collab div.pending-header .pending-filters #expand-pending-filters div label {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 45px;
+  color: #474b5a;
+}
+div.content-collab .pending-collab div.pending-header input#pending-filter {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+}
+div.content-collab .pending-collab div.pending-header #pending-filter:checked ~ #expand-pending-filters {
+  height: 100%;
+  border: 1px solid #90a5f3;
+  max-height: 350px;
+}
+div.content-collab .pending-collab .pending__collab__slider {
+  display: block;
+  max-width: 100%;
+  max-height: 900px;
+}
+div.content-collab .pending-collab .selected-pending-collab.slick-slide {
+  height: 820px;
+  margin: 0 auto;
+}
+div.content-collab .pending-collab .selected-pending-collab {
+  display: block;
+  margin: 0 auto;
+}
+div.content-collab .pending-collab .selected-pending-collab .slider_element {
+  display: block;
+  margin: 0 auto;
+  width: 355px;
+}
+div.content-collab .pending-collab .selected-pending-collab label {
+  display: block;
+  width: 355px;
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+  color: #474b5a;
+  margin: 5% 0 5% 0;
+  cursor: pointer;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-container {
+  width: 355px;
+  height: 410px;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-wrapper,
+div.content-collab .pending-collab .selected-pending-collab .card-wrapper2,
+div.content-collab .pending-collab .selected-pending-collab .card-wrapper3,
+div.content-collab .pending-collab .selected-pending-collab .card-wrapper4 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+div.content-collab .pending-collab .selected-pending-collab .card,
+div.content-collab .pending-collab .selected-pending-collab .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+div.content-collab .pending-collab .selected-pending-collab .card {
+  backface-visibility: hidden;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+  max-height: 100%;
+  border: 1px solid #99a2c1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back .head-back-card {
+  padding: 3%;
+  background: #b8b8e8;
+  border-radius: 15px 15px 0 0;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back h4 {
+  margin: 0;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back p.partnership {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px;
+  padding: 0;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back p.retribution {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back p.member-since {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #5e626e;
+  padding: 0;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back p {
+  margin: 10px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #474b5a;
+  padding: 3%;
+}
+div.content-collab .pending-collab .selected-pending-collab .card-back .profil-mini {
+  width: 85px;
+  height: 85px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  transform: translateY(22%);
+  margin: 0 auto;
+  display: block;
+}
+div.content-collab .pending-collab .selected-pending-collab .contact-btn {
+  margin: 60px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  width: 355px;
+}
+div.content-collab .pending-collab .selected-pending-collab .contact {
+  display: block;
+  width: 155px;
+  height: 45px;
+  background: #474b5a;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+div.content-collab .pending-collab .selected-pending-collab .cancel-demand {
+  display: block;
+  width: 155px;
+  height: 45px;
+  background: #fff;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0px 4px 4px rgba(173, 155, 223, 0.5);
+  border-radius: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #474b5a;
+  text-decoration: none;
+  cursor: pointer;
+}
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card:checked ~ .card-wrapper {
+  transform: rotateY(180deg);
+}
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card2:checked ~ .card-wrapper2 {
+  transform: rotateY(180deg);
+}
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card3:checked ~ .card-wrapper3 {
+  transform: rotateY(180deg);
+}
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card4:checked ~ .card-wrapper4 {
+  transform: rotateY(180deg);
+}
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card,
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card2,
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card3,
+div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card4 {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+}
+div.content-collab .pending-collab .pending_arrow_next {
+  display: block;
+  position: absolute;
+  right: 5%;
+  transform: translateY(-300px);
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.content-collab .pending-collab .pending_arrow_prev {
+  display: block;
+  position: absolute;
+  left: 5%;
+  transform: translateY(-300px);
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
 }
