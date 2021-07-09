@@ -16,7 +16,9 @@ class PageProjetController extends AbstractController
     {
         $response = $this->forward('App\Controller\Api\ProjectController::get', ['id' => $id]);
         $project = json_decode($response->getContent(), true);
-        $project['video'] = str_replace('watch?v=', 'embed/', $project['video']);
+        if (isset($project['video'])) {
+            $project['video'] = str_replace('watch?v=', 'embed/', $project['video']);
+        }
         return $this->render(
             'page_projet/index.html.twig',
             [
