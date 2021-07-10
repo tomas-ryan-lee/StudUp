@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>
 			{% block title %}
@@ -13,6 +13,7 @@
 		<meta name="author" content="Benjamin Bourdeleau">
 		<meta name="description" content="plateforme d'aide à la réalisation de projets étudiants">
 		<meta name="robots" content="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="icon" type="image/png" href="/favicon.png"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"/>
@@ -46,26 +47,24 @@
 
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							Tes collaborations
+{#					<li>#}
+{#						<a href="#">#}
+{#							Tes collaborations#}
 
 
-						</a>
-					</li>
+{#						</a>#}
+{#					</li>#}
 					<li>
-						<a href="{{ path('projet_form') }}#modal-form-projet-page1">
+						<a href="#modal-form-projet-page1">
 							Poste ton projet
 
 
 						</a>
 					</li>
 					<li>
-						<button>
+						<button class="btn-connexion">
 							<a class="js-modal-signIn" href="#modalConnexion">
 								Connexion
-
-
 							</a>
 						</button>
 					</li>
@@ -80,7 +79,8 @@
 		<div class="burger">
 			<ul class="left-menu">
 				<li>
-					<a href="{{ path('projet_form') }}#modal-form-projet-page1">
+					<a href="{{ path('projet_form') }}#modal-form-projet-page1"
+					   data-action="modal-form#modal-form-projet-page1">
 						Poster ton projet
 
 
@@ -184,11 +184,20 @@
 		<!-- Partie contenue de la page -->
 		{% block body %}
 		{% endblock %}
+		{% block sentence %}
+		{% endblock %}
 
 		{% block promo %}
 		{% endblock %}
+
 		{% block Projets_display %}
 		{% endblock %}
+		{% block sentence2 %}
+		{% endblock %}
+
+		{% block presentation %}
+		{% endblock %}
+
 		<!-- Fin Partie contenue de la page -->
 
 		{% block footer %}

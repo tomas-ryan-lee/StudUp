@@ -1,0 +1,67 @@
+.pres-card {
+  background: linear-gradient(180deg, rgba(36, 144, 168, 0.3) 1.12%, rgba(255, 207, 134, 0.3) 100%), #FFFFFF;
+  margin: 40px 0;
+  border-radius: 0 50px 0 50px;
+
+}
+
+.service-card {
+  height: 454px;
+  width: 336px;
+
+  .avatar {
+    margin: 26px auto;
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 50rem;
+  }
+
+  .service-card-text {
+    text-align: center;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 15%;
+  }
+}
+
+.what-card {
+  margin: auto;
+  height: 456px;
+  width: 780px;
+
+  .what-card-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    height: 100%;
+    margin: 49px 76px;
+
+    color: #5565A3;
+  }
+}
+
+.newsletter-card {
+  width: 785px;
+  height: 299px;
+  margin: 5% auto;
+  display: table;
+
+  .newsletter-card-text {
+    font-family: Sora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+}

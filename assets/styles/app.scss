@@ -1,5 +1,9 @@
+@import "scss/button";
+@import "scss/cards";
+
 $color_head: #fff;
-$bg_nav: #c4c4c4;
+$primary-color: #7331FF;
+$bg_nav: #FFFFFF;
 $bg_buger: #4c4c4c;
 $text_color_nav: #000000;
 $home_bg_color: #757575;
@@ -8,11 +12,12 @@ $main_title_color: #fff;
 $max: 100%;
 
 body, html {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-* {
-  box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 *:focus {
   box-shadow: 0 0 5px blue;
@@ -89,7 +94,6 @@ header {
   background-color: $bg_nav;
   position: fixed;
   width: $max;
-  height: 73px;
   left: 0px;
   top: 0px;
 }
@@ -98,7 +102,7 @@ header {
   position: relative;
 
   ul {
-    width: 80%;
+    width: 55%;
     padding: 0.2% 0% 0.2% 10%;
     float: right;
     list-style: none;
@@ -111,19 +115,20 @@ header {
         text-decoration: none;
         font-family: Sora, sans-serif;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 500;
         font-size: 18px;
         line-height: 23px;
-        color: black;
+        color: #5565A3;
       }
       button {
         margin: 0 5%;
-        padding: 10% 30%;
-        text-decoration: none;
         border: none;
         border-radius: 50px;
-        text-align: center;
-        text-decoration: none;
+      }
+      &:last-child {
+        a {
+          color: white;
+        }
       }
     }
   }
@@ -154,7 +159,7 @@ header {
     position: relative;
     width: 44px;
     height: 8px;
-    background: #757575;
+    background: #90A5F3;
     border-radius: 5px;
     margin-top: 4px;
   }
@@ -257,29 +262,31 @@ body {
   height: 100vh;
   main {
     background: $home_bg_color;
+    min-height: 90vh;
     height: 100vh;
     .home_tag_line {
+      text-align: center;
       color: $main_title_color;
       font-style: normal;
       position: absolute;
       width: 80%;
       height: 127px;
-      left: 15%;
-      top: 30%;
+      left: 10%;
+      top: 15%;
       align-items: center;
     }
     h1 {
       font-family: "Sora", sans-serif;
       font-weight: 800;
-      font-size: 48px;
-      font-size: 64px;
+      font-size: 58px;
       margin: 0;
+      color: #5565A3;
     }
     h2 {
       font-family: "Sora", sans-serif;
       font-style: normal;
       font-weight: 600;
-      font-size: 32px;
+      font-size: 40px;
       margin: 0;
     }
     .search {
@@ -346,15 +353,26 @@ body {
 /*______________________________________________________________*/
 
 .liste-projets {
-  background: #c2c2c2;
+  background: linear-gradient(270.37deg, #789EFF 2.13%, #9038D4 94.19%);
   padding: 10%;
-  h3 {
-    width: 100%;
-    font-family: Sora, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 38px;
+  .pres {
+    display: flex;
+    h3 {
+      width: 100%;
+      font-family: Sora, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 38px;
+      color: white;
+      margin: 4px 0 49px 29px;
+    }
+
+    hr {
+      height: 30px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
   }
 
 
@@ -469,6 +487,56 @@ body {
       }
     }
   }
+  .button-wrapper {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    .btn-stud {
+      width: 380px;
+    }
+  }
+}
+
+.sentence {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(270.37deg, #789EFF 2.13%, #9038D4 94.19%);
+  .one-sentence {
+    width: 55%;
+    h2 {
+      margin: 0;
+      font-family: Sora;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 65px;
+      /* or 118% */
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: #90A5F3;
+    }
+  }
+  .second-sentence {
+    width: 100%;
+    h2 {
+      margin: 0;
+      font-family: Sora;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 65px;
+      /* or 118% */
+
+      text-align: center;
+
+      color: #90A5F3;
+    }
+  }
+
 }
 
 /*_____________________________________________________*/
@@ -482,7 +550,7 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: #757575;
+  background: linear-gradient(270.37deg, #789EFF 2.13%, #9038D4 94.19%);
   p {
     float: left;
     margin: 0;
@@ -507,13 +575,14 @@ footer {
     line-height: 76px;
   }
   .retour-user {
-    width: 33%;
+    width: 550px;
     margin: 0 auto 2% auto;
-    background: #c4c4c4;
+    background: $primary-color;
     border-radius: 30px;
     padding: 1%;
     justify-content: space-between;
     h4 {
+      color: $bg_nav;
       margin: 0;
       font-family: Nunito, sans-serif;
       font-style: normal;
@@ -523,29 +592,29 @@ footer {
       text-align: center;
     }
     p {
-      margin: 0;
+      margin: 0 0 15px 0;
       width: 100%;
       font-family: Sora, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 100;
       font-size: 22px;
       line-height: 28px;
       text-align: center;
-      color: black;
+      color: $bg_nav;
     }
     input {
       width: 474px;
       height: 51px;
       background: #ffffff;
+      margin: 5%;
       border-radius: 10px;
       border: none;
     }
     button {
-      margin: 2% 38% 0 38%;
+      color: #5565A3;
+      height: 55px;
+      margin: 0 33%;
       display: inline-block;
-      width: 24%;
-      height: 29px;
-      background: #f1f0f0;
       border-radius: 70px;
       border: none;
       font-family: Sora, sans-serif;
@@ -561,13 +630,12 @@ footer {
     margin: 0 auto;
     padding: 10% auto;
     width: 20%;
-    padding: 0 auto;
     a {
       margin: 2%;
       font-family: Sora, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 30px;
       color: white;
       text-decoration: none;
@@ -580,11 +648,12 @@ footer {
       font-family: Sora, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 18px;
       line-height: 30px;
-      background: #c4c4c4;
-      border-radius: 60px;
-      width: 244px;
+      border-radius: 10px;
+      color: #5565A3;
+      align-items: center;
+      width: 200px;
       border: none;
     }
   }
@@ -605,7 +674,9 @@ line-height: 40px;
 
 }
 .citation {
-  background: #dedede;
+  text-align: center;
+  background: $primary-color;
+  color: $bg_nav;
   height: 95px;
   width: 100%;
   h4 {
@@ -627,7 +698,83 @@ line-height: 40px;
     line-height: 30px;
     float: right;
     margin: 0;
-    color: black;
+    color: $bg_nav;
+  }
+}
+
+.presentation {
+  background: linear-gradient(270.37deg, #789EFF 2.13%, #9038D4 94.19%);
+  --bs-gutter-x: 10rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 100%;
+  .pres {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    h3 {
+      margin: 0 29px 0 0;
+      font-family: Sora;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 38px;
+      color: #FFFFFF;
+    }
+    hr {
+      border-left: 5px solid white;
+      border-radius: 5px;
+      height: 40px;
+      margin:0;
+    }
+  }
+  .services {
+    .service-cards {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(var(--bs-gutter-y) * -1);
+      margin-right: calc(var(--bs-gutter-x) * -.10);
+      margin-left: calc(var(--bs-gutter-x) * -.5);
+      justify-content: space-between;
+    }
+  }
+
+  .what {}
+
+  .newsletter {
+    padding-bottom: 5%;
+    .newsletter-input {
+      margin: 6%;
+      i {
+        position: absolute;
+      }
+      .icon {
+        padding: 15px;
+        font-size: 20px;
+        color: #5565A3;
+        min-width: 50px;
+        text-align: center;
+      }
+
+
+      input {
+        width: 100%;
+        height: 57px;
+        background: #FFFFFF;
+        border: 1px solid #5565A3;
+        box-sizing: border-box;
+        /* ombrage stud 'up */
+
+        box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
+        border-radius: 30px;
+      }
+    }
   }
 }
 
