@@ -3267,55 +3267,71 @@ div.content-page-projet div.main-content #toggle-ad:checked ~ #expand {
 div.content-page-edit-projet {
   margin: 73px auto 0 auto;
   width: 100%;
-  height: 100%;
-  padding: 5% 10%;
-  background-color: white;
+  padding: 1% 5%;
+  background-color: #90a5f3;
+}
+div.content-page-edit-projet .section-header {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
 }
 div.content-page-edit-projet .section-header h3 {
   margin: 0;
   font-family: Sora;
-  font-weight: 800;
-  font-size: 45px;
-  line-height: 57px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px;
+  line-height: 88px;
   text-align: center;
-  color: #606060;
+  color: #5565a3;
 }
-div.content-page-edit-projet .section-header span {
+div.content-page-edit-projet .section-header p {
   font-family: Nunito;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 300;
   font-size: 30px;
   line-height: 41px;
   text-align: center;
-  color: #606060;
-  margin: 0 auto;
-  display: block;
+  color: #5565a3;
+  margin: 0;
+}
+div.content-page-edit-projet .section-header p + p {
+  text-align: right;
 }
 div.content-page-edit-projet .btn-tab-wrapper {
   margin: 2% auto;
-  width: 50%;
+  width: 370px;
   display: flex;
   justify-content: space-around;
+  background: #ffffff;
+  box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
+  border-radius: 38px;
 }
 div.content-page-edit-projet div.btn-tab.active {
   background: black;
   color: #fff;
   transition: all 0.3s ease;
+  background: #7331ff;
+  box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
+  font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 55px;
+  font-size: 22px;
+  line-height: 60px;
+  color: #ffffff;
 }
 div.content-page-edit-projet div.btn-tab {
-  width: 210px;
-  height: 55px;
+  width: 191px;
+  height: 60px;
   background: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 10px;
   font-family: Sora;
-  font-size: 20px;
-  line-height: 55px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 60px;
   text-align: center;
-  color: #000000;
+  color: #7331ff;
   cursor: pointer;
+  border-radius: 38px;
 }
 
 /*_________________________________________________________*/
@@ -3324,21 +3340,37 @@ div.content-page-edit-projet div.btn-tab {
 /* !VVVVVVVVVVVVVVV! THIS IS ONGLET MON PROJET !VVVVVVVVVVVVVVV! */
 div.tab-content.my-project {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 90%;
   flex-wrap: wrap;
-  margin: 0 auto;
-  background: #ffffff;
+  background: none;
   position: absolute;
   opacity: 0;
   visibility: hidden;
 }
+div.tab-content.my-project .input {
+  width: 320px;
+  height: 60px;
+  margin-bottom: 0;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 60px;
+  color: #466aef;
+}
 div.tab-content.my-project p {
   font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
   font-size: 20px;
   line-height: 25px;
-  color: #000000;
-  margin-bottom: 0;
+  text-align: center;
+  color: #466aef;
 }
 div.tab-content.my-project .checkbox-wrapper {
   display: flex;
@@ -3350,11 +3382,12 @@ div.tab-content.my-project .checkbox-wrapper div {
   display: flex;
 }
 div.tab-content.my-project .checkbox-wrapper div label {
-  font-family: Roboto;
-  font-weight: 500;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 28px;
-  color: #000000;
+  line-height: 30px;
+  color: #90a5f3;
 }
 div.tab-content.my-project input.checkbox {
   background: #ffffff;
@@ -3362,6 +3395,20 @@ div.tab-content.my-project input.checkbox {
   border-radius: 4px;
   width: 25px;
   height: 25px;
+}
+div.tab-content.my-project input#url-video {
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 30px;
+  width: 480px;
+  height: 60px;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+  color: #90a5f3;
 }
 div.tab-content.my-project input,
 div.tab-content.my-project select {
@@ -3371,13 +3418,18 @@ div.tab-content.my-project select {
   box-sizing: border-box;
   border-radius: 10px;
 }
+div.tab-content.my-project ul {
+  margin: 0;
+}
 div.tab-content.my-project li {
   display: inline-block;
   font-family: Sora;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  color: #000000;
+  color: #466aef;
+  margin-right: 20px;
 }
 div.tab-content.my-project span {
   font-family: Sora;
@@ -3396,17 +3448,41 @@ div.tab-content.my-project textarea {
   width: 530px;
   height: 160px;
 }
+div.tab-content.my-project label#img-upload {
+  width: 480px;
+  height: 210px;
+  cursor: pointer;
+}
 div.tab-content.my-project img {
-  width: 290px;
-  height: 160px;
-  border-radius: 15px;
-  margin-right: 50%;
+  display: block;
+  width: 480px;
+  height: 210px;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  box-sizing: border-box;
+  border-radius: 60px;
 }
 div.tab-content.my-project div.left-container {
-  width: 50%;
+  display: grid;
+  padding: 40px 50px;
+  background: rgba(252, 252, 255, 0.82);
+  border-radius: 40px 0px;
+  margin-top: 5%;
 }
 div.tab-content.my-project div.right-container {
-  width: 50%;
+  display: grid;
+  background: rgba(252, 252, 255, 0.82);
+  border-radius: 0px 40px;
+  margin-top: 5%;
+}
+div.tab-content.my-project div.right-container p.choice-display {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #90a5f3;
 }
 div.tab-content.my-project .bottom-container {
   display: flex;
@@ -4505,6 +4581,9 @@ div.content-collab .pending-collab .selected-pending-collab.slick-slide {
 div.content-collab .pending-collab .selected-pending-collab {
   display: block;
   margin: 0 auto;
+  /* input#flip-pending-card:checked~.card-wrapper {
+      transform: rotateY(180deg);
+  } */
 }
 div.content-collab .pending-collab .selected-pending-collab .slider_element {
   display: block;
@@ -4670,25 +4749,9 @@ div.content-collab .pending-collab .selected-pending-collab .cancel-demand {
   text-decoration: none;
   cursor: pointer;
 }
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card:checked ~ .card-wrapper {
+div.content-collab .pending-collab .selected-pending-collab .flip {
   transform: rotateY(180deg);
-}
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card2:checked ~ .card-wrapper2 {
-  transform: rotateY(180deg);
-}
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card3:checked ~ .card-wrapper3 {
-  transform: rotateY(180deg);
-}
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card4:checked ~ .card-wrapper4 {
-  transform: rotateY(180deg);
-}
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card,
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card2,
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card3,
-div.content-collab .pending-collab .selected-pending-collab input#flip-pending-card4 {
-  visibility: hidden;
-  display: none;
-  opacity: 0;
+  -webkit-transform: rotateY(180deg);
 }
 div.content-collab .pending-collab .pending_arrow_next {
   display: block;

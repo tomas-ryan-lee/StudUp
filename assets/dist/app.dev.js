@@ -211,8 +211,6 @@ $(document).ready(function () {
     prevArrow: '.arrow_prev',
     nextArrow: '.arrow_next'
   });
-});
-$(document).ready(function () {
   $('.pending__collab__slider').slick({
     infinite: true,
     slidesToShow: 2,
@@ -221,23 +219,32 @@ $(document).ready(function () {
     prevArrow: '.pending_arrow_prev',
     nextArrow: '.pending_arrow_next'
   });
+  /*     $('.click').click(
+  
+      ); */
 });
-/*
- *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
- *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
- *  FONCTIONNALITE CHANGEMENT BOUTTON MES COLLABS
- */
+/* var flipBtn = document.getElementsByClassName("click");
 
-/**
-let btnConfirm = document.querySelector('.confirm_end');
-let btnSend = document.querySelector('.send_end');
-let btnCancel = document.querySelector('.cancel_end');
-btnConfirm.addEventListener('click', () => {
-    btnConfirm.innerText = "Annuler"
-    btnSend.style.display = "block";
-})
-btnCancel.addEventListener('click', () => {
-    btnCancel.style.display = "none";
-    btnSend.style.display = "none";
-    btnConfirm.innerText = "Mission finie";
-}) */
+flipBtn.addEventListener("click", function() {
+
+    id = document.getElementById(elementId)
+    console.log(id);
+    if ($(id).hasClass("flip")) {
+        $(id).removeClass("flip");
+    } else
+        $(id).addClass("flip");
+
+}, false); */
+
+var flipBtns = document.getElementsByClassName("click");
+flipBtns.forEach(function (flipBtn) {
+  flipBtn.addEventListener("click", function () {
+    var flipPanel = document.getElementsByClassName(flipBtn.id);
+
+    if ($(flipPanel).hasClass("flip")) {
+      $(flipPanel).removeClass("flip");
+    } else {
+      $(flipPanel).addClass("flip");
+    }
+  }, false);
+});

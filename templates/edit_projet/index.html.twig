@@ -1,41 +1,30 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}
-	Hello EditProjetController!
-{% endblock %}
-
-{% block body %}
-	<div class="content-page-edit-projet">
-		<div class="section-header">
-			<h3>
-				NOM DU PROJET
-			</h3>
-			<span>
-				“La meilleure manière de prévoir le futur, c’est de le créer.”
-			</span>
-			<div class="btn-tab-wrapper">
-				<div class="btn-tab active" data-anim="1">
-					Mon projet
-				</div>
-				<div class="btn-tab" data-anim="2">
-					Mon équipe
-				</div>
-			</div>
-		</div>
-		{# PREMIER ONGLET #}
-		<div
-			class="tab-content my-project activeContenu" style="visibility: visible;" data-anim="1">
-			{# PARTIE GAUCHE DU PREMIER ONGLET #}
-			<div class="left-container">
-				<p>
-					Nom du projet
-				</p>
-				<input type="text">
-				<p>
-					Secteur d’activité
-				</p>
-				<select name="Secteur d’activité" id="sectors-list">
-					<option value="">
+{% extends 'base.html.twig' %} {% block title %} Hello EditProjetController! {% endblock %} {% block body %}
+<div class="content-page-edit-projet">
+    <div class="section-header">
+        <h3>
+            NOM DU PROJET
+        </h3>
+        <p>
+            “La meilleure manière de prévoir le futur, c’est de le créer.”
+        </p>
+        <p>Peter Drucker</p>
+        <div class="btn-tab-wrapper">
+            <div class="btn-tab active" data-anim="1">
+                Mon projet
+            </div>
+            <div class="btn-tab" data-anim="2">
+                Mon équipe
+            </div>
+        </div>
+    </div>
+    {# PREMIER ONGLET #}
+    <div class="tab-content my-project activeContenu" style="visibility: visible;" data-anim="1">
+        {# PARTIE GAUCHE DU PREMIER ONGLET #}
+        <div class="left-container">
+            <input type="text" placeholder="NOM DU PROJET" class="input">
+            <select class="input" name="Secteur d’activité" id="sectors-list">
+				<option value="" disabled selected hidden>Secteur d’activité</option>	
+				<option value="">
 						Secteur 1
 					</option>
 					<option value="">
@@ -45,18 +34,16 @@
 						Secteur 3
 					</option>
 				</select>
-				<ul>
-					<li>
-						Culture /
-					</li>
-					<li>
-						Audio-visuel
-					</li>
-				</ul>
-				<p>
-					Localisation
-				</p>
-				<select name="Localisation" id="Localisation">
+            <ul>
+                <li>
+                    Culture x
+                </li>
+                <li>
+                    Audio-visuel x
+                </li>
+            </ul>
+            <select class="input" name="Localisation" id="Localisation">
+				<option value="" disabled selected hidden>Localisation</option>	
 					<option value="">
 						Ville 1
 					</option>
@@ -67,93 +54,73 @@
 						Ville 3
 					</option>
 				</select>
-				<ul>
-					<li>
-						Bordeaux
-					</li>
+            <ul>
+                <li>
+                    Bordeaux
+                </li>
 
-				</ul>
-				<p>
-					Es-tu accompagné.e par une structure ?
-				</p>
-				<div class="checkbox-wrapper">
-					<div>
-						<input class="checkbox" type="checkbox" id="true">
-						<label for="true">
+            </ul>
+            <p>
+                Es-tu accompagné.e par une structure ?
+            </p>
+            <div class="checkbox-wrapper">
+                <div>
+                    <input class="checkbox" type="checkbox" id="true">
+                    <label for="true">
 							Oui
 						</label>
-					</div>
-					<div>
-						<input class="checkbox" type="checkbox" id="false">
-						<label for="false">
+                </div>
+                <div>
+                    <input class="checkbox" type="checkbox" id="false">
+                    <label for="false">
 							Non
 						</label>
-					</div>
-				</div>
-				<p>
-					Vision globale
-				</p>
-				<span>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <p>
+                Photo ou logo
+            </p>
+            <span>
+				Elle doit t’appartenir ou être libre de droit
+			</span>
+            <label id="img-upload" for="upload-photo">
+            <img src="../img/youclothes.jpg" alt="image du projet">
+		</label>
+            <br>
+            <input id="upload-photo" style="display: none;" type="file">
+            <p class="choice-display">
+                Ou
+            </p>
+            <input placeholder="Glisse le lien de ta vidéo de présentation" id="url-video" type="url">
+        </div>
+        <div class="left-container">
+            <p>
+                Vision globale
+            </p>
+            <span>
 					La vocation, l’objectif long terme du projet en 1/2 tweet
 				</span>
-				<textarea name="global-vision" id="global-vision" cols="30" rows="10"></textarea>
-				<p>
-					Elevator Pitch
-				</p>
-				<span>
+            <textarea name="global-vision" id="global-vision" cols="30" rows="10"></textarea>
+            <p>
+                Elevator Pitch
+            </p>
+            <span>
 					Le temps d’un trajet en ascenseur
 					<br>
 					Explique brièvement ton projet
 					<br>
 					Motive tes futurs collaborateurs à te rejoindre
 				</span>
-				<textarea name="elevator-pitch" id="elevator-pitch" cols="30" rows="10"></textarea>
-				<p>
-					Ton projet est-il une avancée sociale, environnementale?
-				</p>
-				<div class="checkbox-wrapper">
-					<div>
-						<input class="checkbox" type="checkbox" id="true">
-						<label for="true">
-							Oui
-						</label>
-					</div>
-					<div>
-						<input class="checkbox" type="checkbox" id="false">
-						<label for="false">
-							Non
-						</label>
-					</div>
-				</div>
-			</div>
+            <textarea name="elevator-pitch" id="elevator-pitch" cols="30" rows="10"></textarea>
 
-			{# PARTIE DROITE DU PREMIER ONGLET #}
-
-			<div class="right-container">
-				<p>
-					Photo ou logo
-				</p>
-				<span>
-					Elle doit t’appartenir ou être libre de droit
-				</span>
-				<img src="../img/youclothes.jpg" alt="image du projet">
-				<br>
-				<input type="file">
-				<p class="choice-display">
-					Ou
-				</p>
-				<p>
-					Vidéo de présentation
-				</p>
-				<span>
-					Une vidéo vaut 1000 images
-				</span>
-				<br>
-				<input type="url">
-				<p>
-					Mood de la team
-				</p>
-				<select name="team-mood" id="team-mood">
+        </div>
+        <div class="right-container">
+            <p>
+                Mood de la team
+            </p>
+            <select name="team-mood" id="team-mood">
 					<option value="">
 						Mood 1
 					</option>
@@ -164,15 +131,15 @@
 						Mood 3
 					</option>
 				</select>
-				<ul>
-					<li>
-						Réunionite aïgue
-					</li>
-				</ul>
-				<p>
-					En recherche de
-				</p>
-				<select name="team-mood" id="team-mood">
+            <ul>
+                <li>
+                    Réunionite aïgue
+                </li>
+            </ul>
+            <p>
+                En recherche de
+            </p>
+            <select name="team-mood" id="team-mood">
 					<option value="">
 						recherche 1
 					</option>
@@ -183,21 +150,21 @@
 						recherche 3
 					</option>
 				</select>
-				<ul>
-					<li>
-						Q
-					</li>
-					<li>
-						Q
-					</li>
-					<li>
-						Q
-					</li>
-				</ul>
-				<p>
-					Atouts du projet
-				</p>
-				<select name="project-assets" id="project-assets">
+            <ul>
+                <li>
+                    Q
+                </li>
+                <li>
+                    Q
+                </li>
+                <li>
+                    Q
+                </li>
+            </ul>
+            <p>
+                Atouts du projet
+            </p>
+            <select name="project-assets" id="project-assets">
 					<option value="">
 						atout 1
 					</option>
@@ -208,23 +175,40 @@
 						atout 3
 					</option>
 				</select>
-				<ul>
-					<li>
-						atout 1
-					</li>
-					<li>
-						atout 2
-					</li>
-					<li>
-						atout 3
-					</li>
-				</ul>
-			</div>
-			<div class="bottom-container">
-				<p>
-					Quelle phase réalises-tu actuellement ?
-				</p>
-				<select name="phase actuelle" id="phases-list">
+            <ul>
+                <li>
+                    atout 1
+                </li>
+                <li>
+                    atout 2
+                </li>
+                <li>
+                    atout 3
+                </li>
+            </ul>
+            <p>
+                Ton projet est-il une avancée sociale, environnementale?
+            </p>
+            <div class="checkbox-wrapper">
+                <div>
+                    <input class="checkbox" type="checkbox" id="true">
+                    <label for="true">
+							Oui
+						</label>
+                </div>
+                <div>
+                    <input class="checkbox" type="checkbox" id="false">
+                    <label for="false">
+							Non
+						</label>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <p>
+                Quelle phase réalises-tu actuellement ?
+            </p>
+            <select name="phase actuelle" id="phases-list">
 					<option value="">
 						phase 1
 					</option>
@@ -235,97 +219,97 @@
 						phase 3
 					</option>
 				</select>
-				<span>
+            <span>
 					phase actuelle
 				</span>
-				<p>
-					Coche les phases que tu as déjà réalisées
-				</p>
-				<div class="progress-bar-wrapper">
-					<div class="progress-bar-container">
-						<div class="progress-bar-content"></div>
-					</div>
-					<span>
+            <p>
+                Coche les phases que tu as déjà réalisées
+            </p>
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-content"></div>
+                </div>
+                <span>
 						Étude de marché
 					</span>
-					<span>
+                <span>
 						Étude de besoins
 					</span>
-					<span>
+                <span>
 						Validation du concept
 					</span>
-					<span>
+                <span>
 						Rédaction du business plan
 					</span>
-					<span>
+                <span>
 						Création d’un MVP
 					</span>
-					<span>
+                <span>
 						Test utilisateurs
 					</span>
-					<span>
+                <span>
 						Lancement sur le marché
 					</span>
-					<span>
+                <span>
 						En activité
 					</span>
-				</div>
-			</div>
-		</div>
+            </div>
+        </div>
+    </div>
 
-		{# DEUXIEME ONGLET #}
+    {# DEUXIEME ONGLET #}
 
-		<div class="tab-content my-team" data-anim="2">
-			<div class="top-content">
-				<p class="intro">
-					Un stud’upper de plus a ton équipe ?
-				</p>
-				<input type="text">
-				<a href="">
+    <div class="tab-content my-team" data-anim="2">
+        <div class="top-content">
+            <p class="intro">
+                Un stud’upper de plus a ton équipe ?
+            </p>
+            <input type="text">
+            <a href="">
 					Ma team n’est pas sur Stud’up
 				</a>
-			</div>
-			<div class="member-wrapper">
-				<div class="validated-teamate-card">
-					<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
-					<h4>
-						Nom & Prénom
-					</h4>
-					<p>
-						Etud / Alumnis + Niveau + Cursus
-					</p>
-					<ul>
-						<li>
-							Compétence 1
-						</li>
-						<li>
-							Compétence 2
-						</li>
-						<li>
-							Compétence 3
-						</li>
-						<li>
-							Compétence 4
-						</li>
-						<li>
-							Compétence 5
-						</li>
-					</ul>
-					<button>
+        </div>
+        <div class="member-wrapper">
+            <div class="validated-teamate-card">
+                <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+                <h4>
+                    Nom & Prénom
+                </h4>
+                <p>
+                    Etud / Alumnis + Niveau + Cursus
+                </p>
+                <ul>
+                    <li>
+                        Compétence 1
+                    </li>
+                    <li>
+                        Compétence 2
+                    </li>
+                    <li>
+                        Compétence 3
+                    </li>
+                    <li>
+                        Compétence 4
+                    </li>
+                    <li>
+                        Compétence 5
+                    </li>
+                </ul>
+                <button>
 						Actualiser
 					</button>
-				</div>
+            </div>
 
-				<div class="form-card">
-					<div class="header-card">
-						<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profile">
-						<p>
-							NOM PRENOM
-						</p>
-						<h4>
-							Ses compétences sur le projet
-						</h4>
-						<select name="competences" id="comp">
+            <div class="form-card">
+                <div class="header-card">
+                    <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profile">
+                    <p>
+                        NOM PRENOM
+                    </p>
+                    <h4>
+                        Ses compétences sur le projet
+                    </h4>
+                    <select name="competences" id="comp">
 							<option value="Compétence 1">
 								Compétence 1
 							</option>
@@ -336,15 +320,15 @@
 								Compétence 3
 							</option>
 						</select>
-						<a href="">
+                    <a href="">
 							Tu ne trouves pas les compétences dont tu as besoin
 						</a>
-					</div>
-					<div class="body-card">
-						<p>
-							Type de collaboration établi
-						</p>
-						<select name="type de colaboration" id="colab">
+                </div>
+                <div class="body-card">
+                    <p>
+                        Type de collaboration établi
+                    </p>
+                    <select name="type de colaboration" id="colab">
 							<option value="Associé.e">
 								Associé.e
 							</option>
@@ -355,89 +339,89 @@
 								autre
 							</option>
 						</select>
-					</div>
-				</div>
+                </div>
+            </div>
 
 
-				<div class="validated-teamate-card" style="display: none;">
-					<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
-					<h4>
-						Nom & Prénom
-					</h4>
-					<p>
-						Etud / Alumnis + Niveau + Cursus
-					</p>
-					<ul>
-						<li>
-							Compétence 1
-						</li>
-						<li>
-							Compétence 2
-						</li>
-						<li>
-							Compétence 3
-						</li>
-						<li>
-							Compétence 4
-						</li>
-						<li>
-							Compétence 5
-						</li>
-					</ul>
-					<button>
+            <div class="validated-teamate-card" style="display: none;">
+                <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+                <h4>
+                    Nom & Prénom
+                </h4>
+                <p>
+                    Etud / Alumnis + Niveau + Cursus
+                </p>
+                <ul>
+                    <li>
+                        Compétence 1
+                    </li>
+                    <li>
+                        Compétence 2
+                    </li>
+                    <li>
+                        Compétence 3
+                    </li>
+                    <li>
+                        Compétence 4
+                    </li>
+                    <li>
+                        Compétence 5
+                    </li>
+                </ul>
+                <button>
 						Actualiser
 					</button>
-				</div>
-			</div>
-			<div class="annonce-wrapper">
-				<div class="resume-annonce">
-					<div class="card-annonce">
-						<div class="header-card">
-							<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
-							<h4>
-								Community manager
-							</h4>
-						</div>
-						<div class="body-card">
-							<h4>
-								Associé
-							</h4>
-							<p>
-								Menthe à l’eau
-							</p>
-						</div>
-					</div>
-					<textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
-					<button>
+            </div>
+        </div>
+        <div class="annonce-wrapper">
+            <div class="resume-annonce">
+                <div class="card-annonce">
+                    <div class="header-card">
+                        <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+                        <h4>
+                            Community manager
+                        </h4>
+                    </div>
+                    <div class="body-card">
+                        <h4>
+                            Associé
+                        </h4>
+                        <p>
+                            Menthe à l’eau
+                        </p>
+                    </div>
+                </div>
+                <textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
+                <button>
 						Actualiser
 					</button>
-				</div>
-				<div class="resume-annonce" style="display: none;">
-					<div class="card-annonce">
-						<div class="header-card">
-							<img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
-							<h4>
-								Community manager
-							</h4>
-						</div>
-						<div class="body-card">
-							<h4>
-								Associé
-							</h4>
-							<p>
-								Menthe à l’eau
-							</p>
-						</div>
-					</div>
-					<textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
-					<button>
+            </div>
+            <div class="resume-annonce" style="display: none;">
+                <div class="card-annonce">
+                    <div class="header-card">
+                        <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
+                        <h4>
+                            Community manager
+                        </h4>
+                    </div>
+                    <div class="body-card">
+                        <h4>
+                            Associé
+                        </h4>
+                        <p>
+                            Menthe à l’eau
+                        </p>
+                    </div>
+                </div>
+                <textarea name="resume de la collaboration" id="collab-description" cols="30" rows="10"></textarea>
+                <button>
 						Actualiser
 					</button>
-				</div>
-			</div>
-		</div>
-		<button class="validation-btn">
+            </div>
+        </div>
+    </div>
+    <button class="validation-btn">
 			Valider ces changements
 		</button>
-	</div>
+</div>
 {% endblock %}
