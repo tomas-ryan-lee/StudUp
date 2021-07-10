@@ -99,6 +99,6 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
     protected function getLoginUrl()
     {
         
-        return $this->router->generate('security_login');
+        return $this->router->generate('home', ['_fragment' => 'modalConnexion']);
     }
 }

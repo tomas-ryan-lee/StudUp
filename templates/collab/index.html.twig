@@ -4,10 +4,10 @@
         <img class="profil" src="../img/caroline-CBD.png" alt="photo de profil">
         <div>
             <h3>
-                Prénom Nom
+                {{ student.surname }} {{ student.name }}
             </h3>
             <p class="infos">
-                Etudiant ingénieur informatique developpement web
+                {{ student.cursus }}
             </p>
         </div>
         <div class="list-comp">
@@ -96,7 +96,12 @@
                 </div>
             </div>
         </div>
+
+        {% if collaborations is empty %}
+            T'as pas de projets bâtard
+        {% else %}
         <div class="collab__slider">
+            {% for collaboration in collaborations %}
             <div class="selected-collab">
 
                 <label class="click" id="card1" for="flip-card">
@@ -109,7 +114,7 @@
                             <div class="card-image"></div>
                             <div class="card-text">
                                 <h3>
-                                    You Clothes
+                                    BDD - {{ collaboration.project.name }}
                                 </h3>
                                 <p>
                                     Environnement - Technologie
@@ -194,9 +199,14 @@
                 </div>
                 <div class="contact-btn">
                     <a class="contact" href="#">Contacter</a>
+                    {# 
+                        Information de l'auteur du projet pour contacter accessible via
+                        [collaboration|applyment].author."les infos de contact que tu veux"
+                    #}
                     <label class="confirm_end" for="end-mission">Mission finie</label>
                 </div>
             </div>
+            {% endfor %}
             <div class="selected-collab">
 
                 <label id="toggle-flip" for="flip-card2">
@@ -304,6 +314,7 @@
                     >
                 </div>
         </div>
+        {% endif %}
 
         {# PARTIE MES DEMANDES EN COURS #} {# PARTIE MES DEMANDES EN COURS #} {# PARTIE MES DEMANDES EN COURS #}
 
@@ -355,7 +366,11 @@
             </div>
 
             {# FIN TITRE MES DEMANDES #} {# FIN TITRE MES DEMANDES #} {# FIN TITRE MES DEMANDES #} {# DEBUT CAROUSSEL DEMANDE EN COURS #} {# DEBUT CAROUSSEL DEMANDE EN COURS #} {# DEBUT CAROUSSEL DEMANDE EN COURS #}
+            {% if applyments is empty %}
+                <p>Tu as pas postuler</p>
+            {% else %}
             <div class="pending__collab__slider">
+            {% for applyment in applyments %}
                 <div class="selected-pending-collab">
                     <div class="slider_element">
                         <label class="click" id="card1">
@@ -367,7 +382,7 @@
                                     <div class="card-image"></div>
                                     <div class="card-text">
                                         <h3>
-                                            You Clothes
+                                            BDD - {{ applyment.project.name }}
                                         </h3>
                                         <p>
                                             Environnement - Technologie
@@ -429,7 +444,7 @@
                         </div>
                     </div>
                 </div>
-
+            {% endfor %}
                 <div class="selected-pending-collab">
                     <div class="slider_element">
                         <label class="click" id="toggle-pending-flip">
@@ -650,6 +665,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="pending_arrow_prev">
                 < </div>
                     <div class="pending_arrow_next">
