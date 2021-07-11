@@ -15,6 +15,7 @@ class FavoritesController extends AbstractController
      */
     public function index(): Response
     {
+        // TODO
         
         $student = $this->getUser()->getProfile();
         return $this->render(
