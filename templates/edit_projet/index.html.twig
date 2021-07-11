@@ -19,7 +19,6 @@
     </div>
     {# PREMIER ONGLET #}
     <div class="tab-content my-project activeContenu" style="visibility: visible;" data-anim="1">
-        {# PARTIE GAUCHE DU PREMIER ONGLET #}
         <div class="left-container">
             <input type="text" placeholder="NOM DU PROJET" class="input">
             <select class="input" name="Secteur d’activité" id="sectors-list">
@@ -95,7 +94,7 @@
             </p>
             <input placeholder="Glisse le lien de ta vidéo de présentation" id="url-video" type="url">
         </div>
-        <div class="left-container">
+        <div class="left-container bottom-left">
             <p>
                 Vision globale
             </p>
@@ -107,20 +106,15 @@
                 Elevator Pitch
             </p>
             <span>
-					Le temps d’un trajet en ascenseur
-					<br>
-					Explique brièvement ton projet
-					<br>
-					Motive tes futurs collaborateurs à te rejoindre
+				Le temps d’un trajet en ascenseur, explique brièvement ton projet <br>
+				Motive tes futurs collaborateurs à te rejoindre.
 				</span>
             <textarea name="elevator-pitch" id="elevator-pitch" cols="30" rows="10"></textarea>
 
         </div>
-        <div class="right-container">
-            <p>
-                Mood de la team
-            </p>
-            <select name="team-mood" id="team-mood">
+        <div class="right-container bottom-right">
+            <select class="input" name="team-mood" id="team-mood">
+				<option value="" disabled selected hidden>Mood de la team</option>	
 					<option value="">
 						Mood 1
 					</option>
@@ -131,15 +125,8 @@
 						Mood 3
 					</option>
 				</select>
-            <ul>
-                <li>
-                    Réunionite aïgue
-                </li>
-            </ul>
-            <p>
-                En recherche de
-            </p>
-            <select name="team-mood" id="team-mood">
+            <select class="input" name="team-mood" id="team-mood">
+				<option value="" disabled selected hidden>En recherche de</option>
 					<option value="">
 						recherche 1
 					</option>
@@ -161,10 +148,8 @@
                     Q
                 </li>
             </ul>
-            <p>
-                Atouts du projet
-            </p>
-            <select name="project-assets" id="project-assets">
+            <select class="input" name="project-assets" id="project-assets">
+				<option value="" disabled selected hidden>En recherche de</option>
 					<option value="">
 						atout 1
 					</option>
@@ -194,7 +179,7 @@
                     <input class="checkbox" type="checkbox" id="true">
                     <label for="true">
 							Oui
-						</label>
+					</label>
                 </div>
                 <div>
                     <input class="checkbox" type="checkbox" id="false">
@@ -205,10 +190,8 @@
             </div>
         </div>
         <div class="bottom-container">
-            <p>
-                Quelle phase réalises-tu actuellement ?
-            </p>
-            <select name="phase actuelle" id="phases-list">
+            <select class="input" name="phase actuelle" id="phases-list">
+				<option value="" disabled selected hidden>La phase que tu réalises</option>
 					<option value="">
 						phase 1
 					</option>
@@ -219,12 +202,6 @@
 						phase 3
 					</option>
 				</select>
-            <span>
-					phase actuelle
-				</span>
-            <p>
-                Coche les phases que tu as déjà réalisées
-            </p>
             <div class="progress-bar-wrapper">
                 <div class="progress-bar-container">
                     <div class="progress-bar-content"></div>
@@ -250,9 +227,6 @@
                 <span>
 						Lancement sur le marché
 					</span>
-                <span>
-						En activité
-					</span>
             </div>
         </div>
     </div>
@@ -260,46 +234,73 @@
     {# DEUXIEME ONGLET #}
 
     <div class="tab-content my-team" data-anim="2">
-        <div class="top-content">
-            <p class="intro">
-                Un stud’upper de plus a ton équipe ?
-            </p>
-            <input type="text">
-            <a href="">
-					Ma team n’est pas sur Stud’up
-				</a>
-        </div>
         <div class="member-wrapper">
-            <div class="validated-teamate-card">
-                <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profil">
-                <h4>
-                    Nom & Prénom
-                </h4>
-                <p>
-                    Etud / Alumnis + Niveau + Cursus
-                </p>
-                <ul>
-                    <li>
-                        Compétence 1
-                    </li>
-                    <li>
-                        Compétence 2
-                    </li>
-                    <li>
-                        Compétence 3
-                    </li>
-                    <li>
-                        Compétence 4
-                    </li>
-                    <li>
-                        Compétence 5
-                    </li>
-                </ul>
-                <button>
-						Actualiser
-					</button>
-            </div>
+            <div class="card-container">
+                <div class="card-wrapper card1">
 
+                    <div class="validated-teamate-card">
+                        <img class="img-card" src="https://dummyimage.com/60x60/000/fff.png" alt="photo de profil">
+                        <i class="icon edit click" id="card1"></i>
+                        <h4>
+                            Nom & Prénom
+                        </h4>
+                        <p>
+                            Etudiant.e master International Marketing and Business development
+                        </p>
+                        <h4>
+                            Statut
+                        </h4>
+                        <ul>
+                            <li>
+                                Compétence 1
+                            </li>
+                            <li>
+                                Compétence 2
+                            </li>
+                            <li>
+                                Compétence 3
+                            </li>
+                            <li>
+                                Compétence 4
+                            </li>
+                            <li>
+                                Compétence 5
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="validated-teamate-card back ">
+                        <i class="icon edit click" id="card1"></i>
+                        <img class="img-card" src="https://dummyimage.com/60x60/000/fff.png" alt="photo de profil">
+                        <h4>
+                            Jean-Philipe Herbien
+                        </h4>
+                        <p>
+                            Etudiant.e master International Marketing and Business development
+                        </p>
+                        <h4>
+                            Statut
+                        </h4>
+                        <ul>
+                            <li>
+                                Compétence 1
+                            </li>
+                            <li>
+                                Compétence 2
+                            </li>
+                            <li>
+                                Compétence 3
+                            </li>
+                            <li>
+                                Compétence 4
+                            </li>
+                            <li>
+                                Compétence 5
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
             <div class="form-card">
                 <div class="header-card">
                     <img class="img-card" src="../img/caroline-CBD.png" alt="photo de profile">
@@ -421,7 +422,7 @@
         </div>
     </div>
     <button class="validation-btn">
-			Valider ces changements
-		</button>
+		Valider ces infos
+	</button>
 </div>
 {% endblock %}

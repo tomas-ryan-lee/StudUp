@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/**  STOCKAGE DES ICONES **/
+i.icon {
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.edit {
+  position: absolute;
+  margin: -110px 0px 0 300px;
+  background-image: url("../../public/img/icones/icone-edit.png");
+}
+
+/**  STOCKAGE DES ICONES **/
 body,
 html {
   margin: 0;
@@ -2158,7 +2173,7 @@ div.main-projet-form-Modal .modal-footer a.next-form-page {
   color: #000000;
 }
 #modal-form-projet-page4 .form-card {
-  display: none;
+  display: block;
   /* remettre à : block */
   width: 443px;
   height: 338px;
@@ -3265,9 +3280,8 @@ div.content-page-projet div.main-content #toggle-ad:checked ~ #expand {
 /* !|||||||||||||||! THIS IS PAGE EDIT PROJET !|||||||||||||||! */
 /* !VVVVVVVVVVVVVVV! THIS IS PAGE EDIT PROJET !VVVVVVVVVVVVVVV! */
 div.content-page-edit-projet {
-  margin: 73px auto 0 auto;
+  margin-top: 73px;
   width: 100%;
-  padding: 1% 5%;
   background-color: #90a5f3;
 }
 div.content-page-edit-projet .section-header {
@@ -3341,7 +3355,7 @@ div.content-page-edit-projet div.btn-tab {
 div.tab-content.my-project {
   display: flex;
   justify-content: space-around;
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
   background: none;
   position: absolute;
@@ -3369,8 +3383,8 @@ div.tab-content.my-project p {
   font-weight: 600;
   font-size: 20px;
   line-height: 25px;
-  text-align: center;
   color: #466aef;
+  margin: 0;
 }
 div.tab-content.my-project .checkbox-wrapper {
   display: flex;
@@ -3421,6 +3435,9 @@ div.tab-content.my-project select {
 div.tab-content.my-project ul {
   margin: 0;
 }
+div.tab-content.my-project .input + .input {
+  margin-top: 40px;
+}
 div.tab-content.my-project li {
   display: inline-block;
   font-family: Sora;
@@ -3433,9 +3450,11 @@ div.tab-content.my-project li {
 }
 div.tab-content.my-project span {
   font-family: Sora;
+  font-style: normal;
+  font-weight: 200;
   font-size: 16px;
   line-height: 20px;
-  color: #b5b5b5;
+  color: #466aef;
 }
 div.tab-content.my-project #global-vision {
   height: 75px;
@@ -3447,6 +3466,7 @@ div.tab-content.my-project textarea {
   resize: none;
   width: 530px;
   height: 160px;
+  margin-bottom: 25px;
 }
 div.tab-content.my-project label#img-upload {
   width: 480px;
@@ -3469,8 +3489,18 @@ div.tab-content.my-project div.left-container {
   border-radius: 40px 0px;
   margin-top: 5%;
 }
+div.tab-content.my-project .bottom-right {
+  width: 500px;
+}
+div.tab-content.my-project ul + p {
+  margin-top: 25px;
+}
+div.tab-content.my-project + div {
+  margin-top: 0;
+}
 div.tab-content.my-project div.right-container {
   display: grid;
+  padding: 40px 50px;
   background: rgba(252, 252, 255, 0.82);
   border-radius: 0px 40px;
   margin-top: 5%;
@@ -3485,13 +3515,18 @@ div.tab-content.my-project div.right-container p.choice-display {
   color: #90a5f3;
 }
 div.tab-content.my-project .bottom-container {
+  margin: 60px 0;
+  padding: 3% 0 6% 0;
   display: flex;
+  width: 1160px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgba(252, 252, 255, 0.82);
+  border-radius: 40px 40px 0px 40px;
 }
 div.tab-content.my-project .bottom-container .progress-bar-wrapper {
-  width: 1221px;
+  width: 1100px;
   height: 120px;
   margin: 0 auto;
   display: flex;
@@ -3501,24 +3536,26 @@ div.tab-content.my-project .bottom-container .progress-bar-wrapper {
 }
 div.tab-content.my-project .bottom-container .progress-bar-wrapper .progress-bar-container {
   width: 100%;
-  height: 44px;
-  background: #d8d8d8;
-  border-radius: 40px;
+  height: 100px;
+  background: #fff;
+  border-radius: 60px;
 }
 div.tab-content.my-project .bottom-container .progress-bar-wrapper .progress-bar-container .progress-bar-content {
   width: 60%;
-  height: 44px;
-  background: #704dff;
-  border-radius: 40px;
+  height: 100px;
+  background: linear-gradient(270.38deg, #789eff 2.19%, #9038d4 96.73%);
+  border-radius: 60px;
 }
 div.tab-content.my-project .bottom-container .progress-bar-wrapper span {
   margin: 15px 0;
-  width: 80px;
+  max-width: 140px;
   font-family: Sora;
-  font-size: 16px;
-  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
-  color: #474b5a;
+  color: #5565a3;
 }
 
 /*_________________________________________________________*/
@@ -3559,16 +3596,16 @@ div.tab-content.my-team .member-wrapper {
   display: flex;
   justify-content: space-around;
   margin-top: 5%;
+  background: rgba(252, 252, 255, 0.82);
+  max-width: 100vw;
+  height: 70vh;
 }
 div.tab-content.my-team div.validated-teamate-card {
-  display: block;
   margin: 80px auto 80px auto;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #90a5f3;
   border-radius: 30px;
-  width: 543px;
-  max-width: 45%;
-  height: 258px;
+  padding: 1%;
 }
 div.tab-content.my-team div.validated-teamate-card .img-card {
   transform: translateY(-53px);
@@ -3582,38 +3619,36 @@ div.tab-content.my-team div.validated-teamate-card h4 {
   transform: translateY(-53px);
   font-family: Sora;
   font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
   text-align: center;
-  color: #000000;
+  color: #5565a3;
   margin: 15px 0 0 0;
 }
 div.tab-content.my-team div.validated-teamate-card p {
   transform: translateY(-53px);
-  text-align: center;
   font-family: Sora;
   font-style: normal;
-  font-weight: 100;
-  font-size: 20px;
-  line-height: 25px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
-  color: #000000;
+  color: #5565a3;
   margin: 0;
 }
 div.tab-content.my-team div.validated-teamate-card ul {
-  transform: translateY(-53px);
-  margin: 30px;
+  transform: translateY(-73px);
 }
 div.tab-content.my-team div.validated-teamate-card ul li {
   display: inline;
   font-family: Sora;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 18px;
   line-height: 23px;
   text-align: center;
-  color: #000000;
+  color: #5565a3;
 }
 div.tab-content.my-team div.validated-teamate-card button {
   display: block;
@@ -3631,8 +3666,31 @@ div.tab-content.my-team div.validated-teamate-card button {
   border-radius: 50px;
   padding: 5px;
 }
-div.tab-content.my-team .form-card {
+div.tab-content.my-team .back {
+  transform: rotateY(180deg);
+  max-height: 100%;
+}
+div.tab-content.my-team .card-container {
+  width: 380px;
+  height: 295px;
   display: block;
+}
+div.tab-content.my-team .card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+div.tab-content.my-team .validated-teamate-card,
+div.tab-content.my-team .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+div.tab-content.my-team .form-card {
+  display: none;
   /* remettre à : block */
   width: 443px;
   height: 338px;
@@ -3814,17 +3872,20 @@ div.tab-content.my-team .resume-annonce button {
 /* !VVVVVVVVVVVVVVV! THIS IS FIN DE PAGE MODFIER PROJET !VVVVVVVVVVVVVVV! */
 .validation-btn {
   display: block;
-  margin: 10% auto;
-  background: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 15px;
-  width: 450px;
-  height: 60px;
+  margin: 20% auto 0 auto;
+  background: #7331ff;
+  box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
+  border-radius: 60px;
+  width: 380px;
+  height: 95px;
   font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
   font-size: 30px;
   line-height: 38px;
   text-align: center;
-  color: #000000;
+  color: #ffffff;
+  border: none;
 }
 
 /*_________________________________________________________*/
@@ -4749,10 +4810,6 @@ div.content-collab .pending-collab .selected-pending-collab .cancel-demand {
   text-decoration: none;
   cursor: pointer;
 }
-div.content-collab .pending-collab .selected-pending-collab .flip {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}
 div.content-collab .pending-collab .pending_arrow_next {
   display: block;
   position: absolute;
@@ -4770,4 +4827,9 @@ div.content-collab .pending-collab .pending_arrow_prev {
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }

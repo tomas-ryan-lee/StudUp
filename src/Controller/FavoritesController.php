@@ -15,11 +15,7 @@ class FavoritesController extends AbstractController
      */
     public function index(): Response
     {
-
-        // TODO: add fyp
-        return $this->render('favorites/index.html.twig', [
-            'controller_name' => 'FavoritesController',
-        ]);
+        
         $student = $this->getUser()->getProfile();
         return $this->render(
             'favorites/index.html.twig', 
