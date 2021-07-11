@@ -18,7 +18,7 @@ class FavoritesController extends AbstractController
     public function index(): Response
     {
         $studentId = $this->getUser()->getProfile()->getId();
-        $fyProjects = json_decode($this->forward('App\Entity\Api\ProjectController::forYouProject', ['id' => $studentId]), true);
+        $fyProjects = json_decode($this->forward('App\Controller\Api\ProjectController::forYouProject', ['id' => $studentId]), true);
         
         $student = $this->getUser()->getProfile();
         return $this->render(
