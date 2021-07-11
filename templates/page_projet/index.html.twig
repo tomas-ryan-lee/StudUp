@@ -6,35 +6,6 @@
         <img src="{{ project.picture }}" alt="Image du projet"> {% else %}
         <iframe width="560" height="315" src="{{ project.video }}" title="Vidéo du projet {{project.name}}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe> {% endif %}
         <div class="over_img">
-            <p>
-                {{ project.currentPhase }}
-            </p>
-            <span>
-					Q
-				</span>
-            <span>
-					Q
-				</span>
-            <span>
-					Q
-				</span>
-        </div>
-        <div class="info-projet">
-            <h3>
-                {{ project.name }}
-            </h3>
-            <span>
-					Accompagné par :
-					<strong>
-						{{ project.incubator }}
-					</strong>
-				</span>
-            <h4>
-                {% for domain in project.domains %} {{ domain.name }} - {% endfor %}
-            </h4>
-            <p>
-                {{ project.globalVision }}
-            </p>
             <ul>
                 <li>
                     Impact Social
@@ -50,65 +21,123 @@
                 </li>
             </ul>
         </div>
+        <div class="info-projet">
+            <h3>
+                {{ project.name }}
+            </h3>
+            <h4>
+                {% for domain in project.domains %} {{ domain.name }} {% if loop.last == false %} - {% endif %}{% endfor %}
+            </h4>
+            <a class="edit-projet-btn" href="{{ path('edit_projet', {'id': project.id}) }}">
+                Modifer ma page
+            </a>
+            <div class="look-for">
+                <img src="/img/icones/icone-en-recherche-collab.png" alt="en recherche de">
+                <img src="/img/icones/icone-en-recherche-collab.png" alt="en recherche de">
+                <img src="/img/icones/icone-en-recherche-collab.png" alt="en recherche de">
+            </div>
+            <p>
+                {{ project.globalVision }}
+            </p>
+            {% if project.incubator %}
+            <span>
+                Accompagné par :
+                <strong>
+                    {{ project.incubator }}
+                </strong>
+            </span> {% else %}
+            <span>
+            <strong>
+                Accompagné.e par aucune structure
+            </strong> 
+        </span> {% endif %}
+        </div>
     </div>
     <div class="page-projet-btns">
-        <a class="edit-projet-btn" href="{{ path('edit_projet', {'id': project.id}) }}">
-				Modifier ma page projet
-			</a>
+
         <a class="check-add-request-btn">
-				Voir les demandes de collaborations
+            Voir les demandes de collab’
 			</a>
     </div>
     <div class="progress-bar-wrapper">
         <div class="progress-bar-container">
-            <div class="progress-bar-content"></div>
+            <div class="progress-bar-content" style="width: {{ percentage }}%;"></div>
         </div>
         <span>
-				Étude de marché
+            {% if project.currentPhase == "Étude de marché"%}    
+			<strong>	Étude de marché</strong>
+            {% else %}
+            Étude de marché
+            {% endif %}
 			</span>
         <span>
-				Étude de besoins
+            {% if project.currentPhase == "Étude de besoins"%}
+			<strong>	Étude de besoins</strong>
+            {% else %}
+            Étude de besoins
+            {% endif %}
 			</span>
         <span>
-				Validation du concept
+            {% if project.currentPhase == "Validation du concept"%}
+			<strong>	Validation du concept</strong>
+            {% else %}
+            Validation du concept
+            {% endif %}
 			</span>
         <span>
-				Rédaction du business plan
+            {% if project.currentPhase == "Rédaction du business plan"%}
+			<strong>	Rédaction du business plan</strong>
+            {% else %}
+            Rédaction du business plan
+            {% endif %}
+
 			</span>
         <span>
-				Création d’un MVP
+            {% if project.currentPhase == "Création de MVP"%}
+			<strong>Création d’un MVP</strong>
+            {% else %}
+            Création d’un MVP
+            {% endif %}
+
 			</span>
         <span>
+            {% if project.currentPhase == "Test utilisateurs"%}
+			<strong>Test utilisateurs</strong>
+            {% else %}
+            Test utilisateurs
+            {% endif %}
 				Test utilisateurs
 			</span>
         <span>
-				Lancement sur le marché
-			</span>
-        <span>
-				En activité
+            {% if project.currentPhase == "Test utilisateurs"%}
+			<strong>Lancement sur le marché</strong>
+            {% else %}
+            Lancement sur le marché
+            {% endif %}
 			</span>
     </div>
     <div class="main-content">
-        <div class="alinea"></div>
-        <h3>
-            Elevator Pitch
-        </h3>
+        <div class="title">
+            <div class="alinea"></div>
+            <h3>
+                Elevator Pitch
+            </h3>
+        </div>
         <p>
-            {{ project.elevatorSpeech }} Numquam soluta enim ex cupiditate blanditiis voluptates tempora placeat atque iusto rem doloremque magnam eos iste nulla sint, qui natus laboriosam quos sit molestias, consectetur, eaque expedita error! Ad, possimus! Sit praesentium
-            aliquid, repellendus dolores quisquam quo, iure quasi nostrum perferendis quia sed. Est quo facilis adipisci, quos assumenda aut deleniti, doloribus deserunt nesciunt, corrupti consectetur vero hic? Reiciendis, enim! Animi nesciunt ratione
-            distinctio ipsa inventore iusto impedit fugit totam ducimus magni, molestias minus nostrum. Impedit, labore reprehenderit officia iure magnam ad aut tenetur, molestiae in harum non porro quas? Veritatis, fugiat numquam soluta aspernatur vel
-            magni, itaque, perspiciatis pariatur voluptate dolorem aliquid! Modi similique inventore totam, vero error accusamus voluptatibus ex magni impedit ullam molestiae perferendis recusandae debitis. Atque.
+            {{ project.elevatorSpeech }}
         </p>
-        <div class="alinea type-2"></div>
-        <h3>
-            L’équipe {{ project.name }}
-        </h3>
-        <span>
+        <div class="title">
+            <div class="alinea type-2"></div>
+            <h3>
+                L’équipe {{ project.name }}
+            </h3>
+            <span>
 				Sprinter
 			</span>
+        </div>
         <div class="team-member-card">
 
-            <img src="{{ project.author.profilePic }}" alt="photo de profil">
+            <img src="{{ project.author.profilePic }} " alt="photo de profil">
             <h4>
                 {{ project.author.surname }} {{ project.author.name }}
             </h4>
@@ -119,7 +148,7 @@
                 Porteur de projet
             </h4>
             <p>
-                {% for job in project.author.jobs %} {{ job }} - {% endfor %}
+                UX/UI Designer - Product manager Business Développement {% for job in project.author.jobs %} {{ job }} - {% endfor %}
             </p>
 
 
@@ -139,63 +168,71 @@
             </p>
             {% endif %} {% endfor %}
         </div>
-        <div class="alinea type-2"></div>
-        <h3>
-            Les collab recherchées
-        </h3>
-        <span>
+        <div class="title">
+            <div class="alinea type-2"></div>
+            <h3>
+                Les collab recherchées
+            </h3>
+            <span>
 				Sprinter
 			</span>
-        <div class="add-request">
+        </div>
+        <div class="wanted-collab">
             {% for member in project.members %} {% if member.student == null %}
-            <input id="toggle-ad" type="checkbox" checked>
-            <label for="toggle-ad">
-							<div class="card-annonce">
-								<div class="header-card">
-									<img class="img-card" src="../img/{{ member.job.category }}.png" alt="photo de profil">
-									<h4>
-										{{ member.job.name }}
-									</h4>
-								</div>
-								<div class="body-card">
-									<h4>
-										{{ member.type }}
-									</h4>
-									<p>
-										{{ member.retribution }}
-									</p>
-								</div>
-							</div>
-						</label>
-            <button class="actualiser">
-							Actualiser
+            <div class="add-request">
+                <label for="toggle-ad">
+					<div class="card-annonce">
+						<div class="header-card">
+							<img class="img-card" src="../img/{{ member.job.category }}.png " alt="photo de profil ">
+							<h4>
+                				{{ member.job.name }}
+							</h4>
+						</div>
+						<div class="body-card">
+							<h4>
+								{{ member.type }}
+							</h4>
+							<p>
+								{{ member.retribution }}
+							</p>
+						</div>
+					</div>
+				</label>
+                <button class="actualiser">
+					Actualiser
+				</button> {% if member.applicants %}
+                <input id="toggle-ad" type="checkbox" checked>
+                <div class="expand">
+                    {% for applicant in member.applicants %}
+                    <div>
+                        <img src="{{applicant.profilePic}}" alt="photo de profil">
+                        <span>
+							En attente depuis
+							<br>
+							Juillet 2021
+						</span>
+                        <h4>
+                            {{ applicant.surname }} {{ applicant.name }}
+                        </h4>
+                        <p>
+                            {{ applicant.cursus }}
+                        </p>
+                        <div class="response">
+                            <button class="active">
+							Contacter
+	    				</button>
+                            <button>
+							Accepter
 						</button>
-            <div id="expand">
-                {% for applicant in member.applicants %}
-                <img src="{{applicant.profilePic}}" alt="photo de profil">
-                <span>
-									En attente depuis
-									<br>
-									Juillet 2021
-								</span>
-                <h4>
-                    {{ applicant.surname }} {{ applicant.name }}
-                </h4>
-                <p>
-                    {{ applicant.cursus }}
-                </p>
-                <div class="response">
-                    <button class="active">
-										Contacter
-									</button>
-                    <button>
-										Accepter
-									</button>
-                    <button>
-										Décliner
-									</button>
+                            <button>
+							Décliner
+						</button>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+                {% endif %}
+
             </div>
             {% endif %} {% endfor %}
         </div>

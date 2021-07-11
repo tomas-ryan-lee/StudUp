@@ -285,7 +285,9 @@ body {
   height: 100vh;
 }
 body main {
-  background: #757575;
+  background-image: url("/public/img/bg-landing.png");
+  background-color: rgba(0, 148, 255, 0.3);
+  background-size: 100% 100%;
   height: 100vh;
 }
 body main .home_tag_line {
@@ -2908,7 +2910,11 @@ div.content-page-projet {
   margin: 73px auto 0 auto;
   width: 100%;
   padding: 5%;
-  background-color: white;
+  background-color: linear-gradient(270.38deg, #789eff 2.17%, #9038d4 95.75%);
+  background-size: 100% 75%;
+  background: rgba(0, 148, 255, 0.3);
+  background-size: 100% 70%;
+  background-repeat: no-repeat;
 }
 div.content-page-projet div.top-page-projet {
   display: flex;
@@ -2918,38 +2924,63 @@ div.content-page-projet div.top-page-projet img {
   width: 574px;
   height: 332px;
   object-fit: cover;
+  border-radius: 5px;
 }
 div.content-page-projet div.top-page-projet .over_img {
-  margin-top: 20px;
+  margin-top: 80px;
   position: absolute;
   width: 250px;
-  height: 71px;
-  background: rgba(242, 242, 242, 0.75);
-  border-radius: 0px 10px 10px 0px;
+  opacity: 0.8;
 }
-div.content-page-projet div.top-page-projet .over_img p {
+div.content-page-projet div.top-page-projet .over_img ul {
+  padding: 0;
+  margin: 5px 0;
+}
+div.content-page-projet div.top-page-projet .over_img ul li {
+  display: inline-block;
   font-family: Sora;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
   text-align: center;
-  color: #474b5a;
-  margin: 10px;
-}
-div.content-page-projet div.top-page-projet .over_img span {
-  margin: 0 12%;
+  color: #90a5f3;
+  background: #ffffff;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px 15px;
 }
 div.content-page-projet div.top-page-projet .info-projet {
   width: 615px;
-  padding: 10px;
+  padding: 35px;
 }
 div.content-page-projet div.top-page-projet .info-projet h3 {
   margin: 0;
   font-family: Sora;
+  font-style: normal;
   font-weight: 600;
   font-size: 50px;
   line-height: 63px;
-  color: #474b5a;
+  color: #5565a3;
+}
+div.content-page-projet div.top-page-projet .info-projet .look-for {
+  max-width: auto;
+  align-items: center;
+  width: 30%;
+  height: 53px;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+div.content-page-projet div.top-page-projet .info-projet img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
 }
 div.content-page-projet div.top-page-projet .info-projet span {
   font-family: Sora;
@@ -2959,11 +2990,12 @@ div.content-page-projet div.top-page-projet .info-projet span {
 }
 div.content-page-projet div.top-page-projet .info-projet h4 {
   font-family: Sora;
+  font-style: normal;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 30px;
-  color: #474b5a;
-  margin: 28px 0;
+  font-size: 26px;
+  line-height: 33px;
+  color: #5565a3;
+  margin: 0;
 }
 div.content-page-projet div.top-page-projet .info-projet p {
   margin: 0;
@@ -2974,29 +3006,11 @@ div.content-page-projet div.top-page-projet .info-projet p {
   line-height: 25px;
   color: #474b5a;
 }
-div.content-page-projet div.top-page-projet .info-projet ul {
-  padding: 0;
-  margin: 5px 0;
-}
-div.content-page-projet div.top-page-projet .info-projet ul li {
-  display: inline-block;
-  font-family: Sora;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  color: #474b5a;
-  background: #ffffff;
-  border: 1px solid #474b5a;
-  border-radius: 10px;
-  margin: 5px 5px;
-  padding: 5px 15px;
-}
 div.content-page-projet .page-projet-btns {
   width: 100%;
   display: flex;
   margin: 50px auto;
+  justify-content: flex-end;
 }
 div.content-page-projet button {
   margin: 0 auto;
@@ -3010,38 +3024,42 @@ div.content-page-projet button {
   border: none;
 }
 div.content-page-projet a.edit-projet-btn {
-  margin: 0 auto;
-  height: 46px;
+  float: right;
+  margin-top: 20px;
+  height: 70px;
+  width: 237px;
   font-family: Sora;
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  line-height: 46px;
-  border-radius: 30px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  width: 284px;
-  background-color: white;
-  color: #474b5a;
-  text-decoration: none;
+  line-height: 70px;
   text-align: center;
+  color: #7331ff;
+  border: 2px solid #7331ff;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 7px 7px rgba(71, 75, 90, 0.15));
+  border-radius: 60px;
+  text-decoration: none;
 }
 div.content-page-projet a.check-add-request-btn {
-  margin: 0 auto;
-  height: 46px;
+  margin: 0 175px;
+  height: 75px;
+  width: 390px;
+  line-height: 75px;
   font-family: Sora;
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  line-height: 46px;
-  border-radius: 30px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  width: 415px;
-  background-color: #474b5a;
-  color: white;
+  text-align: center;
+  color: #ffffff;
+  background: #7331ff;
+  box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
+  border-radius: 60px;
   text-decoration: none;
   text-align: center;
 }
 div.content-page-projet .progress-bar-wrapper {
   width: 1221px;
-  height: 120px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -3049,55 +3067,68 @@ div.content-page-projet .progress-bar-wrapper {
 }
 div.content-page-projet .progress-bar-wrapper .progress-bar-container {
   width: 100%;
-  height: 44px;
-  background: #d8d8d8;
-  border-radius: 40px;
+  height: 100px;
+  background: #ffffff;
+  border: 1px solid #90a5f3;
+  box-sizing: border-box;
+  border-radius: 60px;
 }
 div.content-page-projet .progress-bar-wrapper .progress-bar-container .progress-bar-content {
   width: 60%;
-  height: 44px;
-  background: #704dff;
-  border-radius: 40px;
+  height: 100px;
+  background: linear-gradient(270.38deg, #789eff 2.19%, #9038d4 96.73%);
+  border-radius: 60px;
 }
 div.content-page-projet .progress-bar-wrapper span {
   margin: 15px 0;
-  width: 80px;
+  width: 150px;
   font-family: Sora;
-  font-size: 16px;
-  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
-  color: #474b5a;
+  color: #5565a3;
 }
 div.content-page-projet div.main-content .alinea {
   float: left;
   width: 5px;
   height: 40px;
-  background: #704dff;
+  background: #fff;
   border-radius: 10px;
   margin-right: 26px;
 }
 div.content-page-projet div.main-content .type-2 {
   height: 60px;
 }
-div.content-page-projet div.main-content h3 {
+div.content-page-projet div.main-content div.title {
+  margin-top: 75px;
+}
+div.content-page-projet div.main-content div.title h3 {
   margin: 0;
   font-family: Sora;
+  font-style: normal;
   font-weight: bold;
+  font-size: 30px;
+  line-height: 38px;
+  color: #5666a4;
+}
+div.content-page-projet div.main-content div.title span {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
   font-size: 26px;
-  line-height: 40px;
-  color: #474b5a;
+  line-height: 33px;
+  color: #5565a3;
 }
 div.content-page-projet div.main-content p {
   font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
   font-size: 20px;
   line-height: 35px;
-  color: #474b5a;
-}
-div.content-page-projet div.main-content span {
-  font-family: Sora;
-  font-size: 26px;
-  line-height: 30px;
-  color: #474b5a;
+  text-align: justify;
+  color: #5565a3;
 }
 div.content-page-projet div.main-content .team-member-card {
   margin-top: 120px;
@@ -3120,31 +3151,40 @@ div.content-page-projet div.main-content .team-member-card img {
 div.content-page-projet div.main-content .team-member-card h4 {
   transform: translateY(-60px);
   font-family: Sora;
-  font-weight: 800;
+  font-style: normal;
+  font-weight: bold;
   font-size: 22px;
   line-height: 28px;
   text-align: center;
-  color: #474b5a;
+  color: #5565a3;
   margin: 13px 0 0 0;
 }
 div.content-page-projet div.main-content .team-member-card p {
   width: 85%;
   transform: translateY(-60px);
-  font-size: 18px;
+  font-family: Sora;
+  font-style: normal;
   font-weight: 300;
+  font-size: 18px;
   line-height: 23px;
-  color: #474b5a;
   text-align: center;
+  color: #5565a3;
   margin: 0 auto;
+}
+div.content-page-projet div.main-content .wanted-collab {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(253, 255, 255, 0.82);
+  border: 1px solid #5565a3;
+  box-sizing: border-box;
+  border-radius: 30px;
+  margin-top: 30px;
 }
 div.content-page-projet div.main-content .add-request {
   margin-top: 30px;
   width: 458px;
-  background: #f2f2f2;
-  border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 div.content-page-projet div.main-content .add-request input {
@@ -3157,6 +3197,8 @@ div.content-page-projet div.main-content .add-request img {
   width: 106px;
   height: 106px;
   border-radius: 100%;
+  background-color: #fff;
+  border: 2px solid #90a5f3;
 }
 div.content-page-projet div.main-content .add-request .card-annonce {
   margin: 20px auto;
@@ -3166,8 +3208,9 @@ div.content-page-projet div.main-content .add-request .card-annonce {
   border-radius: 30px;
 }
 div.content-page-projet div.main-content .add-request .card-annonce .header-card {
-  background: #704cff;
-  border-radius: 30px 30px 0px 0px;
+  background: #90a5f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 20px 0px 0px;
   max-height: 127px;
 }
 div.content-page-projet div.main-content .add-request .card-annonce .header-card .img-card {
@@ -3194,9 +3237,18 @@ div.content-page-projet div.main-content .add-request .card-annonce .body-card h
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  line-height: 28px;
+  line-height: 30px;
   text-align: center;
-  color: #555555;
+  color: #5565a3;
+}
+div.content-page-projet div.main-content .add-request .card-annonce .body-card p {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #5565a3;
 }
 div.content-page-projet div.main-content .add-request button.actualiser {
   width: 110px;
@@ -3210,13 +3262,13 @@ div.content-page-projet div.main-content .add-request button.actualiser {
   border: 1px solid #474b5a;
   border-radius: 50px;
 }
-div.content-page-projet div.main-content .add-request #expand {
+div.content-page-projet div.main-content .add-request .expand {
   height: 0;
   overflow: hidden;
   transition: height 0.5s;
   text-align: center;
 }
-div.content-page-projet div.main-content .add-request #expand span {
+div.content-page-projet div.main-content .add-request .expand span {
   margin-right: 15px;
   display: flex;
   justify-content: flex-end;
@@ -3227,7 +3279,7 @@ div.content-page-projet div.main-content .add-request #expand span {
   text-align: right;
   color: #474b5a;
 }
-div.content-page-projet div.main-content .add-request #expand h4 {
+div.content-page-projet div.main-content .add-request .expand h4 {
   font-family: Sora;
   font-weight: bold;
   font-size: 24px;
@@ -3235,7 +3287,7 @@ div.content-page-projet div.main-content .add-request #expand h4 {
   color: #474b5a;
   margin: 0;
 }
-div.content-page-projet div.main-content .add-request #expand p {
+div.content-page-projet div.main-content .add-request .expand p {
   margin: 0;
   font-family: Sora;
   font-size: 20px;
@@ -3243,12 +3295,12 @@ div.content-page-projet div.main-content .add-request #expand p {
   text-align: center;
   color: #474b5a;
 }
-div.content-page-projet div.main-content .add-request #expand .response {
+div.content-page-projet div.main-content .add-request .expand .response {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-div.content-page-projet div.main-content .add-request #expand button {
+div.content-page-projet div.main-content .add-request .expand button {
   margin: 5% 0;
   font-weight: normal;
   font-family: Sora;
@@ -3261,17 +3313,17 @@ div.content-page-projet div.main-content .add-request #expand button {
   border: 1px solid #474b5a;
   border-radius: 50px;
 }
-div.content-page-projet div.main-content .add-request #expand .active {
+div.content-page-projet div.main-content .add-request .expand .active {
   font-weight: bold;
   color: white;
   background: #704cff;
   border: none;
 }
-div.content-page-projet div.main-content label {
+div.content-page-projet div.main-content .add-request label {
   transition: 0.3s;
   cursor: pointer;
 }
-div.content-page-projet div.main-content #toggle-ad:checked ~ #expand {
+div.content-page-projet div.main-content .add-request #toggle-ad:checked ~ .expand {
   height: 100%;
 }
 
@@ -3283,6 +3335,7 @@ div.content-page-edit-projet {
   margin-top: 73px;
   width: 100%;
   background-color: #90a5f3;
+  overflow: auto;
 }
 div.content-page-edit-projet .section-header {
   width: 70%;
@@ -3348,6 +3401,11 @@ div.content-page-edit-projet div.btn-tab {
   border-radius: 38px;
 }
 
+.tabs-container {
+  width: 100%;
+  height: 1500px;
+}
+
 /*_________________________________________________________*/
 /* !|||||||||||||||! THIS IS ONGLET MON PROJET !|||||||||||||||! */
 /* !|||||||||||||||! THIS IS ONGLET MON PROJET !|||||||||||||||! */
@@ -3355,12 +3413,13 @@ div.content-page-edit-projet div.btn-tab {
 div.tab-content.my-project {
   display: flex;
   justify-content: space-around;
+  padding: 0 10%;
   width: 100%;
   flex-wrap: wrap;
   background: none;
-  position: absolute;
   opacity: 0;
-  visibility: hidden;
+  position: absolute;
+  visibility: visible;
 }
 div.tab-content.my-project .input {
   width: 320px;
@@ -3484,7 +3543,7 @@ div.tab-content.my-project img {
 }
 div.tab-content.my-project div.left-container {
   display: grid;
-  padding: 40px 50px;
+  padding: 40px 80px 40px 50px;
   background: rgba(252, 252, 255, 0.82);
   border-radius: 40px 0px;
   margin-top: 5%;
@@ -3565,6 +3624,8 @@ div.tab-content.my-project .bottom-container .progress-bar-wrapper span {
 div.tab-content.my-team {
   opacity: 0;
   visibility: hidden;
+  position: absolute;
+  width: 100%;
 }
 div.tab-content.my-team p.intro {
   font-family: Sora;
@@ -3669,6 +3730,10 @@ div.tab-content.my-team div.validated-teamate-card button {
 div.tab-content.my-team .back {
   transform: rotateY(180deg);
   max-height: 100%;
+}
+div.tab-content.my-team .back img {
+  margin: 0;
+  transform: none;
 }
 div.tab-content.my-team .card-container {
   width: 380px;
@@ -3781,9 +3846,21 @@ div.tab-content.my-team .form-card .body-card select {
   width: 200px;
 }
 div.tab-content.my-team .annonce-wrapper {
-  margin-top: 10%;
-  display: flex;
+  margin: 10%;
+  width: 80%;
   justify-content: space-around;
+  background: rgba(252, 252, 255, 0.82);
+  border-radius: 40px 0px;
+  padding: 5%;
+}
+div.tab-content.my-team h3 {
+  font-family: Sora;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #466aef;
 }
 div.tab-content.my-team .resume-annonce {
   max-width: 30%;
@@ -3794,8 +3871,10 @@ div.tab-content.my-team .resume-annonce .card-annonce {
   height: 208px;
 }
 div.tab-content.my-team .resume-annonce .card-annonce .header-card {
-  background: #757575;
-  border-radius: 30px 30px 0px 0px;
+  background: #90a5f3;
+  border: 1px solid #99a2c1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 30px 30px 0 0;
   max-height: 127px;
 }
 div.tab-content.my-team .resume-annonce .card-annonce .header-card .img-card {
@@ -3814,6 +3893,7 @@ div.tab-content.my-team .resume-annonce .card-annonce .header-card h4 {
   line-height: 30px;
   text-align: center;
   color: #ffffff;
+  margin: 0;
 }
 div.tab-content.my-team .resume-annonce .card-annonce .body-card {
   background: #ffffff;
@@ -3870,9 +3950,14 @@ div.tab-content.my-team .resume-annonce button {
 /* !|||||||||||||||! THIS IS FIN DE PAGE MODFIER PROJET !|||||||||||||||! */
 /* !|||||||||||||||! THIS IS FIN DE PAGE MODFIER PROJET !|||||||||||||||! */
 /* !VVVVVVVVVVVVVVV! THIS IS FIN DE PAGE MODFIER PROJET !VVVVVVVVVVVVVVV! */
+.btn-container {
+  width: 100%;
+  margin: 50px 0 150px 0;
+}
+
 .validation-btn {
   display: block;
-  margin: 20% auto 0 auto;
+  margin: 0 auto;
   background: #7331ff;
   box-shadow: 0px 7px 7px rgba(71, 75, 90, 0.15);
   border-radius: 60px;
