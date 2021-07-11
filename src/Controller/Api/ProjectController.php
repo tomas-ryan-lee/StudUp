@@ -25,11 +25,40 @@ class ProjectController extends AbstractController {
     /**
      * @Route("/api/projects", name="get_all_projects", methods={"GET"})
      */
-    public function getAll() : JsonResponse {
-        $projects = $this->projectRepository->findAll();
+    public function getAll(Request $request) : JsonResponse {
+
+        $query = $request->query;
         $data = [];
-        foreach($projects as $project) {
-            $data[] = $project->toArray();
+        $projects = $this->projectRepository->findAll();
+
+        if (!empty($query->all())) {
+        // TODO : améliorer le tri
+
+            foreach ($projects as $project) {
+                $parametersNumber = array_sum([
+                    $query->has('location'),
+                    $query->has('domains'),
+                    $query->has('jobs'),
+                    $query->has('types')
+                ]);
+                $filtersNumber = array_sum([
+                    ($query->has('location') && in_array($project->getLocation(), $query->get('location'))),
+                    ($query->has('domains') && count(array_intersect($query->get('domains'), $project->getDomainsNames())) >= 1),
+                    ($query->has('jobs') && count(array_intersect($query->get('jobs'), $project->getJobsNames())) >= 1),
+                    ($query->has('types') && count(array_intersect($query->get('types'), $project->getJobsTypes())) >= 1),
+                ]);
+                if ($parametersNumber == $filtersNumber) {
+                    $data[] = $project->toArray();
+                }
+            }
+
+
+        } else {
+
+            foreach($projects as $project) {
+                $data[] = $project->toArray();
+
+            }
         }
 
         return new JsonResponse($data, Response::HTTP_OK);

@@ -266,6 +266,37 @@ class Project {
         return $this->members;
     }
 
+    public function getDomainsNames() {
+        $domains = $this->domains;
+        $domainName = [];
+        foreach($domains as $domain) {
+            $domainName[] = $domain->getName();
+        }
+        return $domainName;
+    }
+
+    public function getJobsNames($isFree = true) {
+        $members = $this->members;
+        $jobsName = [];
+        foreach($members as $member) {
+            if(($member->getStudent() == null) == $isFree) {
+                $jobsName[] = $member->getJob()->getName();
+            }
+        }
+        return $jobsName;
+    }
+
+    public function getJobsTypes($isFree = true) {
+        $members = $this->members;
+        $jobsType = [];
+        foreach($members as $member) {
+            if(($member->getStudent() == null) == $isFree) {
+                $jobsType[] = $member->getType();
+            }
+        }
+        return $jobsType;
+    }
+
     public function toArray(array $exclude = []) {
         $data = [
             'id' => $this->getId(),
