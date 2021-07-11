@@ -13,9 +13,13 @@ class DirectoryController extends AbstractController
      */
     public function index(): Response
     {
-        // TODO
+        // TODO : manage filters
+
+        $projects = json_decode($this->forward('App\Controller\Api\ProjectController::getAll'));
+
         return $this->render('directory/index.html.twig', [
             'controller_name' => 'DirectoryController',
+            'projects' => $projects,
         ]);
     }
 }

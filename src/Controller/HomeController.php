@@ -13,7 +13,7 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        // TODO
+        // TODO : projets à la une
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);

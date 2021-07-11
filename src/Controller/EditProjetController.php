@@ -13,9 +13,13 @@ class EditProjetController extends AbstractController
      */
     public function index(int $id): Response
     {
-        // TODO
+        // TODO : manage info save
+
+        $project = json_decode($this->forward("App\Controller\Api\ProjectController::get", ['id' => $id]));
+
         return $this->render('edit_projet/index.html.twig', [
             'controller_name' => 'EditProjetController',
+            '$project' => $project,
         ]);
     }
 }
