@@ -13,6 +13,7 @@ class EditProjetController extends AbstractController
      */
     public function index(int $id): Response
     {
+        // TODO
         return $this->render('edit_projet/index.html.twig', [
             'controller_name' => 'EditProjetController',
         ]);

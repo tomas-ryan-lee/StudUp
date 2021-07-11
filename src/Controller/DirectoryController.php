@@ -13,6 +13,7 @@ class DirectoryController extends AbstractController
      */
     public function index(): Response
     {
+        // TODO
         return $this->render('directory/index.html.twig', [
             'controller_name' => 'DirectoryController',
         ]);

@@ -13,6 +13,7 @@ class ParametreController extends AbstractController
      */
     public function index(): Response
     {
+        // TODO
         return $this->render('parametre/index.html.twig', [
             'controller_name' => 'ParametreController',
         ]);
