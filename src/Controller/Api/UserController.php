@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Entity\Student;
 use App\Repository\UserRepository;
 
 class UserController {
@@ -52,6 +53,8 @@ class UserController {
 
     public function add(Request $request) : JsonResponse {
         $data = json_decode($request->getContent(), true);
+        $studentRepository = $this->getDoctrine()->getRepository(Student::class);
+
         if(!isset($data["login"])||!isset($data["password"])) {
             return new JsonResponse(
                 ["error" => "Missing mandatory parameters"],
@@ -62,7 +65,7 @@ class UserController {
         $login = $data["login"];
         $password = $data["password"];
         if(isset($data["studentId"])) {
-            // TODO : get the student from the ID
+            $studentRepository->findOneBy(['id' => $data['studentId']]);
         }
             
         $user = $this->userRepository->saveUser($login, $password, $student);
@@ -91,11 +94,12 @@ class UserController {
     public function update($id, Request $request) : JsonResponse {
         $user = $this->userRepository->findOneBy(["id" => $id]);
         $data = json_decode($request->getContent(), true);
+        $studentRepository = $this->getDoctrine()->getRepository(Student::class);
 
         isset($data["login"]) ? $user->setLogin($data["login"]) : true;
         isset($data["password"]) ? $user->setPassword($data["password"]) : true;
         if(isset($data["studentId"])) {
-            // TODO : get the student from the ID
+            $user->setStudent($studentRepository->findOneBy(['id' => $data['studentId']]));
         }
 
         $updatedUser = $this->userRepository->updateUser($user);
