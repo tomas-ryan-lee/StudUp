@@ -138,4 +138,14 @@ class ProjectRepository extends ServiceEntityRepository {
         return $query->getQuery()->execute();
     }
 
+    // public function findByDomains($domains) {
+    //     $query = $this->getEntityManager()
+    //         ->createQuery(
+    //             'SELECT p, d FROM App\Entity\Project p
+    //             INNER JOIN p.domains d
+    //             WHERE d.name = :names'
+    //         )->setParameters('names', "Audiovisuel");
+    //     return $query->getResult();
+    // }
+
 }
