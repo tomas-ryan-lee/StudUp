@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,8 +28,8 @@ class AddStudentType extends AbstractType
             ->add('surname', TextType::class, ["label" => "Prénom"])
             ->add('name', TextType::class, ["label" => "Nom"])
             ->add('gender', ChoiceType::class, ["choices" => [
-                "Homme" => "Homme",
-                "Femme" => "Femme",
+                "Homme" => "male",
+                "Femme" => "female",
             ], "label" => "Tu es ?"])
             ->add('birthday', DateType::class, [
                 'widget' => 'single_text', 
@@ -77,7 +76,7 @@ class AddStudentType extends AbstractType
                 "2006" => "2006",
                 "2005" => "2005",
             ], "label" => "Année"])
-            ->add('school_name', TextType::class, ["label" => "Nom du cursus de ton école"])
+            ->add('cursus', TextType::class, ["label" => "Nom du cursus de ton école"])
             //Onglet 2
             ->add('skills', EntityType::class, [
                 'class' => Job::class,
@@ -97,14 +96,24 @@ class AddStudentType extends AbstractType
                 "On te contacte ?" => true,
                 "On ne te contacte pas" => false,
             ], "label" => false])
-            ->add('bio', TextareaType::class, ["label" => "C'est à toi de jouer ! Parle du type de missions que tu recherches"])
+            ->add('bio', TextareaType::class, [
+                "label" => "C'est à toi de jouer ! Parle du type de missions que tu recherches",
+                "required" => false,
+            ])
             //Onglet 3
-            ->add('phone', TelType::class, ["label" => "Téléphone (Facultatif)"])
+            ->add('phone', TelType::class, [
+                "label" => "Téléphone (Facultatif)", 
+                "required" => false
+            ])
             ->add('social', ChoiceType::class, ["choices" => [
                 "Facebook" => "Facebook",
-                "LinkedIn" => "LinkedIn",
-            ], "label" => "Diplôme"])
-            ->add('social_url', UrlType::class, ["label" => "Réseau social (Facultatif)"])
+                "Instagram" => "Instagram",
+                "Site Web" => "Site Web",
+            ], "label" => "Réseaux sociaux"])
+            ->add('social_url', TextType::class, [
+                "label" => "URL (Facultatif)",
+                "required" => false,
+            ])
             ->add('email', EmailType::class, ["label" => "Je jure solenellement que mes intentions sont bonnes"])
             ->add('password', PasswordType::class, ["label" => "Mot de passe"])
             ->add('agreeTerms', CheckboxType::class, [
